@@ -1,0 +1,230 @@
+/*
+================================================================================
+style.css
+
+Autores: 
+	SEBASTIÁN HORCAJO ORTEGA
+	GUILLERMO
+	JAVIER
+Versión: 1.0
+Fecha: Octubre 2015
+ 
+Hoja de estilos general
+================================================================================
+1.- STILOS GENERALES
+2.- MENÚ PRINCIPAL
+	2.1.- Pantalla de inicio
+	2.2.- Cabeceras
+	2.3.- Formulario de datos
+	2.4.- Menu Desplegable
+	
+================================================================================
+1.- ESTILOS GENERALES
+================================================================================*/
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;  
+    list-style: none;
+}
+
+html,body{height: 100%;overflow-x:hidden;}
+
+body{
+    font: 1em/1.5 sans-serif;
+    font-weight: 300;
+}
+
+
+/*================================================================================
+1.- MENÚ PRINCIPAL
+================================================================================
+	/*================================================================================
+	2.1.- Pantalla de inicio
+	================================================================================*/
+	.body{
+	    width: 100%;
+	    height: 100%;
+	    background: url(../img/fondo.jpg) no-repeat center;
+	    background-size: cover;
+	}
+
+	.pantallaWeb{
+	    width: 100%;
+	    text-align: center;
+	}
+
+	.contentGen{
+	    width: 100%;
+	    height: 100%;
+	    padding: 20px;
+	    margin-bottom: 75px;
+	}
+
+	.contentIni{
+	    width: 70%;
+	    height: 30%;
+	    background: url(../img/cuadro.jpg) no-repeat center;
+	    background-size: cover;
+	    border-radius: 20px;
+	    margin: 0px auto;
+	    margin-bottom: 75px;
+	}
+
+	.formularioEntradaIni{
+		width: 320px;
+	    margin: 20px auto;
+		padding: 20px;
+	    background-color: #B0E0E6;
+	    border-radius: 20px;
+	    border: 10px solid black;
+	}
+
+	#txt_error{
+	    font-weight: 300;
+	    margin: 30px auto;
+	    display: none;
+	    text-align: center;
+	    font: 1.5em/1.5 sans-serif;
+	    color: white;
+	    font-weight: 600;
+	    width: 50%;
+	    background: black;
+	}
+
+   /*================================================================================
+    2.2.- Cabeceras
+    ================================================================================*/
+
+	.cookies{
+	    width: 100%;
+	    margin: 0px auto;
+	    background: black;
+	    overflow: hidden;
+	}
+
+	.cookies h1{
+	   font: 1em/1 sans-serif;
+	   line-height: 30px;
+	}
+
+	.cookies h1 span{
+	    color: #99AABB;
+	}
+
+	.cabeceraIni{
+	    width: 100%;
+	    margin: 0px auto;
+	    margin-bottom: 75px;
+	    background: black;
+	    background: rgba(0,0,0,.8);
+	    overflow: hidden;
+	}
+
+	.cabeceraIni h1{
+	   float: left;
+	   width: 100%;
+	   font: 2.5em/2.5 sans-serif;
+	   font-weight: 300px;
+	   line-height: 100px;
+	}
+	
+	.cabeceraIni h1 span{
+	    color: #99AABB;
+	}
+
+	.descripcion #descri1{
+		width: 40%;
+	    margin: 0px auto;
+	    float: right;
+	    margin: 30px;
+	}
+
+	.descripcion #descri2{
+		width: 40%;
+	    margin: 0px auto;
+	    float: left;
+	    margin: 30px;
+	}
+
+	.descripcion1 h1{
+	   float: left;
+	   font: 1.5em/1.5 sans-serif;
+	   font-weight: 300;
+	   line-height: 100px;
+	}
+	
+	.descripcion1 h1 span{
+	    color: #99AABB;
+	}
+
+	.cabeceraFin{
+	    width: 100%;
+	    margin: 0px auto;
+	    background: black;
+	    background: rgba(0,0,0,.8);
+	    overflow: hidden;
+	}
+
+	.cabeceraFinz h1{
+	   float: left;
+	   width: 60%;
+	   font: 1.5em/1.5 sans-serif;
+	   font-weight: 300;
+	   color: white;
+	   line-height: 100px;
+	   margin-bottom: 20px;
+	}
+
+	.cabeceraFinz h1 span{
+	    color: #99AABB;
+	}
+
+
+	/*================================================================================
+    2.3.- Formulario de datos
+    ================================================================================*/
+	#formularioEntradaIni{
+	    width: 100%;
+	    margin: 0 auto;
+	    text-align: center;
+	}
+
+	#formularioEntradaIni input{
+	    width: 270px;
+	    margin: 0 auto;
+	    padding: 5px 0;
+	    font: .9em/1.5 sans-serif;
+	    text-align: center;
+	    border: 1px solid #99AABB;
+	}
+
+	#formularioEntradaIni h2{
+	    margin: 0 auto;
+	    font: 1em/1.5 sans-serif;
+	    color: #335566;
+	    font-weight: 600;
+	    text-align: center;
+	}
+
+	.btn{
+	    width: 270px;
+	    margin: 10px auto;
+	    padding: 7px 0;
+	    font: .9em/1.5 sans-serif;
+	    text-align: center;
+	    color: white;
+	    background: #335566;
+	    cursor: pointer;
+	}
+
+	.btn:hover{
+	    color: white;
+	    background: #4B4E50;
+	}
+
+	/*================================================================================
+    2.4.- Menu Desplegable
+    ================================================================================*/
+	
