@@ -10,7 +10,7 @@
 <table>
 <?php
 	// manager
-	$conexion = mysqli_connect('localhost','root','manager','inmobiliaria')
+	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 
 	if (mysqli_connect_errno()) {
@@ -18,7 +18,7 @@
 		exit();
 	}
 	
-$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `bagnos`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `imagen1`, `imagen2`, `imagen3`, `localidad`, `provincia` 
+$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `imagen1`, `imagen2`, `imagen3`, `localidad`, `provincia` 
 FROM `inmuebles` , `localidades`, `provincias`
 where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia`";
 

@@ -6,7 +6,7 @@
 <title>Insertar Inmueble</title>
 </head>
 <?php
-$conexion = mysqli_connect('localhost','root','manager','inmobiliaria')
+$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 
 	if (mysqli_connect_errno()) {
@@ -85,8 +85,10 @@ while($fila = mysqli_fetch_row($result)){
        if($cargo=="admin"){
 		   $consulta="SELECT idlocalidad,localidad from localidades";       
        }else{	
-       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia from provincias where idusuario=".$dni.")";
+       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia"
+               . " from provincias where idusuario='12345678G')";
 	}
+        $consulta= "SELECT idlocalidad,localidad from localidades";
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
 echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";

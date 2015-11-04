@@ -9,7 +9,7 @@
 <body>
 <table>
 <?php
-	$conexion = mysqli_connect('localhost','root','manager','inmobiliaria')
+	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 
 	if (mysqli_connect_errno()) {
