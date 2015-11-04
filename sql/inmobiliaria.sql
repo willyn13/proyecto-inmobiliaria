@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2015 a las 16:52:30
+-- Tiempo de generación: 04-11-2015 a las 13:30:24
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -154,9 +154,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`dni_usuario`, `idzona`, `nombre`, `apellidos`, `cargo`, `password`) VALUES
-('12345678G', 2, 'Guillermo', '', 'Comercial', '1234'),
-('12345678J', 3, 'Javier', '', 'Comercial', '1234'),
-('12345678S', 1, 'Sebastián', 'Horcajo Ortega', 'Administrador', '1234');
+('12345678G', 2, 'Guillermo', 'Domínguez Garrido', 'Comercial', '1234'),
+('12345678J', 3, 'Javier', 'Rodríguez Pellejero', 'Comercial', '1234'),
+('12345678S', 1, 'Sebastián', 'Horcajo Ortega', 'admin', '1234');
 
 -- --------------------------------------------------------
 

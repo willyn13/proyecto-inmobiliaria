@@ -17,10 +17,10 @@ echo $sql;
 
 	$res = mysqli_query($conexion,$sql);							
 	if ($res === TRUE) {
-	   	echo "Se ha insertado el usuario.";
+	   	echo "Se ha insertado el Inmueble.";
 		header ("Location: gestiondeinmuebles.php");
 	} else {
-		printf("No se pudo insertar el usuario: 
+		printf("No se pudo insertar el Inmueble: 
 		%s\n", mysqli_error($conexion));
 	}
 	mysqli_close($conexion);
