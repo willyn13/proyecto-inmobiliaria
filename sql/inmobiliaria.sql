@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2015 a las 13:30:24
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 10-11-2015 a las 15:05:39
+-- Versión del servidor: 10.0.17-MariaDB
+-- Versión de PHP: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `alquileres`
 --
 
-CREATE TABLE IF NOT EXISTS `alquileres` (
+CREATE TABLE `alquileres` (
   `idcasa` int(3) NOT NULL,
   `dni_inquilino` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `dni_usuario` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `alquileres` (
 -- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE IF NOT EXISTS `clientes` (
+CREATE TABLE `clientes` (
   `dni_cliente` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `apellidos` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
@@ -49,13 +49,23 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `email` varchar(60) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`dni_cliente`, `nombre`, `apellidos`, `telefono`, `email`) VALUES
+('23453676A', 'Maria', 'CarrascoPedroche', '625986523', 'mariacarrascopedroche@hotmail.com'),
+('34569674B', 'Jaime', 'Velasco Martin', '654987421', 'jaimevelascomartin@hotmail.com'),
+('43257452D', 'Alfredo', 'Marin Bargas', '675873456', 'alfredomarinbargas@hotmail.com'),
+('65728475L', 'Claudia', 'Millan Torres', '698347623', 'claudiamillantorres@hotmail.com');
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `imagenes`
 --
 
-CREATE TABLE IF NOT EXISTS `imagenes` (
+CREATE TABLE `imagenes` (
   `idcasa` int(3) NOT NULL,
   `direcion_imagen` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -66,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
 -- Estructura de tabla para la tabla `inmuebles`
 --
 
-CREATE TABLE IF NOT EXISTS `inmuebles` (
+CREATE TABLE `inmuebles` (
   `idcasa` int(3) NOT NULL,
   `idlocalidad` int(3) NOT NULL,
   `dni_propietario` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
@@ -84,17 +94,26 @@ CREATE TABLE IF NOT EXISTS `inmuebles` (
   `precio_alquiler` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `inmuebles`
+--
+
+INSERT INTO `inmuebles` (`idcasa`, `idlocalidad`, `dni_propietario`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`) VALUES
+(1, 1, '23453676A', 'S', 'S', '3', '123', '3', 'S', 'N', 'N', 'S', 'C/Uruguay Nº23 4ºC', 189, 750),
+(2, 4, '34569674B', 'N', 'S', '3', '87', '1', 'N', 'N', 'N', 'N', 'C/Bolivia Nº2 7ªA', 0, 650),
+(3, 7, '43257452D', 'S', 'N', '4', '104', '2', 'S', 'S', 'S', 'S', 'C/Peru Nª47 11ªB', 245, 0);
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `localidades`
 --
 
-CREATE TABLE IF NOT EXISTS `localidades` (
+CREATE TABLE `localidades` (
   `idlocalidad` int(3) NOT NULL,
   `idprovincia` int(3) NOT NULL,
   `localidad` varchar(30) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `localidades`
@@ -118,10 +137,10 @@ INSERT INTO `localidades` (`idlocalidad`, `idprovincia`, `localidad`) VALUES
 -- Estructura de tabla para la tabla `provincias`
 --
 
-CREATE TABLE IF NOT EXISTS `provincias` (
+CREATE TABLE `provincias` (
   `idprovincia` int(3) NOT NULL,
   `provincia` varchar(20) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `provincias`
@@ -140,7 +159,7 @@ INSERT INTO `provincias` (`idprovincia`, `provincia`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE `usuarios` (
   `dni_usuario` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `idzona` int(3) NOT NULL,
   `nombre` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -164,7 +183,7 @@ INSERT INTO `usuarios` (`dni_usuario`, `idzona`, `nombre`, `apellidos`, `cargo`,
 -- Estructura de tabla para la tabla `ventas`
 --
 
-CREATE TABLE IF NOT EXISTS `ventas` (
+CREATE TABLE `ventas` (
   `idcasa` int(3) NOT NULL,
   `dni_comprador` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `dni_usuario` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
@@ -244,17 +263,17 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `inmuebles`
 --
 ALTER TABLE `inmuebles`
-  MODIFY `idcasa` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcasa` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `localidades`
 --
 ALTER TABLE `localidades`
-  MODIFY `idlocalidad` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `idlocalidad` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `provincias`
 --
 ALTER TABLE `provincias`
-  MODIFY `idprovincia` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `idprovincia` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- Restricciones para tablas volcadas
 --
