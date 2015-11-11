@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2015 a las 15:05:39
+-- Tiempo de generación: 11-11-2015 a las 08:18:38
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.6.14
 
@@ -35,6 +35,13 @@ CREATE TABLE `alquileres` (
   `precio_final` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `alquileres`
+--
+
+INSERT INTO `alquileres` (`idcasa`, `dni_inquilino`, `dni_usuario`, `fecha_inicio`, `fecha_fin`, `precio_final`) VALUES
+(2, '45635635J', '12345678G', '2015-11-01', '2016-02-01', 700);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +64,7 @@ INSERT INTO `clientes` (`dni_cliente`, `nombre`, `apellidos`, `telefono`, `email
 ('23453676A', 'Maria', 'CarrascoPedroche', '625986523', 'mariacarrascopedroche@hotmail.com'),
 ('34569674B', 'Jaime', 'Velasco Martin', '654987421', 'jaimevelascomartin@hotmail.com'),
 ('43257452D', 'Alfredo', 'Marin Bargas', '675873456', 'alfredomarinbargas@hotmail.com'),
+('45635635J', 'Laura', 'Donoso Simon', '637489432', 'lauradonososimon@hotmail.com'),
 ('65728475L', 'Claudia', 'Millan Torres', '698347623', 'claudiamillantorres@hotmail.com');
 
 -- --------------------------------------------------------
@@ -99,9 +107,9 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`idcasa`, `idlocalidad`, `dni_propietario`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`) VALUES
-(1, 1, '23453676A', 'S', 'S', '3', '123', '3', 'S', 'N', 'N', 'S', 'C/Uruguay Nº23 4ºC', 189, 750),
+(1, 1, '23453676A', 'S', 'S', '3', '123', '3', 'S', 'N', 'N', 'S', 'C/Uruguay Nº23 4ºC', 189000, 750),
 (2, 4, '34569674B', 'N', 'S', '3', '87', '1', 'N', 'N', 'N', 'N', 'C/Bolivia Nº2 7ªA', 0, 650),
-(3, 7, '43257452D', 'S', 'N', '4', '104', '2', 'S', 'S', 'S', 'S', 'C/Peru Nª47 11ªB', 245, 0);
+(3, 6, '43257452D', 'S', 'N', '4', '104', '2', 'S', 'S', 'S', 'S', 'C/Peru Nª47 11ªB', 245000, 0);
 
 -- --------------------------------------------------------
 
@@ -190,6 +198,13 @@ CREATE TABLE `ventas` (
   `fecha_compra` date NOT NULL,
   `precio_final` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`idcasa`, `dni_comprador`, `dni_usuario`, `fecha_compra`, `precio_final`) VALUES
+(3, '65728475L', '12345678J', '2015-11-12', 240000);
 
 --
 -- Índices para tablas volcadas
