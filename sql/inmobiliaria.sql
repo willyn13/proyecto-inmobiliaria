@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-11-2015 a las 08:18:38
+-- Tiempo de generación: 12-11-2015 a las 13:45:55
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.6.14
 
@@ -107,9 +107,9 @@ CREATE TABLE `inmuebles` (
 --
 
 INSERT INTO `inmuebles` (`idcasa`, `idlocalidad`, `dni_propietario`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`) VALUES
-(1, 1, '23453676A', 'S', 'S', '3', '123', '3', 'S', 'N', 'N', 'S', 'C/Uruguay Nº23 4ºC', 189000, 750),
-(2, 4, '34569674B', 'N', 'S', '3', '87', '1', 'N', 'N', 'N', 'N', 'C/Bolivia Nº2 7ªA', 0, 650),
-(3, 6, '43257452D', 'S', 'N', '4', '104', '2', 'S', 'S', 'S', 'S', 'C/Peru Nª47 11ªB', 245000, 0);
+(1, 1, '23453676A', '1', '1', '3', '123', '3', '1', '0', '0', '1', 'C/Uruguay Nº23 4ºC', 189000, 750),
+(2, 4, '34569674B', '0', '1', '3', '87', '1', '0', '0', '0', '0', 'C/Bolivia Nº2 7ªA', 0, 650),
+(3, 6, '43257452D', '1', '0', '4', '104', '2', '1', '1', '1', '1', 'C/Peru Nª47 11ªB', 245000, 0);
 
 -- --------------------------------------------------------
 

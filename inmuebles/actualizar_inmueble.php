@@ -23,7 +23,7 @@ direccion='".$_POST['direccion']."',
 idlocalidad=".$_POST['idlocalidad'].",
 precio_venta=".$_POST['precio_venta'].",
 precio_alquiler=".$_POST['precio_alquiler'].",
-dnipropietario='".$_POST['dnipropietario']."'
+dni_propietario='".$_POST['dni_propietario']."'
 where idcasa=".$_POST['idcasa'];
 
 echo "<br/>";

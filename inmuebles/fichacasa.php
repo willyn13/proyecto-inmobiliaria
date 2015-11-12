@@ -21,7 +21,7 @@
 $var = $_GET['idcasa'];
 echo"$var";
 */
-$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `bagnos`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `imagen1`, `imagen2`, `imagen3`, `localidad`, `provincia` 
+$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
 FROM `inmuebles` , `localidades`, `provincias`
 where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia` and `inmuebles`.`idcasa`= '".$_GET['idcasa']."'";	
 
@@ -38,20 +38,14 @@ while ($inmueble = mysqli_fetch_array($resultado)){
 			echo "<tr>";
 			echo "<td colspan=\"3\"><p> Precio de venta: " .$inmueble['precio_venta']."</p>";
 			echo "<p> Precio de alquiler: " .$inmueble['precio_alquiler']."</p>";
-			echo "<p> El inmueble consta de: " .$inmueble['habitaciones']." habitaciones, ".$inmueble['bagnos']." baños y se encuentra en la calle ".$inmueble['direccion']." en la comunidad de ".									   $inmueble['localidad']." de la provincia de ".$inmueble['provincia']."</p>";
+			echo "<p> El inmueble consta de: " .$inmueble['habitaciones']." habitaciones, ".$inmueble['banios']." baños y se encuentra en la calle ".$inmueble['direccion']." en la comunidad de ".
+			  $inmueble['localidad']." de la provincia de ".$inmueble['provincia']."</p>";
 			echo "<p>Piscina: ".$piscina;
 			echo "<p>Terraza: ".$terraza;
 			echo "<p>Trastero: ".$trastero;
 			echo "<p>Garaje: ".$garaje;
 			echo "</td>";
-			echo "</tr>";
-			
-			echo "<tr>";
-			echo "<td> <img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></td>";
-			echo "<td> <img src=\"casas/".$inmueble['imagen2']."\"/  width=\"300\" height=\"250\"></td>";
-			echo "<td><img src=\"casas/".$inmueble['imagen3']."\"/  width=\"300\" height=\"250\"></td>";
-			echo "</tr>";
-			
+			echo "</tr>";			
 			echo "<tr>";
 			echo "<td colspan=\"3\"><a href=\"gestiondeinmuebles.php?idcasa=".$idcasa."\">Volver</a></td>";
 			echo "</tr>";

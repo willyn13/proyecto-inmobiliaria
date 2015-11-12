@@ -23,7 +23,6 @@ Página de inicio de la Aplicación
         <!-- Ficheros JavaScript Query -->
         <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.4.min.map"></script>
 
         <!-- Ficheros CCS -->
         <link type="text/css" rel="stylesheet" href="css/style.css">
@@ -32,50 +31,66 @@ Página de inicio de la Aplicación
     
     <body class="body">
     	<div class="pantallaWeb">
-		    <!-- Cookies --> 
-		    <div class="cookies">
-		        <h1><span>Nuestro sitio web utiliza cookies para proporcionarte un mayor servicio. Si continuas, significa que estás de acuerdo.</span></h1>
-		    </div>
+            <!-- Cookies --> 
+            <div class="cookies">
+                <h1><span>Nuestro sitio web utiliza cookies para proporcionarte un mayor servicio. Si continuas, significa que estás de acuerdo.</span></h1>
+            </div>
 
-		    <!-- Título y Logo inicial-->
-		    <div class="cabeceraIni">
-		        <h1><span>Tu Hogar, tu Inmobiliaria mas cercana a tí.</span></h1>
-		    </div>
+            <!-- Título y Logo inicial-->
+            <div class="cabeceraIni">
+                <h1><span>Tu Hogar, tu Inmobiliaria mas cercana a tí.</span></h1>
+            </div>
 
-		    <!-- Contenido General-->
-	        <div class="contentGen">
-	        	<!-- Contenido General-->
-		        <div class="contentIni">
-		            <!-- Menu -->
-				    <div class="menu">
-				    	<h2>VENDER COMPRAR ALQUILAR</h2>  
-				    </div>
+            <!-- Menu -->
+            <div class="menu">
+                <ul id="menu">
+                    <li><h1>Comprar</h1>
+                        <ul>
+                            <li><h1></h1></li>
+                            <li><h1>Casas</h1></li>
+                        </ul>
+                    </li>
+                    <li><h1>Alquilar</h1>
+                        <ul>
+                            <li><h1></h1></li>
+                            <li><h1>Casas</h1></li>
+                        </ul>
+                    </li>
+                    <li><h1>Vender</h1>
+                        <ul>
+                            <li><h1></h1></li>
+                            <li><h1>Casas</h1></li>
+                        </ul>
+                    </li>
+                    <li><h1>Inicio Sesión</h1></li>
+                </ul> 
+            </div>       
+            
+            <!-- Contenido General-->
+            <div class="contentGen">
+                <!-- Formulario de login de acceso -->
+                <div class="formularioEntradaIni">
+                    <form id="formularioEntradaIni">
+                        <h2>Usuario</h2>
+                            <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">
+                        <h2>Contraseña</h2>
+                            <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20">
+                        <div id="btnLogin_inicio" class="btn">Aceptar</div>
+                    </form>
+                    <p id="txt_error">Usuario y Contraseña Incorrectos</p>
+                </div>
 
-		            <!-- Formulario de login de acceso -->
-		            <div class="formularioEntradaIni">
-			            <form id="formularioEntradaIni">
-			                <h2>Usuario</h2>
-			                    <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">
-			                <h2>Contraseña</h2>
-			                    <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20">
-			                <div id="btnLogin_inicio" class="btn">Aceptar</div>
-			            </form>
-			            <p id="txt_error">Usuario y Contraseña Incorrectos</p>
-		            </div>
-	            </div>
+                <!-- Descripcion de la web -->
+                <div class="descripcion">
+                    <h1 id="descri1"><span>Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
+                    <h1><span id="descri2">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
+                </div>
+            </div>
 
-	            <!-- Descripcion de la web -->
-			    <div class="descripcion">
-			        <h1 id="descri1"><span>Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
-			        <h1><span id="descri2">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
-			    </div>
-	        </div>
-
-		    <!-- Cabecera Inferior -->
-		    <div class="cabeceraFin">
-		        <h1><span>Copyright 2015 | Contacto | Quienes Somos | Politica Privacidad | Condiciones Generales</span></h1>
-		    </div>
-	    </div>   
+            <!-- Cabecera Inferior -->
+            <div class="cabeceraFin">
+                <h1><span>Copyright 2015 | Contacto | Quienes Somos | Politica Privacidad | Condiciones Generales</span></h1>
+            </div>
+        </div>   
     </body>
-    
 </html>

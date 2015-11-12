@@ -9,18 +9,21 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 
 	
 		
-$sql = "INSERT INTO inmuebles (venta, alquiler, habitaciones, m2, bagnos, terraza, trastero, piscina, garaje, direccion, idlocalidad, precio_venta, precio_alquiler, imagen1, imagen2, imagen3, dnipropietario)
-	VALUES ( ".$_POST["venta"].", ".$_POST["alquiler"].", ".$_POST["habitaciones"].", ".$_POST["m2"].",".$_POST["bagnos"].", ".$_POST["terraza"].", ".$_POST["trastero"].",".$_POST["piscina"].",".$_POST["garaje"].", '".$_POST["direccion"]."', ".$_POST["localidad"].", ".$_POST["precio_venta"].", ".$_POST["precio_alquiler"].", '".$_POST["imagen1"]."', '".$_POST["imagen2"]."', '".$_POST["imagen2"]."', '".$_POST["dnipropietario"]."')";
+$sql = "INSERT INTO inmuebles (idlocalidad, dni_propietario, venta, alquiler, habitaciones, m2, banios, terraza, trastero, piscina, garaje, direccion,
+ , precio_venta, precio_alquiler)
+	VALUES ( ".$_POST["precio_alquiler"].",'".$_POST["dnipropietario"]."',".$_POST["venta"].", ".$_POST["alquiler"].", ".$_POST["habitaciones"].", ".$_POST["m2"].",".$_POST["banios"].",
+	 ".$_POST["terraza"].", ".$_POST["trastero"].",".$_POST["piscina"].",".$_POST["garaje"].", '".$_POST["direccion"]."',".$_POST["precio_venta"].", 
+	 ".$_POST["precio_alquiler"].")";
 
 	
 echo $sql;
 
 	$res = mysqli_query($conexion,$sql);							
 	if ($res === TRUE) {
-	   	echo "Se ha insertado el Inmueble.";
+	   	echo "Se ha insertado el usuario.";
 		header ("Location: gestiondeinmuebles.php");
 	} else {
-		printf("No se pudo insertar el Inmueble: 
+		printf("No se pudo insertar el usuario: 
 		%s\n", mysqli_error($conexion));
 	}
 	mysqli_close($conexion);

@@ -38,8 +38,8 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
       <td><input type="text" name="m2" maxlength="3" size="32" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Bagnos:</td>
-      <td><input type="text" name="bagnos" maxlength="1" size="32" /></td>
+      <td nowrap="nowrap" align="right">Baños:</td>
+      <td><input type="text" name="banios" maxlength="1" size="32" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Terraza:</td>
@@ -82,13 +82,17 @@ $result= mysqli_query($conexion,$sql);
 while($fila = mysqli_fetch_row($result)){
        $cargo=$fila[0];
        }
+       //MIRAR AQUI LA FUNCIONALIDAD
        if($cargo=="admin"){
 		   $consulta="SELECT idlocalidad,localidad from localidades";       
-       }else{	
-       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia"
-               . " from provincias where idusuario='12345678G')";
+       }else{
+		   $sql1="select idzona from usuarios where dni='".$dni."'";
+		   $result1= mysqli_query($conexion,$sql1);
+		   while($fila = mysqli_fetch_row($result1)){
+               $zona=$fila[0];
+			}	
+//       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia from provincias where idusuario=".$zona.")";
 	}
-        $consulta= "SELECT idlocalidad,localidad from localidades";
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
 echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
@@ -119,7 +123,7 @@ echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
       <td><select name="dnipropietario">
          <option value="Error" selected>Selecciona Propietario</option>
 <?php                
-$consulta="SELECT dni,nombre, apellidos from clientes";
+$consulta="SELECT dni_cliente,nombre, apellidos from clientes";
 $resultado=mysqli_query($conexion,$consulta);
 while ($cliente=mysqli_fetch_array($resultado)){
 echo "<option value='".$cliente[0]."'>".$cliente[1].", ".$cliente[2]."</option>";

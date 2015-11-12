@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,7 +21,7 @@
 $sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`,
  `idlocalidad`, `precio_venta`, `precio_alquiler`, `dni_propietario`
 FROM `inmuebles` , `localidades`, `provincias`
-where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia`";
+where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.'idprovincia' and 'venta' = 'S'";
 
 $resultado =mysqli_query($conexion,$sqlMostrar);
 if (mysqli_num_rows($resultado)==0 ){
@@ -38,7 +38,6 @@ while ($inmueble = mysqli_fetch_array($resultado)){
 			echo "<tr>";
 			echo "<td> <img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></td>";
 			echo '<td><p> Precio de venta: ' .$inmueble['precio_venta'].'</p>';
-			echo '<p> Precio de alquiler: ' .$inmueble['precio_alquiler'].'</p>';
 			echo '<p> El inmueble consta de: ' .$inmueble['habitaciones'].' habitaciones, '.$inmueble['banios'].' baños y se encuentra en la calle '.
 			$inmueble['direccion'].' en la comunidad de '.$inmueble['localidad'].' de la provincia de '.$inmueble['provincia'].'</p>';
 			echo '<p>Piscina: '.$piscina;
