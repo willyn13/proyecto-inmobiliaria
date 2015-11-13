@@ -13,10 +13,14 @@ Hoja de estilos general
 ================================================================================
 1.- STILOS GENERALES
 2.- MENÚ PRINCIPAL
-	2.1.- Pantalla de inicio
-	2.2.- Cabeceras
-	2.3.- Formulario de datos
-	2.4.- Menu Desplegable
+    2.1.- Pantalla de inicio
+    2.2.- Cabeceras
+        2.2.1.- Cookies
+        2.2.2.- Titulo y logo
+    2.3.- Cuerpo
+3.- Formularios
+    3.1.- Formulario Login
+4.- Menus Desplegable
 	
 ================================================================================
 1.- ESTILOS GENERALES
@@ -29,84 +33,113 @@ Hoja de estilos general
     list-style: none;
 }
 
-html,body{height: 100%;overflow-x:hidden;}
+html,body{
+    height: 100%;
+    overflow-x:hidden;
+}
 
 body{
     font: 1em/1.5 sans-serif;
     font-weight: 300;
 }
 
-
 /*================================================================================
 1.- MENÚ PRINCIPAL
 ================================================================================
-	/*================================================================================
-	2.1.- Pantalla de inicio
-	================================================================================*/
-	.body{
-	    width: 100%;
-	    height: 100%;
-	    background: url(../img/fondo.jpg) no-repeat center;
-	    background-size: cover;
-	}
+    /*================================================================================
+    2.1.- Pantalla de inicio
+    ================================================================================*/
+    .body{
+        margin: 0;
+	padding: 0;
+        width: 100%;
+        height: 100%;
+        background: url(../img/fondo.jpg) no-repeat center;
+        background-size: cover;
+        text-align: center;
+    }
+    
+    .wrapper{
+        padding-top: 10%;
+    }
 
-	.pantallaWeb{
-	    width: 100%;
-	    text-align: center;
-	}
+    .header{
+        width: 100%;
+	top: 0; 
+	position: fixed;
+    }
 
-	.contentGen{
-	    width: 100%;
-	    height: 100%;
-	    padding: 20px;
-	    margin-bottom: 75px;
-	}
+    .content{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
 
-	.formularioEntradaIni{
-            width: 320px;
-	    margin: 20px auto;
-            padding: 20px;
-	    background-color: #B0E0E6;
-	    border-radius: 20px;
-	    border: 10px solid black;
-	}
+    .footer{
+        bottom: 0;
+        width: 100%;
+        margin: 0px auto;
+        padding: 20px 0px;
+        background: black;
+        background: rgba(0,0,0,.8);
+        overflow: hidden;
+    }
 
-	#txt_error{
-	    font-weight: 300;
-	    margin: 30px auto;
-	    display: none;
-	    text-align: center;
-	    font: 1.5em/1.5 sans-serif;
-	    color: white;
-	    font-weight: 600;
-	    width: 50%;
-	    background: black;
-	}
+    .footer h1{
+        font: 1.5em/1.5 sans-serif;
+        font-weight: 300;
+        color: white;
+    }
 
+    .footer h1 a{
+        width: 20%;
+        margin: 0 auto;
+        padding: 25px;
+        text-align: center;
+        text-decoration: none;
+        color: #99AABB;
+    }
+    
    /*================================================================================
     2.2.- Cabeceras
     ================================================================================*/
-	.cookies{
+        /*================================================================================
+        2.2.1.- Cookies
+        ================================================================================*/
+        .cookies{
 	    width: 100%;
+            top: 0; 
+            position: fixed;
 	    margin: 0px auto;
+            padding: 10px;
 	    background: black;
-	    overflow: hidden;
+            background: rgba(0,0,0,.7);
+            overflow: hidden;
 	}
+        
+        .cookies img{
+            float: right;
+            height: 22px;
+            margin: 5px;
+            cursor: pointer;
+        }
 
 	.cookies h1{
-	   font: 1em/1 sans-serif;
+	   font: 25px sans-serif;
 	   line-height: 30px;
 	}
 
 	.cookies h1 span{
 	    color: #99AABB;
 	}
-
-	.cabeceraIni{
+        
+        /*================================================================================
+        2.2.2.- Titulo y logo
+        ================================================================================*/
+        .cabeceraIni{
 	    width: 100%;
 	    margin: 0px auto;
-	    background: black;
-	    background: rgba(0,0,0,.8);
+	    background: url(../img/cabezera.jpg);
 	    overflow: hidden;
 	}
 
@@ -121,147 +154,141 @@ body{
 	.cabeceraIni h1 span{
 	    color: #99AABB;
 	}
-
-	.descripcion #descri1{
-            width: 40%;
-	    margin: 0px auto;
-	    float: right;
-	    margin: 30px;
-	}
-
-	.descripcion #descri2{
-            width: 40%;
-	    margin: 0px auto;
-	    float: left;
-	    margin: 30px;
-	}
-
-	.descripcion1 h1{
-            float: left;
-            font: 1.5em/1.5 sans-serif;
-            font-weight: 300;
-            line-height: 100px;
-	}
-	
-	.descripcion1 h1 span{
-	    color: #99AABB;
-	}
-
-	.cabeceraFin{
-	    width: 100%;
-	    margin: 0px auto;
-	    background: black;
-	    background: rgba(0,0,0,.8);
-	    overflow: hidden;
-	}
-
-	.cabeceraFinz h1{
-            float: left;
-            width: 60%;
-            font: 1.5em/1.5 sans-serif;
-            font-weight: 300;
-            color: white;
-            line-height: 100px;
-            margin-bottom: 20px;
-	}
-
-	.cabeceraFinz h1 span{
-	    color: #99AABB;
-	}
-
-
-    /*================================================================================
-    2.3.- Formulario de datos
-    ================================================================================*/
-	#formularioEntradaIni{
-	    width: 100%;
-	    margin: 0 auto;
-	    text-align: center;
-	}
-
-	#formularioEntradaIni input{
-	    width: 270px;
-	    margin: 0 auto;
-	    padding: 5px 0;
-	    font: .9em/1.5 sans-serif;
-	    text-align: center;
-	    border: 1px solid #99AABB;
-	}
-
-	#formularioEntradaIni h2{
-	    margin: 0 auto;
-	    font: 1em/1.5 sans-serif;
-	    color: #335566;
-	    font-weight: 600;
-	    text-align: center;
-	}
-
-	.btn{
-	    width: 270px;
-	    margin: 10px auto;
-	    padding: 7px 0;
-	    font: .9em/1.5 sans-serif;
-	    text-align: center;
-	    color: white;
-	    background: #335566;
-	    cursor: pointer;
-	}
-
-	.btn:hover{
-	    color: white;
-	    background: #4B4E50;
-	}
-
-    /*================================================================================
-    2.4.- Menu Desplegable
-    ================================================================================*/
-    
-	/*ul#menu {
-            background: #333;
-            width: 100%;
-            float: left;
-        }
         
-        ul#menu li {
-            color: #fff;
-            float: left;
-            list-style: none;
-            margin: 0% 5%;
-        }
+    /*================================================================================
+    2.3.- Cuerpo
+    ================================================================================*/
+    .descripcion #descri{
+        width: 40%;
+        margin: 0px auto;
+        float: left;
+        margin: 5%;
+    }
+        
+/*================================================================================
+3.- Formularios
+================================================================================*/
+    /*================================================================================
+    3.1.- Formulario Login
+    ================================================================================*/
+    .formularioEntradaIni{
+        width: 320px;
+        margin: 20px auto;
+        padding: 20px;
+        background: url(../img/cuadro.jpg);
+        border-radius: 20px;
+        border: 10px solid black;
+        // display: none;
+    }
 
-        ul#menu li:hover{
-            color: #aaa073;
-            cursor: pointer;
-        }
+    #txt_error{
+        font-weight: 300;
+        margin: 30px auto;
+        display: none;
+        text-align: center;
+        font: 1.5em/1.5 sans-serif;
+        color: white;
+        font-weight: 600;
+        width: 50%;
+        background: black;
+    }
 
-        ul#menu ul {
-            display: none;
-            background: #333;
-            color: #fff;
-         }
+    .formularioEntradaIni{
+       
+        /*background: black;
+        background: rgba(0,0,0,.8);
+        overflow: hidden;*/
+    }
 
-        ul#menu ul li{
-            float: left;
-            color: #fff;
-            width: 10%;
-            margin: 2% 0%;
-        }
+    #formularioEntradaIni{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-        ul#menu ul li a{
-            color: #fff;
-        }
+    #formularioEntradaIni input{
+        width: 270px;
+        margin: 0 auto;
+        padding: 5px 0;
+        font: .9em/1.5 sans-serif;
+        text-align: center;
+        border: 1px solid #99AABB;
+    }
 
-        ul#menu ul li a:hover{
-            color: #aaa073;
-            cursor: pointer;
-        }
+    #formularioEntradaIni h2{
+        margin: 0 auto;
+        font: 30px sans-serif;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+    }
 
-        ul#menu li:hover ul ul,ul.menu li:hover ul ul ul,ul#menu li:hover ul ul,ul#menu li:hover ul ul ul {
-            display: none;
-            cursor: pointer;
-        }
+    .btn{
+        width: 270px;
+        margin: 10px auto;
+        padding: 7px 0;
+        font: .9em/1.5 sans-serif;
+        text-align: center;
+        color: white;
+        background: #335566;
+        cursor: pointer;
+    }
 
-        ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul,ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul {
-            display: block;
-            cursor: pointer;
-        }*/
+    .btn:hover{
+        color: white;
+        background: #4B4E50;
+    }
+
+/*================================================================================
+4.- Menu Desplegable
+================================================================================*/
+
+#menu{
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+}
+
+.nav > li {
+    float:left;
+    width: 25%;
+}
+
+#admin > li {
+    width: 16.66%;
+}
+
+.nav li a {
+    background: #335566;
+    color: #99AABB;
+    display: block;
+    border-radius: 15px 0px;
+    border: 1px solid;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background: grey;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+.nav li ul li ul {
+    right: -200px;
+    top: 0;
+}
