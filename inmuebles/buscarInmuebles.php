@@ -131,7 +131,7 @@ if ($dni != ''){
 	$resultado=mysqli_query($conexion,$consulta);
 		echo "<tr nowrap=\"nowrap\" align=\"right\">Dnipropietario:</tr>";
 		echo "<td><select name=\"dnipropietario\">";
-        echo	"<option value="" selected>Selecciona Propietario</option>";
+                echo '<option value="" selected>Selecciona Propietario</option>';
 while ($cliente=mysqli_fetch_array($resultado)){
 echo "<option value=\" and dnipropietario='".$cliente[0]."'\">".$cliente[1].", ".$cliente[2]."</option>";
 }

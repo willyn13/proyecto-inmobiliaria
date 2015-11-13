@@ -105,7 +105,6 @@ body{
 	.cabeceraIni{
 	    width: 100%;
 	    margin: 0px auto;
-	    margin-bottom: 75px;
 	    background: black;
 	    background: rgba(0,0,0,.8);
 	    overflow: hidden;
@@ -216,7 +215,8 @@ body{
     /*================================================================================
     2.4.- Menu Desplegable
     ================================================================================*/
-	ul#menu {
+    
+	/*ul#menu {
             background: #333;
             width: 100%;
             float: left;
@@ -264,4 +264,4 @@ body{
         ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul,ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul {
             display: block;
             cursor: pointer;
-        }
+        }*/
