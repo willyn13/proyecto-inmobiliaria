@@ -22,81 +22,77 @@ header("Pragma: no-cache");
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="UTF-8">
-        <title>Proyecto Inmobiliaria tras el conflicto</title>
+        <title>Proyecto Inmobiliaria</title>
 
-        <!-- Ficheros JavaScript Query -->
+        <!-- Ficheros JavaScript jQuery -->
         <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
         <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="js/menus.js"></script>
 
         <!-- Ficheros CCS -->
         <link type="text/css" rel="stylesheet" href="css/style.css">
     </head>
     
-    <body class="body">
-    	<div class="wrapper">
+    <body id="id_body">
+    	<div id="id_wrapper">
             <!-- Contenido Superior-->
-            <div class="header">
+            <div id="id_header">
                 <!-- Cookies --> 
-                <div class="cookies">
+                <div id="id_cookies">
                     <h1><span>Nuestro sitio web utiliza cookies para proporcionarle un mayor servicio. Si continuas, significa que estás de acuerdo.<img src="img/cerrar.png" title="Cerrar"></span></h1>
                 </div>
 
                 <!-- Título y Logo inicial-->
-                <div class="cabeceraIni">
+                <div id="id_cabeceraIni">
                     <h1><span>Tu Hogar, Tu Inmobiliaria Mas Cercana.</span></h1>
                 </div>
 
                 <!-- Menu -->
-                <div id="menu">
-                    <ul class="nav">
+                <div id="id_menu">
+                    <ul class="cls_nav">
                         <li><a href="#"><h1>Comprar</h1></a>
                             <ul>
-                                <li><a href="#"><h1>Casas</h1></a></li>
+                                <li id="id_comprar"><a href="#"><h1>Casas</h1></a></li>
                             </ul>
                         </li>
                         <li><a href="#"><h1>Alquilar</h1></a>
                             <ul>
-                                <li><a href="#"><h1>Casas</h1></a></li>
+                                <li id="id_alquilar"><a href="#"><h1>Casas</h1></a></li>
                             </ul>
                         </li>
                         <li><a href="#"><h1>Vender</h1></a>
                             <ul>
-                                <li><a href="#"><h1>Casas</h1></a></li>
+                                <li id="id_vender"><a href="#"><h1>Casas</h1></a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><h1>Inicio Sesión</h1></a></li>
+                        <li id="id_inicio"><a href="#"><h1>Inicio Sesión</h1></a></li>
                     </ul> 
                 </div>  
             </div>
             
             <!-- Contenido General-->
-            <div class="content">
+            <div id="id_content">
                 <!--Formulario de login -->
-                <div class="formularioEntradaIni">
-                    <form id="formularioEntradaIni">
-                        <h2>Usuario</h2>
-                            <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">
-                        <h2>Contraseña</h2>
-                            <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20" placeholder="Contraseña">
-                        <div id="btnLogin_inicio" class="btn">Aceptar</div>
-                    </form>
-                    <p id="txt_error">Usuario y Contraseña Incorrectos</p>
+                <div id="id_modalFondo">
+                </div>
+                <div id="id_modalPantalla">
+                </div>
+                
+                <!-- Contenido de los menus-->
+                <div id="id_contentMenus">
                 </div>
                 
                 <!-- Descripcion de la web -->
-                <div class="descripcion">
-                    <h1><span id="descri">Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
-                    <h1><span id="descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
-                    <h1><span id="descri">Un poquito de texto para que salga en la principal</span></h1>
-                    <h1><span id="descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
-                    <h1><span id="descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
-                    <h1><span id="descri">Un poquito de texto para que salga en la principal</span></h1>
-                    <h1><span id="descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
+                <div id="id_descripcion">
+                    <h1><span class="cls_descri">Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.Vende tu vivienda mas rapido</span></h1>
+                    <h1><span class="cls_descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
+                    <h1><span class="cls_descri">Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal</span></h1>
+                    <h1><span class="cls_descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas) Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
                 </div>
             </div>
 
             <!-- Contenido Inferior -->
-            <div class="footer">
+            <div id="id_footer">
                 <h1><span>
                     <a href="#">Copyright 2015</a>|
                     <a href="#">Contacto</a>|
