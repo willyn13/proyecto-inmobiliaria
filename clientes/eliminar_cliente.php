@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 	
@@ -16,3 +16,4 @@ else{
 echo "Cliente no borrado";
 }
 ?>
+<p><a href="gestion_clientes.php">Volver</a></p>

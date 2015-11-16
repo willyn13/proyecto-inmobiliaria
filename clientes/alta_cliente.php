@@ -1,4 +1,4 @@
-﻿<?php require_once('Connections/ConexionInmobiliaria.php'); ?>
+﻿<?php require_once('../conexiones/ConexionInmobiliaria.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -47,7 +47,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_ConexionInmobiliaria, $ConexionInmobiliaria);
   $Result1 = mysql_query($insertSQL, $ConexionInmobiliaria) or die(mysql_error());
 
-  $insertGoTo = "registro-ok.php";
+  $insertGoTo = "registro_ok.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];

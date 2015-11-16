@@ -48,7 +48,7 @@
 
 			</tr>";
 	}
-	$display.="<a href=\"altacliente.php\"><input type='SUBMIT' name='SUBMIT' value='Dar de alta un cliente'></a>";
+	$display.="<a href=\"alta_cliente.php\"><input type='SUBMIT' name='SUBMIT' value='Dar de alta un cliente'></a>";
 }
 $display.="</table>";
 	mysqli_close($conexion);

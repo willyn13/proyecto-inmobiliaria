@@ -18,7 +18,7 @@ email='".$_POST['email']."'
 where dni_cliente=".$_POST['dni_cliente'];
 
 echo "<br/>";
-$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion)); ;
+$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
 if ($resultado){echo "Cliente actualizado";}
 else

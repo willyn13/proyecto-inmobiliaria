@@ -1,4 +1,4 @@
-﻿<?php require_once('Connections/ConexionInmobiliaria.php'); ?>
+﻿<?php require_once('../conexiones/ConexionInmobiliaria.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -39,7 +39,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   $insertSQL = sprintf("INSERT INTO usuarios (dni_usuario, idzona, nombre, apellidos, cargo, password) VALUES (%s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['dni_usuario'], "text"),
-		       GetSQLValueString($_POST['zona'], "text"),
+		       GetSQLValueString($_POST['idzona'], "text"),
                        GetSQLValueString($_POST['nombre'], "text"),
                        GetSQLValueString($_POST['apellidos'], "text"),
                        GetSQLValueString($_POST['cargo'], "text"),
