@@ -37,7 +37,7 @@ Hoja de estilos general
 
 html,body{
     height: 100%;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 body{
@@ -52,17 +52,15 @@ body{
     2.1.- Pantalla de inicio
     ================================================================================*/
     #id_body{
-        margin: 0;
-	padding: 0;
         width: 100%;
-        height: 100%;
         background: url(../img/fondo.jpg) no-repeat center;
         background-size: cover;
         text-align: center;
     }
     
     #id_wrapper{
-        padding-top: 10%;
+        padding-top: 11%;
+        min-height: 100%;
     }
 
     #id_header{
@@ -73,18 +71,16 @@ body{
 
     #id_content{
         width: 100%;
-        height: 100%;
-        padding: 20px;
     }
 
     #id_footer{
         bottom: 0;
         width: 100%;
-        margin: 0px auto;
-        padding: 20px 0px;
+        padding: 15px 0px;
         background: black;
         background: rgba(0,0,0,.8);
         overflow: hidden;
+        float: left;
     }
 
     #id_footer h1{
@@ -100,6 +96,10 @@ body{
         text-align: center;
         text-decoration: none;
         color: #99AABB;
+    }
+    
+    #id_footer h1 a:hover{
+        cursor: pointer;
     }
     
    /*================================================================================
@@ -140,7 +140,6 @@ body{
         ================================================================================*/
         #id_cabeceraIni{
 	    width: 100%;
-	    margin: 0px auto;
 	    background: url(../img/cabezera.jpg);
 	    overflow: hidden;
 	}
@@ -149,7 +148,6 @@ body{
 	   float: left;
 	   width: 100%;
 	   font: 60px Impact, Charcoal, sans-serif;
-	   font-weight: 300px;
 	   line-height: 100px;
 	}
 	
@@ -164,15 +162,44 @@ body{
     /*================================================================================
     2.3.- Cuerpo Opciones Menus
     ================================================================================*/
-    #id_descripcion .cls_descri{
+    #id_contentMenus{
+        width: 100%;
+        padding: 2.5%;
+        display: none;
+    }
+    
+    #id_contentFooter{
+        width: 100%;
+        padding: 2.5%;
+        display: none;
+    }
+    
+    #id_descripcion{
+        width: 100%;
+        padding: 2.5%;
+    }
+    
+    .cls_descri{
         width: 40%;
-        margin: 0px auto;
         float: left;
-        margin: 3.8% 5%;
+        margin: 5% 5% 0% 5%;
         text-align: justify;
         font: 30px Impact, Charcoal, sans-serif;
     }
-        
+    
+    .cls_footer{
+        width: 75%;
+        margin: 0 auto;
+        background: url(../img/cuaderno.jpg);
+        border-radius: 15px;
+    }
+    
+    #id_contentFooter p{
+        padding: 1px;
+        font: 22px auto;
+        text-align: justify;
+    }
+     
 /*================================================================================
 3.- Formularios
 ================================================================================*/
@@ -328,20 +355,19 @@ body{
     background-color: grey;
     border-radius: 20px;
     border: 1px solid black;
-    width: 31%;
-    height: 250px;
-    margin: 15px;
+    width: 30%;
+    margin: 1.65%;
     float: left;
 }
 
 .cls_ventanas p{
     overflow: hidden;
+    padding-bottom: 5px;
 }
 
 .cls_slider{
     width: 100%;
     height: 80%;
-    margin-bottom: 15px;
 }
 
 .cls_slider img{
@@ -356,4 +382,95 @@ body{
 }
 .cls_imgSecundaria{
     display: none;
+}
+
+
+
+/*==============================================================================*/
+
+/* Contenedor general */
+#slider-wrapper {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-family: arial, sans-serif;
+    font-size: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Contenedor slider */
+#slider { 
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%; /* Aspect ratio */
+    overflow: hidden;
+    border:10px solid #333;
+    border-radius: 5%/10%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#slider > a {
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    min-height: 100%;
+}
+
+/* Ajuste de las imágenes */
+#slider img {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    margin:0;
+    padding:0; 
+    border:0;
+}
+
+/* Texto que acompaña a cada imagen */
+#slider p {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 80%;
+    height: 18px;
+    margin:0;
+    padding: 5px 0;
+    border-radius: 0 20px 20px 0;
+    color: #eee;
+    background: #333;
+    font-size: 18px;
+    line-height: 18px;
+    text-align:center;
+}
+
+/* Flechas de navegación */
+a.mas, a.menos {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+    color: white;
+    background: #333;
+    text-decoration: none;
+}
+
+a.mas {
+    left: 100%;
+    margin-left: -40px;
 }
