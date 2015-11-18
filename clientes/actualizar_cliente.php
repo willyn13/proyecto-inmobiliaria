@@ -15,12 +15,14 @@ nombre='".$_POST['nombre']."',
 apellidos='".$_POST['apellidos']."', 
 telefono=".$_POST['telefono'].",
 email='".$_POST['email']."'
-where dni_cliente=".$_POST['dni_cliente'];
+where dni_cliente='".$_COOKIE["dni"]."'";
 
 echo "<br/>";
 $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
-if ($resultado){echo "Cliente actualizado";}
+if ($resultado){echo "Cliente actualizado";
+echo '<p><a href="gestion_clientes.php">Volver</a></p>';
+}
 else
 {echo "Cliente NO actualizado";}
 

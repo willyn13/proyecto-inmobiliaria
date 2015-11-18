@@ -92,10 +92,10 @@ while($fila = mysqli_fetch_row($result)){
 	}
 
 
-
+$consulta= "SELECT * from localidades ";
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
-echo "<option value=\" and `localidades`.idlocalidad = ".$localidad[0]."\">".$localidad[3]."</option>";
+echo "<option value=\" and idlocalidad = ".$localidad[0]."\">".$localidad[3]."</option>";
 }
 ?>  </td></tr>
     <tr valign="baseline">

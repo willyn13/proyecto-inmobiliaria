@@ -1,4 +1,4 @@
-﻿<?php require_once('../conexiones/ConexionInmobiliaria.php'); ?>
+﻿<?php require_once('../conexiones/conexion_inmobiliaria.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
@@ -37,7 +37,8 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO usuarios (dni_usuario, idzona, nombre, apellidos, cargo, password) VALUES (%s, %s, %s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO usuarios (dni_usuario, idzona, nombre, apellidos, cargo, password) "
+          . "VALUES (%s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['dni_usuario'], "text"),
 		       GetSQLValueString($_POST['idzona'], "text"),
                        GetSQLValueString($_POST['nombre'], "text"),
@@ -73,7 +74,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Dni:</td>
       <td><span id="sprytextfield1">
-        <input type="text" name="dni" value="" size="32" />
+        <input type="text" name="dni_usuario" value="" size="32" />
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">
@@ -97,7 +98,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Zona:</td>
       <td><span id="sprytextfield5">
-        <input type="text" name="zona" value="" size="32" />
+        <input type="text" name="idzona" value="" size="32" />
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">

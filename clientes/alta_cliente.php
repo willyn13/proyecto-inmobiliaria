@@ -1,4 +1,4 @@
-﻿<?php require_once('../conexiones/ConexionInmobiliaria.php'); ?>
+﻿<?php require_once('../conexiones/conexion_inmobiliaria.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 

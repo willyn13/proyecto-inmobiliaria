@@ -18,10 +18,10 @@
 		exit();
 	}
 	
-$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`,
- `idlocalidad`, `precio_venta`, `precio_alquiler`, `dni_propietario`
-FROM `inmuebles` , `localidades`, `provincias`
-where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia` and 'alquiler' = 'S'";
+$sqlMostrar = "SELECT idcasa, venta, alquiler, habitaciones, m2, banios, terraza, trastero, piscina, garaje, direccion,
+ idlocalidad, precio_venta, precio_alquiler, dni_propietario 
+FROM inmuebles 
+where alquiler = 1";
 
 $resultado =mysqli_query($conexion,$sqlMostrar);
 if (mysqli_num_rows($resultado)==0 ){
