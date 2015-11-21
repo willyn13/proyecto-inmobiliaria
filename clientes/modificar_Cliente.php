@@ -1,76 +1,60 @@
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<div class="cls_dialog">
 <?php
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h1>No Se Pudo Conectar: </h1>' . mysqli_error());
 
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
-	
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
+    if (mysqli_connect_errno()) {
+            printf('<h1>No Se Pudo Conectar: %s/n</h1>', mysqli_connect_error());
+            exit();
+    }
 
-	$sql_cliente = "select * from clientes where dni_cliente='".$_GET['dni_cliente']."'";	
-	$resp_sql = mysqli_query($conexion,$sql_cliente);
-	
-	
-	$i=0;
-	while($datos=mysqli_fetch_row($resp_sql)){
-		foreach($datos as $valor){
-			$datos[$i]=$valor;
-			$i++;			
-			if ($i==3){break;}
-		}
-		$cliente=$datos;
-	}	
-	
-	$dni=$cliente[0];
+    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";	
+    $resp_sql = mysqli_query($conexion,$sql_cliente);
 
-	setcookie('dni',$dni);
-	
 
+    $i=0;
+    while($datos=mysqli_fetch_row($resp_sql)){
+            foreach($datos as $valor){
+                    $datos[$i]=$valor;
+                    $i++;			
+                    if ($i==3){break;}
+            }
+            $cliente=$datos;
+    }	
+
+    $dni=$cliente[0];
+
+    setcookie('dni',$dni);
 ?>
-<html>
-
-
-<table cellpadding="6" >
-	<form action="actualizar_cliente.php" method="POST">
-		
-	<div class="flotados1">
-		<table cellpadding="5">		
-			<tr>
-			<td><h3>Modifica los datos necesarios.</h3></td>
-			</tr>
-			<tr>
-				<td><label for="dni"> dni </label></td>
-				<td><font>(*) </font><input type="text" id="dni_cliente" name="dni_cliente" value="<?php echo $cliente[0] ?>" required/></td>
-			</tr>
-			<tr>
-				<td><label for="nombre"> Nombre </label></td>
-				<td><font>(*) </font><input type="text" id="nombre" placeholder="Escribe nombre" name="nombre" value="<?php echo $cliente[1] ?>" required/></td>
-			</tr>
-			<tr>
-				<td><label for="apellidos"> Apellidos: </label></td>
-				<td><font>(*) </font><input type="text" id="apellidos" placeholder="Escribe apellidos" name="apellidos" value="<?php echo $cliente[2] ?>"/></td>
-			</tr>
-			<tr>
-				<td><label for="telefono"> Telefono: </label></td>
-				<td><font>(*) </font><input type="text" id="telefono" placeholder="Escribe telefono" name="telefono" value="<?php echo $cliente[3] ?>" required/></td>
-			</tr>		
-			<tr>
-				<td><label for="mail"> Email: </label></td>
-				<td><font>(*) </font><input type="text" id="email" placeholder="Escribe mail" name="email" value="<?php echo $cliente[4] ?>" required/></td>
-			</tr>	
-		</table>
-	</div>
-	<div class="flotados3">
-		<table cellpadding="5">
-			<tr>
-				<td ><br><input type="submit" id="boton" value="Guardar cambios" name="boton"/></td>
-			</tr>
-		</table>
-	</div>
-	
-	
-</form>
+</div>
+<div class="cls_gestiones">
+<table>
+    <form action="actualizar_cliente.php" method="POST">
+        <h1>Modificar Datos</h1>
+        <table>
+            <tr>
+                <th><label for="dni">Dni</label></th>
+                <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" value="<?php echo $cliente[0] ?>" required/></td>
+            </tr>
+            <tr>
+                <th><label for="nombre"> Nombre </label></th>
+                <td><input type="text" id="nombre" placeholder="Escribe Nombre" name="nombre" value="<?php echo $cliente[1] ?>" required/></td>
+            </tr>
+            <tr>
+                <th><label for="apellidos"> Apellidos: </label></th>
+                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" value="<?php echo $cliente[2] ?>"/></td>
+            </tr>
+            <tr>
+                <th><label for="telefono"> Telefono: </label></th>
+                <td><input type="text" id="telefono" placeholder="Escribe Telefono" name="telefono" value="<?php echo $cliente[3] ?>" required/></td>
+            </tr>		
+            <tr>
+                <th><label for="mail"> Email: </label></th>
+                <td><input type="text" id="email" placeholder="Escribe Email" name="email" value="<?php echo $cliente[4] ?>" required/></td>
+            </tr>	
+        </table>
+        <a><input type="submit" id="boton" value="Guardar cambios" name="boton"/></a>
+    </form>
 </table>
-
-</html>
+</div>

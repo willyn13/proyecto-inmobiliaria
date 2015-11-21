@@ -1,56 +1,55 @@
+<link type="text/css" rel="stylesheet" href="../css/style.css">
 <?php
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
+echo '<div class="cls_dialog">';
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h1>No Se Pudo Conectar: </h1>' . mysqli_error());
 
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
+    if (mysqli_connect_error()) {
+            printf('<h1>No Se Pudo Conectar: %s/n</h1>', mysqli_connect_error());
+            exit();
+    }
+echo '</div>';
+    $display='<div class="cls_gestiones"><h1>Gestión de Clientes</h1></br>';	
 
-	$display="<h3>Listado de clientes</h3></br>";	
-	
-	$consulta = 'SELECT * FROM clientes';
-	$resultado= mysqli_query($conexion,$consulta)
-	or die('Consulta fallida: ' . mysqli_error());
-	
-	$display.="<table border='1'>";
-		if (mysqli_num_rows($resultado)==0 ){
-			$display.="<p class=\"error\">
-				&nbsp;&nbsp;&nbsp;&nbsp;<i>No hay clientes.</i> 
-			 </p>";
-		} else{
-			$display.="<tr>
-				<td></td>
-				<td></td>
-				<td>dni</td>
-				<td>nombre</td>
-				<td>apellidos</td>
-				<td>telefono</td>
-				<td>email</td>
-				</tr>";
-				
+    $consulta = 'SELECT * FROM clientes';
+    $resultado= mysqli_query($conexion,$consulta)
+    or die('Consulta fallida: ' . mysqli_error());
 
-		while($reg=mysqli_fetch_array($resultado) ){
-			$dni_cliente=$reg[0];
-			$nombre=$reg[1];
-			$apellidos=$reg[2];
-			$telefono=$reg[3];
-			$email=$reg[4];
-				
-			$display.="<tr>
-				<td><a href=\"eliminar_cliente.php?dni_cliente=".$dni_cliente."\">Eliminar</a></td>
-				<td><a href=\"modificar_cliente.php?dni_cliente=".$dni_cliente."\">Modificar</a></td>
-				<td>".$dni_cliente."</td>	
-				<td>".$nombre."</td>
-				<td>".$apellidos."</td>
-				<td>".$telefono."</td>
-				<td>".$email."</td>
+    $display.="<table>";
+        if (mysqli_num_rows($resultado)==0 ){
+            $display.='<p class="error"><i>No hay Clientes</i></p>';
+        } else {
+            $display.="<a href=\"alta_cliente.php\"><input type='SUBMIT' name='SUBMIT' value='Dar de Alta un Cliente'></a>";
+            $display.="<tr>
+                          <th></th>
+                          <th></th>
+                          <th>DNI</th>
+                          <th>NOMBRE</th>
+                          <th>APELLIDOS</th>
+                          <th>TELEFONO</th>
+                          <th>EMAIL</th>
+                       </tr>";
 
-			</tr>";
-	}
-	$display.="<a href=\"alta_cliente.php\"><input type='SUBMIT' name='SUBMIT' value='Dar de alta un cliente'></a>";
-}
-$display.="</table>";
-	mysqli_close($conexion);
-	echo $display
+            while($reg=mysqli_fetch_array($resultado) ){
+                $dni_cliente=$reg[0];
+                $nombre=$reg[1];
+                $apellidos=$reg[2];
+                $telefono=$reg[3];
+                $email=$reg[4];
+
+                $display.="<tr>
+                              <td><a href=\"eliminar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Eliminar'></a></td>
+                              <td><a href=\"modificar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Modificar'></a></td>
+                              <td>".$dni_cliente."</td>	
+                              <td>".$nombre."</td>
+                              <td>".$apellidos."</td>
+                              <td>".$telefono."</td>
+                              <td>".$email."</td>
+                          </tr>";
+            }
+        }
+
+    $display.="</table></div>";
+        mysqli_close($conexion);
+        echo $display;
 ?>

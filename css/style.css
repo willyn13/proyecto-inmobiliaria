@@ -1,16 +1,4 @@
-/*
-================================================================================
-style.css
-
-Autores: 
-	SEBASTIÁN HORCAJO ORTEGA
-	GUILLERMO
-	JAVIER
-Versión: 1.0
-Fecha: Octubre 2015
- 
-Hoja de estilos general
-================================================================================
+/*==============================================================================
 1.- STILOS GENERALES
 2.- MENÚ PRINCIPAL
     2.1.- Pantalla de inicio
@@ -18,15 +6,106 @@ Hoja de estilos general
         2.2.1.- Cookies
         2.2.2.- Titulo y logo
     2.3.- Cuerpo Opciones Menus
-3.- Formularios
-    3.1.- Formulario Login
+3.- Formulario Login
 4.- Menus Desplegable
 5.- Modales
-6.- Contenido Menus Compras y Ventas
+6.- Contenido Menus
+7.- Gestiones Administracion
+8.- Slider
 	
 ================================================================================
 1.- ESTILOS GENERALES
 ================================================================================*/
+@media screen and (max-width: 1050px){ 
+    #id_cabeceraIni{ font-size: 15px;}
+    #id_menu{ font-size: 14px;} 
+    #id_content{ font-size: 14px;}
+    #id_cookies{ font-size: 14px;}
+    #id_footer{ font-size: 14px;}
+    #id_contentFooter{ font-size: 14px;}
+}
+@media screen and (max-width: 975px){ 
+    #id_cabeceraIni{ font-size: 14px;}
+    #id_menu{ font-size: 14px;} 
+    #id_content{ font-size: 14px;}
+    #id_cookies{ font-size: 14px;}
+    #id_footer{ font-size: 14px;}
+    #id_contentFooter{ font-size: 14px;}
+}
+@media screen and (max-width: 900px){ 
+    #id_cabeceraIni{ font-size: 13px;}
+    #id_menu{ font-size: 13px;} 
+    #id_content{ font-size: 13px;}
+    #id_cookies{ font-size: 13px;}
+    #id_footer{ font-size: 13px;}
+    #id_contentFooter{ font-size: 13px;}
+}
+@media screen and (max-width: 825px){ 
+    #id_cabeceraIni{ font-size: 12px;}
+    #id_menu{ font-size: 12px;} 
+    #id_content{ font-size: 12px;}
+    #id_cookies{ font-size: 12px;}
+    #id_footer{ font-size: 12px;}
+    #id_contentFooter{ font-size: 12px;}
+}
+@media screen and (max-width: 750px){ 
+    #id_cabeceraIni{ font-size: 11px;}
+    #id_menu{ font-size: 11px;} 
+    #id_content{ font-size: 11px;}
+    #id_cookies{ font-size: 11px;}
+    #id_footer{ font-size: 11px;}
+    #id_contentFooter{ font-size: 11px;}
+}
+@media screen and (max-width: 675px){ 
+    #id_cabeceraIni{ font-size: 10px;}
+    #id_menu{ font-size: 10px;} 
+    #id_content{ font-size: 10px;}
+    #id_cookies{ font-size: 10px;}
+    #id_footer{ font-size: 10px;}
+    #id_contentFooter{ font-size: 10px;}
+}
+@media screen and (max-width: 600px){ 
+    #id_cabeceraIni{ font-size: 9px;}
+    #id_menu{ font-size: 9px;} 
+    #id_content{ font-size: 9px;}
+    #id_cookies{ font-size: 9px;}
+    #id_footer{ font-size: 9px;}
+    #id_contentFooter{ font-size: 9px;}
+}
+@media screen and (max-width: 550px){ 
+    #id_cabeceraIni{ font-size: 8px;}
+    #id_menu{ font-size: 8px;} 
+    #id_content{ font-size: 8px;}
+    #id_cookies{ font-size: 8px;}
+    #id_footer{ font-size: 8px;}
+    #id_contentFooter{ font-size: 8px;}
+}
+@media screen and (max-width: 475px){ 
+    #id_cabeceraIni{ font-size: 7px;}
+    #id_menu{ font-size: 7px;} 
+    #id_content{ font-size: 7px;}
+    #id_cookies{ font-size: 7px;}
+    #id_footer{ font-size: 7px;}
+    #id_contentFooter{ font-size: 7px;}
+}
+@media screen and (max-width: 425px){ 
+    #id_cabeceraIni{ font-size: 6px;}
+    #id_menu{ font-size: 6px;} 
+    #id_content{ font-size: 6px;}
+    #id_cookies{ font-size: 6px;}
+    #id_footer{ font-size: 6px;}
+    #id_contentFooter{ font-size: 6px;}
+}
+@media screen and (max-width: 350px){ 
+    #id_cabeceraIni{ font-size: 5px;} 
+    #id_menu{ font-size: 5px;} 
+    #id_content{ font-size: 5px;}
+    #id_cookies{ font-size: 5px;}
+    #id_footer{ font-size: 5px;}
+    #id_contentFooter{ font-size: 5px;}
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -41,8 +120,9 @@ html,body{
 }
 
 body{
-    font: 1em/1.5 sans-serif;
+    font: 1em sans-serif;
     font-weight: 300;
+    font-size: 100%;
 }
 
 /*================================================================================
@@ -59,7 +139,7 @@ body{
     }
     
     #id_wrapper{
-        padding-top: 11%;
+        padding-top: 150px;
         min-height: 100%;
     }
 
@@ -84,7 +164,7 @@ body{
     }
 
     #id_footer h1{
-        font: 1.5em/1.5 sans-serif;
+        font: 1.5em sans-serif;
         font-weight: 300;
         color: white;
     }
@@ -127,7 +207,7 @@ body{
         }
 
 	#id_cookies h1{
-	   font: 25px sans-serif;
+	   font: 1.5em sans-serif;
 	   line-height: 30px;
 	}
 
@@ -147,7 +227,7 @@ body{
 	#id_cabeceraIni h1{
 	   float: left;
 	   width: 100%;
-	   font: 60px Impact, Charcoal, sans-serif;
+	   font: 4em Impact, Charcoal, sans-serif;
 	   line-height: 100px;
 	}
 	
@@ -162,7 +242,13 @@ body{
     /*================================================================================
     2.3.- Cuerpo Opciones Menus
     ================================================================================*/
-    #id_contentMenus{
+    #id_contentMenusClientes{
+        width: 100%;
+        padding: 2.5%;
+        display: none;
+    }
+ 
+    #id_contentMenusAdmin{
         width: 100%;
         padding: 2.5%;
         display: none;
@@ -184,19 +270,19 @@ body{
         float: left;
         margin: 5% 5% 0% 5%;
         text-align: justify;
-        font: 30px Impact, Charcoal, sans-serif;
+        font: 1em Impact, Charcoal, sans-serif;
     }
     
     .cls_footer{
         width: 75%;
         margin: 0 auto;
-        background: url(../img/cuaderno.jpg);
+        background-color: #F5F5DC;
         border-radius: 15px;
     }
     
     #id_contentFooter p{
         padding: 1px;
-        font: 22px auto;
+        font: 1.5em auto;
         text-align: justify;
     }
      
@@ -218,7 +304,7 @@ body{
         margin: 30px auto;
         display: none;
         text-align: center;
-        font: 1.5em/1.5 sans-serif;
+        font: 1.5em sans-serif;
         color: white;
         font-weight: 600;
         width: 50%;
@@ -229,7 +315,7 @@ body{
         width: 90%;
         margin: 0 auto;
         padding: 5px 0;
-        font: .9em/1.5 sans-serif;
+        font: .9em sans-serif;
         text-align: center;
         border: 1px solid #99AABB;
     }
@@ -242,7 +328,7 @@ body{
         overflow: auto;
         width: 90%;
         margin: 0 auto;
-        font: 30px sans-serif;
+        font: 1.5em sans-serif;
         color: white;
         font-weight: 600;
         text-align: center;
@@ -252,7 +338,7 @@ body{
         width: 270px;
         margin: 10px auto;
         padding: 7px 0;
-        font: .9em/1.5 sans-serif;
+        font: .9em sans-serif;
         text-align: center;
         color: white;
         background: #335566;
@@ -347,7 +433,6 @@ body{
     z-index: 86;
 }
 
-
 /*******************************************************************************
 6.- Contenido Menus Compras y Ventas
 *******************************************************************************/
@@ -384,10 +469,112 @@ body{
     display: none;
 }
 
+/*******************************************************************************
+7.-Gestiones Administracion
+*******************************************************************************/
+.cls_gestiones{
+    width: 75%;
+    margin: 0 auto;
+    min-width: 1200px;
+    background-color: #ddd;
+    border: 2px solid black;
+    border-radius: 15px;
+}
 
+.cls_gestiones h1{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    margin-top: 1.5%;
+}
 
-/*==============================================================================*/
+.cls_gestiones input[type="button"]{
+    padding: 15px;
+    background-color: #99AABB;
+    font: 1em sans-serif;
+}
 
+.cls_gestiones input[type="submit"]{
+    padding: 15px;
+    background-color: #99AABB;
+    font: 1em sans-serif;
+    margin: 0% 41% 2%;
+}
+
+.cls_gestiones input[type="text"]{
+    padding: 15px;
+    background-color: #eee;
+    font: 1em sans-serif;
+    margin: 0px auto;
+}
+
+.cls_gestiones input:hover{
+    cursor: pointer;
+    background-color: #335566;
+}
+
+.cls_gestiones table{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 1em;
+    padding: 10px;
+    margin: 0% 3% 2% 3%;
+    width: 1100px;
+    text-align: left;
+    border-collapse: collapse; 
+    border: 0px;
+}
+
+.cls_gestiones th{
+    font-size: 1em;
+    font-weight: normal;
+    padding: 8px; 
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+}
+
+.cls_gestiones td{
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent; 
+}
+
+.cls_gestiones tr:hover td{
+    background: #d0dafd;
+    color: #339;
+}
+
+.cls_dialog{
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: 0px auto;
+    width: 30%;
+    background: #b9c9fe;
+    text-align: center;
+    overflow: auto;
+}
+
+.cls_dialog h1{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    margin: 1%;
+}
+
+.cls_dialog input{
+    padding: 15px;
+    background-color: #99AABB;
+    font: 1em sans-serif;
+    margin: 2%;
+}
+
+.textfieldRequiredMsg{
+    display: none;
+}
+
+/*==============================================================================
+8.- Slider
+==============================================================================*/
 /* Contenedor general */
 #slider-wrapper {
     position: relative;
@@ -408,7 +595,7 @@ body{
     width: 100%;
     padding-bottom: 50%; /* Aspect ratio */
     overflow: hidden;
-    border:10px solid #333;
+    border: 10px solid #333;
     border-radius: 5%/10%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -416,9 +603,9 @@ body{
 }
 
 #slider > a {
-    position:absolute;
-    top:0;
-    left:0;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     min-height: 100%;
 }
@@ -428,9 +615,9 @@ body{
     width: 100%;
     min-height: 100%;
     position: absolute;
-    margin:0;
-    padding:0; 
-    border:0;
+    margin: 0;
+    padding: 0; 
+    border: 0;
 }
 
 /* Texto que acompaña a cada imagen */
@@ -449,9 +636,9 @@ body{
     border-radius: 0 20px 20px 0;
     color: #eee;
     background: #333;
-    font-size: 18px;
+    font-size: 1em;
     line-height: 18px;
-    text-align:center;
+    text-align: center;
 }
 
 /* Flechas de navegación */
@@ -464,7 +651,7 @@ a.mas, a.menos {
     height: 30px;
     text-align: center;
     line-height: 30px;
-    font-size: 30px;
+    font-size: 1.5em;
     color: white;
     background: #333;
     text-decoration: none;

@@ -1,13 +1,4 @@
-/*
-================================================================================
-Maestros.js
-
-Autor: JOSE CARLOS ELVIRA GOMEZ
-Versión: 1.0
-Fecha: Agosto 2015
- 
-Javascript General Administración
-================================================================================
+/*==============================================================================
 0.- Pintar Inicio
 1.- Cerrar Cookies
 2.- Pintar Logim
@@ -17,6 +8,7 @@ Javascript General Administración
 6.- Pintar Opciones Menu Alquiler
 7.- Pintar Opciones Menu Venta
 8.- Pintar Opciones Footer
+
 ================================================================================
 ********************************************************************************/
 
@@ -28,7 +20,8 @@ $(document).ready(function() {
 ********************************************************************************/
 $(document).on('click',"#id_cabeceraIni",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("##id_contentMenusClientes").css({"display":"none"});
+    $("##id_contentMenusAdmin").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
     $("#id_descripcion").css({"display":"block"});
     
