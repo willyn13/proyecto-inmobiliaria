@@ -20,8 +20,8 @@ $(document).ready(function() {
 ********************************************************************************/
 $(document).on('click',"#id_cabeceraIni",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
-    $("##id_contentMenusClientes").css({"display":"none"});
-    $("##id_contentMenusAdmin").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
     $("#id_descripcion").css({"display":"block"});
     
@@ -58,7 +58,6 @@ $(document).on('click',"#id_inicio",function(event){
     
     $("#id_modalPantalla").html(v_pantallaLogin);
     
-    event.stopImmediatePropagation();
 });
 
 /*******************************************************************************
@@ -75,23 +74,23 @@ $(document).on('mouseleave',"#id_formularioLogin",function(event){
 4.- Slider
 ********************************************************************************/
 
-    $(function(){
-        $('#slider a:gt(0)').hide();
-        var interval = setInterval(changeDiv, 6000);
-        
-        function changeDiv(){
-            $('#slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#slider');
-        };
-        
-        $(document).on('click',".mas",function(event){
-            changeDiv();
-            clearInterval(interval);
-            interval = setInterval(changeDiv, 6000);
-        });
-        $(document).on('click',".menos",function(event){
-            $('#slider a:first-child').fadeOut(1000);
-            $('#slider a:last-child').fadeIn(1000).prependTo('#slider');
-            
+$(function(){
+    $('#slider a:gt(0)').hide();
+    var interval = setInterval(changeDiv, 6000);
+
+    function changeDiv(){
+        $('#slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#slider');
+    };
+
+    $(document).on('click',".mas",function(event){
+        changeDiv();
+        clearInterval(interval);
+        interval = setInterval(changeDiv, 6000);
+    });
+    $(document).on('click',".menos",function(event){
+        $('#slider a:first-child').fadeOut(1000);
+        $('#slider a:last-child').fadeIn(1000).prependTo('#slider');
+
         clearInterval(interval);
         interval = setInterval(changeDiv, 6000);
     });
@@ -102,7 +101,8 @@ $(document).on('mouseleave',"#id_formularioLogin",function(event){
 ********************************************************************************/
 $(document).on('click',"#id_comprar",function(event){
     //$("#id_footer").css({"margin-top":"0px"});
-    $("#id_contentMenus").css({"display":"block"});
+    $("#id_contentMenusClientes").css({"display":"block"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
     
@@ -119,7 +119,7 @@ var v_pantallaComprar =
         <a href="javascript:void();" class="menos">&lsaquo;</a>\n\
     </div>';
     
-    $("#id_contentMenus").html(v_pantallaComprar);
+    $("#id_contentMenusClientes").html(v_pantallaComprar);
     
     event.stopImmediatePropagation();
 });
@@ -129,7 +129,8 @@ var v_pantallaComprar =
 ********************************************************************************/
 $(document).on('click',"#id_alquilar",function(event){
     //$("#id_footer").css({"margin-top":"0px"});
-    $("#id_contentMenus").css({"display":"block"});
+    $("#id_contentMenusClientes").css({"display":"block"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
 
@@ -190,7 +191,7 @@ $(document).on('click',"#id_alquilar",function(event){
             <p>Aqui iran todas la especificaciones del inmueble</p>\n\
         </div>';
     
-    $("#id_contentMenus").html(v_pantallaAlquilar);
+    $("#id_contentMenusClientes").html(v_pantallaAlquilar);
     
     event.stopImmediatePropagation();
 });
@@ -200,7 +201,8 @@ $(document).on('click',"#id_alquilar",function(event){
 ********************************************************************************/
 $(document).on('click',"#id_vender",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
-    $("#id_contentMenus").css({"display":"block"});
+    $("#id_contentMenusClientes").css({"display":"block"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
 
@@ -209,7 +211,7 @@ $(document).on('click',"#id_vender",function(event){
             <h1>VENTAS</h1>\n\
         </div>';
     
-    $("#id_contentMenus").html(v_pantallaVender);
+    $("#id_contentMenusClientes").html(v_pantallaVender);
     
     event.stopImmediatePropagation();
 });
@@ -220,7 +222,8 @@ $(document).on('click',"#id_vender",function(event){
 $(document).on('click',"#id_copyright",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
 
     var v_pantallaCopyright = 
@@ -237,7 +240,8 @@ $(document).on('click',"#id_copyright",function(event){
 $(document).on('click',"#id_contacto",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
 
     var v_pantallaContacto = 
@@ -254,7 +258,8 @@ $(document).on('click',"#id_contacto",function(event){
 $(document).on('click',"#id_somos",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
 
     var v_pantallaSomos = 
@@ -271,7 +276,8 @@ $(document).on('click',"#id_somos",function(event){
 $(document).on('click',"#id_politica",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
 
     var v_pantallaPolitica = 
@@ -288,7 +294,8 @@ $(document).on('click',"#id_politica",function(event){
 $(document).on('click',"#id_condiciones",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
-    $("#id_contentMenus").css({"display":"none"});
+    $("#id_contentMenusClientes").css({"display":"none"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
 
     var v_pantallaCondiciones = 

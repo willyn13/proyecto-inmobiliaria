@@ -139,8 +139,8 @@ body{
     }
     
     #id_wrapper{
-        padding-top: 150px;
-        min-height: 100%;
+        padding-top: 125px;
+        min-height: 92.5%;
     }
 
     #id_header{
@@ -151,6 +151,8 @@ body{
 
     #id_content{
         width: 100%;
+        padding: 0px;
+        margin: 0px auto;
     }
 
     #id_footer{
@@ -262,7 +264,7 @@ body{
     
     #id_descripcion{
         width: 100%;
-        padding: 2.5%;
+        padding: 0% 2.5% 1% 2.5%;
     }
     
     .cls_descri{
@@ -420,7 +422,6 @@ body{
 }
 
 #id_modalPantalla{
-    text-align: center;
     display: none;
     position: absolute;
     top: 25%;
