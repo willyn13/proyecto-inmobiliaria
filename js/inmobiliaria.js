@@ -40,24 +40,11 @@ $(document).on('click',"#id_cookies img",function(event){
 /*******************************************************************************
 2.- Pintar Logim
 ********************************************************************************/
-$(document).on('click',"#id_inicio",function(event){
+$(document).on("click","#id_inicio",function(event){
     $("#id_modalFondo").css({"display":"block"});
     $("#id_modalPantalla").css({"display":"block"});
-
-    var v_pantallaLogin = 
-        '<div id="id_formularioLogin">\n\
-            <form id="id_formularioEntradaIni">\n\
-                <h2>Usuario</h2>\n\
-                    <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">\n\
-                <h2>Contraseña</h2>\n\
-                    <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20" placeholder="Contraseña">\n\
-                <div id="btnLogin_inicio" class="cls_btn">Aceptar</div>\n\
-            </form>\n\
-            <p id="id_txt_error">Usuario y Contraseña Incorrectos</p>\n\
-        </div>';
     
-    $("#id_modalPantalla").html(v_pantallaLogin);
-    
+    event.stopImmediatePropagation();
 });
 
 /*******************************************************************************
@@ -137,51 +124,6 @@ $(document).on('click',"#id_alquilar",function(event){
     var v_pantallaAlquilar = 
         '<h1>ALQUILERES</h1>\n\
         <div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler2">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler3">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler4">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler5">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler6">\n\
             <div class="cls_slider">\n\
                 <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
                 <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
@@ -282,7 +224,7 @@ $(document).on('click',"#id_politica",function(event){
 
     var v_pantallaPolitica = 
         '<div class="cls_footer">\n\
-            <p>POLITICA</p>\n\
+            <p>POLITICA PRIVACIDAD</p>\n\
             <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
@@ -308,4 +250,5 @@ $(document).on('click',"#id_condiciones",function(event){
     
     event.stopImmediatePropagation();
 });
+
 });  

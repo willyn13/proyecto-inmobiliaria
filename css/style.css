@@ -409,7 +409,6 @@ body{
 5.- MODALES
 *******************************************************************************/
 #id_modalFondo{
-    display: none;
     opacity: .80;
     filter: alpha(opacity=80);
     position: fixed;
@@ -422,13 +421,12 @@ body{
 }
 
 #id_modalPantalla{
-    display: none;
     position: absolute;
     top: 25%;
     left: 37%;
     border-radius: 20px;
-    width: 25%;
-    height: 25%;
+    width: 22%;
+    height: 22%;
     margin: 0 auto;
     background: #ddd;
     z-index: 86;

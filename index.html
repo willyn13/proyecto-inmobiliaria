@@ -37,11 +37,19 @@ Página de inicio de la Aplicación
     </head>
     
     <body id="id_body">
-        
         <!--Formulario de login -->
-        <div id="id_modalFondo">
-        </div>
+        <div id="id_modalFondo"></div>
         <div id="id_modalPantalla">
+            <div id="id_formularioLogin">
+                <form id="id_formularioEntradaIni">
+                    <h2>Usuario</h2>
+                        <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">
+                    <h2>Contraseña</h2>
+                        <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20" placeholder="Contraseña">
+                    <div id="btnLogin_inicio" class="cls_btn">Aceptar</div>
+                </form>
+                <p id="id_txt_error">Usuario y Contraseña Incorrectos</p>
+            </div>
         </div>
         
     	<div id="id_wrapper">
