@@ -1,20 +1,33 @@
 /*==============================================================================
-1.- Stilos Generles
-2.- Pantalla de inicio
-3.- Formulario Login
-4.- Modales
-5.- Cookies
-6.- Titulo y logo
-7.- Menus Desplegable
-8.- Cuerpo Opciones Menus
+style.css
 
+Autores: SEBASTIÁN HORCAJO ORTEGA
+	 GUILLERMO
+	 JAVIER
 
-6.- Contenido Menus
-7.- Gestiones Administracion
-8.- Slider
+Versión: 1.0
+
+Fecha: Octubre 2015
+ 
+Estilos de la Aplicación
+
+================================================================================
+================================================================================
+
+01.- Stilos Generles
+02.- Pantalla de inicio
+03.- Formulario Login
+04.- Modales
+05.- Cookies
+06.- Titulo y logo
+07.- Menus Desplegable
+08.- Contenido Opciones Menus
+09.- Contenido Menus
+10.- Gestiones Administracion
+11.- Slider
 	
 ================================================================================
-1.- Estilos Generales
+01.- Estilos Generales
 ================================================================================*/
 @media screen and (max-width: 1050px){ 
     #id_cabeceraIni{ font-size: 15px;}
@@ -125,7 +138,7 @@ body{
 }
 
 /*================================================================================
-2.- Pantalla de inicio
+02.- Pantalla de inicio
 ================================================================================*/
 #id_body{
     width: 100%;
@@ -135,8 +148,7 @@ body{
 }
 
 #id_wrapper{
-    padding-top: 125px;
-    min-height: 92.5%;
+    padding-top: 150px;
 }
 
 #id_header{
@@ -148,7 +160,7 @@ body{
 #id_content{
     width: 100%;
     height: 100%;
-    margin: 2% auto 0 auto;
+    margin: 0 auto;
 }
 
 #id_footer{
@@ -181,7 +193,7 @@ body{
 }
 
 /*================================================================================
-3.- Formulario Login
+03.- Formulario Login
 ================================================================================*/
 #id_formularioLogin{
     background: url(../img/cuadro.jpg);
@@ -242,7 +254,7 @@ body{
 }
 
 /*******************************************************************************
-4.- Modales
+04.- Modales
 *******************************************************************************/
 #id_modalFondo{
     display: none;
@@ -271,7 +283,7 @@ body{
 }
 
 /*================================================================================
-5.- Cookies
+05.- Cookies
 ================================================================================*/
 #id_cookies{
     width: 100%;
@@ -301,7 +313,7 @@ body{
 }
 
 /*================================================================================
-6.- Titulo y logo
+06.- Titulo y logo
 ================================================================================*/
 #id_cabeceraIni{
     width: 100%;
@@ -325,7 +337,7 @@ body{
 }
         
 /*================================================================================
-7.- Menu Desplegable
+07.- Menu Desplegable
 ================================================================================*/
 #id_menu{
     height: auto;
@@ -378,11 +390,11 @@ body{
 }
 
 /*================================================================================
-8.- Cuerpo Opciones Menus
+08.- Contenido Opciones Menus
 ================================================================================*/
 #id_contentMenusClientes{
     width: 100%;
-    min-height: 543px;
+    min-height: 534px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -390,7 +402,7 @@ body{
 
 #id_contentMenusAdmin{
     width: 100%;
-    min-height: 543px;
+    min-height: 534px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -398,7 +410,7 @@ body{
 
 #id_contentFooter{
     width: 100%;
-    min-height: 543px;
+    min-height: 534px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -406,15 +418,15 @@ body{
 
 #id_descripcion{
     width: 100%;
-    min-height: 543px;
+    min-height: 534px;
     margin: 1% auto;
     padding: 0% 2.5%;
 }
 
-#id_descripcion .cls_descri{
+.cls_descri{
     width: 40%;
     float: left;
-    margin: 3% 5% 2% 5%;
+    margin: 2.5% 5%;
     text-align: justify;
     font: 1em Impact, Charcoal, sans-serif;
 }
@@ -422,7 +434,8 @@ body{
 .cls_footer{
     width: 75%;
     margin: 0 auto;
-    margin-top: 5%;
+    padding: 1%;
+    border: 2px solid black;
     background-color: #F5F5DC;
     border-radius: 15px;
 }
@@ -434,7 +447,7 @@ body{
 }
 
 /*******************************************************************************
-9.- Contenido Menus Compras y Ventas
+09.- Contenido Menus Compras y Ventas
 *******************************************************************************/
 .cls_ventanas{
     background-color: grey;
@@ -575,34 +588,43 @@ body{
 /*==============================================================================
 11- Slider
 ==============================================================================*/
-/* Contenedor general */
-#slider-wrapper {
+#id_slider_wrapper {
     position: relative;
-    width: 800px;
-    max-width: 100%;
+    width: 75%;
     margin: 0 auto;
-    padding: 0 10px;
+    background-color: grey;
     font-family: arial, sans-serif;
-    font-size: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    border: 5px solid black;
+    border-radius: 50px;
 }
 
-/* Contenedor slider */
-#slider { 
+#id_slider_wrapper p{
+    overflow: hidden;
+    padding: 10px;
+    border-top: 5px solid black;
+}
+
+#id_slider_wrapper input{
+    background-color: #99AABB;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    font: 1em sans-serif;
+}
+
+#id_slider_wrapper input:hover{
+    cursor: pointer;
+    background-color: #335566;
+}
+
+#id_slider { 
     position: relative;
     width: 100%;
-    padding-bottom: 50%; /* Aspect ratio */
+    padding-bottom: 39%; 
     overflow: hidden;
-    border: 10px solid #333;
-    border-radius: 5%/10%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    border-radius: 46px 47px 0px 0px;
 }
 
-#slider > a {
+#id_slider > a {
     position: absolute;
     top: 0;
     left: 0;
@@ -610,41 +632,14 @@ body{
     min-height: 100%;
 }
 
-/* Ajuste de las imágenes */
-#slider img {
+#id_slider img {
     width: 100%;
-    min-height: 100%;
-    position: absolute;
-    margin: 0;
-    padding: 0; 
-    border: 0;
+    border-radius: 46px 47px 0px 0px;
 }
 
-/* Texto que acompaña a cada imagen */
-#slider p {
-    position: absolute;
-    bottom: 5%;
-    left: 0;
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 80%;
-    height: 18px;
-    margin:0;
-    padding: 5px 0;
-    border-radius: 0 20px 20px 0;
-    color: #eee;
-    background: #333;
-    font-size: 1em;
-    line-height: 18px;
-    text-align: center;
-}
-
-/* Flechas de navegación */
 a.mas, a.menos {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 10px;
     z-index: 10;
     width: 30px;

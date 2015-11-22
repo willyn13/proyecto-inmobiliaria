@@ -1,22 +1,38 @@
 /*==============================================================================
-0.- Pintar Inicio
-1.- Cerrar Cookies
-2.- Pintar Logim
-3.- Cerrar Logim
-4.- Slider
-5.- Pintar Opciones Menu Comprar
-6.- Pintar Opciones Menu Alquiler
-7.- Pintar Opciones Menu Venta
-8.- Pintar Opciones Footer
+administracion.js
+
+Autores: SEBASTIÁN HORCAJO ORTEGA
+	 GUILLERMO
+	 JAVIER
+
+Versión: 1.0
+
+Fecha: Octubre 2015
+ 
+javascript y jquery de la Aplicación
+
+================================================================================
+==============================================================================
+
+01.- Pintar Inicio
+02.- Cerrar Cookies
+03.- Pintar Logim
+04.- Cerrar Logim
+05.- Pintar Slider
+06.- Activar Slider
+07.- Activar Menu Comprar
+08.- Activar Menu Alquiler
+09.- Pintar Ventanas Compra-Alquiler
+10.- Formulario Menu Venta
+11.- Pintar Opciones Footer
 
 ================================================================================
 ********************************************************************************/
-
 $(document).ready(function() {
     $.ajaxSetup({ cache: false });
     
 /*******************************************************************************
-0.- Pintar Inicio
+01.- Pintar Inicio
 ********************************************************************************/
 $(document).on('click',"#id_cabeceraIni",function(event){
     //$("#id_footer").css({"margin-top":"-66px"});
@@ -29,7 +45,7 @@ $(document).on('click',"#id_cabeceraIni",function(event){
 });
 
 /*******************************************************************************
-1.- Cerrar Cookies
+02.- Cerrar Cookies
 ********************************************************************************/
 $(document).on('click',"#id_cookies img",function(event){
     $("#id_cookies").css({"display":"none"});
@@ -38,7 +54,7 @@ $(document).on('click',"#id_cookies img",function(event){
 });
 
 /*******************************************************************************
-2.- Pintar Logim
+03.- Pintar Logim
 ********************************************************************************/
 $(document).on("click","#id_inicio",function(event){
     $("#id_modalFondo").css({"display":"block"});
@@ -48,7 +64,7 @@ $(document).on("click","#id_inicio",function(event){
 });
 
 /*******************************************************************************
-3.- Cerrar Logim
+04.- Cerrar Logim
 ********************************************************************************/
 $(document).on('mouseleave',"#id_formularioLogin",function(event){
     $("#id_modalFondo").css({"display":"none"});
@@ -58,15 +74,42 @@ $(document).on('mouseleave',"#id_formularioLogin",function(event){
 });
 
 /*******************************************************************************
-4.- Slider
+05.- Pintar Slider
 ********************************************************************************/
+$(document).on('click',"#id_informacion",function(event){
+    $("#id_contentMenusClientes").css({"display":"block"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
+    $("#id_descripcion").css({"display":"none"});
+    $("#id_contentFooter").css({"display":"none"});
+    
+    var v_slider = 
+        '<div id="id_slider_wrapper">\n\
+            <div id="id_slider">\n\
+                <a href="#"><img src="img/img1.jpg"/></a>\n\
+                <a href="#"><img src="img/img2.jpg"/></a>\n\
+                <a href="#"><img src="img/img3.jpg"/></a>\n\
+                <a href="#"><img src="img/img4.jpg"/></a>\n\
+            </div>\n\
+            <p>Aqui iran todas la especificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmueble</p>\n\
+            <input type="button" value="Contratar"/>\n\
+            <a href="javascript:void();" class="mas">></a>\n\
+            <a href="javascript:void();" class="menos"><</a>\n\
+        </div>';
+    
+    $("#id_contentMenusClientes").html(v_slider);
+    
+    event.stopImmediatePropagation();
+});
 
+/*******************************************************************************
+06.- Activar Slider
+********************************************************************************/    
 $(function(){
-    $('#slider a:gt(0)').hide();
+    $('#id_slider a:gt(0)').hide();
     var interval = setInterval(changeDiv, 6000);
 
     function changeDiv(){
-        $('#slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#slider');
+        $('#id_slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#id_slider');
     };
 
     $(document).on('click',".mas",function(event){
@@ -75,8 +118,8 @@ $(function(){
         interval = setInterval(changeDiv, 6000);
     });
     $(document).on('click',".menos",function(event){
-        $('#slider a:first-child').fadeOut(1000);
-        $('#slider a:last-child').fadeIn(1000).prependTo('#slider');
+        $('#id_slider a:first-child').fadeOut(1000);
+        $('#id_slider a:last-child').fadeIn(1000).prependTo('#id_slider');
 
         clearInterval(interval);
         interval = setInterval(changeDiv, 6000);
@@ -84,27 +127,15 @@ $(function(){
 });
 
 /*******************************************************************************
-5.- Pintar Opciones Menu Comprar
+07.- Activar Menu Comprar
 ********************************************************************************/
 $(document).on('click',"#id_comprar",function(event){
-    //$("#id_footer").css({"margin-top":"0px"});
     $("#id_contentMenusClientes").css({"display":"block"});
     $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
     
-var v_pantallaComprar = 
-    '<h1>COMPRAS</h1>\n\
-    <div id="slider-wrapper">\n\
-        <div id="slider">\n\
-            <a href="URL_ENLACE1"><img src="img/img1.jpg"/><p>TEXTO1</p></a>\n\
-            <a href="URL_ENLACE2"><img src="img/img2.jpg"/><p>TEXTO2</p></a>\n\
-            <a href="URL_ENLACE3"><img src="img/img3.jpg"/><p>TEXTO3</p></a>\n\
-            <a href="URL_ENLACE3"><img src="img/img4.jpg"/><p>TEXTO3</p></a>\n\
-        </div>\n\
-        <a href="javascript:void();" class="mas">&rsaquo;</a>\n\
-        <a href="javascript:void();" class="menos">&lsaquo;</a>\n\
-    </div>';
+    var v_pantallaComprar = ventanaImagenes();    
     
     $("#id_contentMenusClientes").html(v_pantallaComprar);
     
@@ -112,7 +143,7 @@ var v_pantallaComprar =
 });
 
 /*******************************************************************************
-6.- Pintar Opciones Menu Alquiler
+08.- Activar Menu Alquiler
 ********************************************************************************/
 $(document).on('click',"#id_alquilar",function(event){
     //$("#id_footer").css({"margin-top":"0px"});
@@ -121,17 +152,7 @@ $(document).on('click',"#id_alquilar",function(event){
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
 
-    var v_pantallaAlquilar = 
-        '<h1>ALQUILERES</h1>\n\
-        <div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
-            <div class="cls_slider">\n\
-                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
-                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
-            </div>\n\
-            <p>Aqui iran todas la especificaciones del inmueble</p>\n\
-        </div>';
+    var v_pantallaAlquilar = ventanaImagenes();
     
     $("#id_contentMenusClientes").html(v_pantallaAlquilar);
     
@@ -139,10 +160,30 @@ $(document).on('click',"#id_alquilar",function(event){
 });
 
 /*******************************************************************************
-7.- Pintar Opciones Menu Venta
+09- Pintar Ventanas compra-Alquiler
+********************************************************************************/
+function ventanaImagenes(){
+    var v_ventana = "<h1>ALQUILERES COMPRAS</h1>";
+    
+    for(var i=0; i<3; i++){
+        v_ventana = v_ventana + 
+        '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
+            <div class="cls_slider">\n\
+                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
+            </div>\n\
+            <p>Aqui iran todas la especificaciones del inmueble  &nbsp;<a href="#" id="id_informacion">+info</a></p>\n\
+        </div>';
+    }
+    return v_ventana;
+}
+
+/*******************************************************************************
+10.- Formulario Menu Venta
 ********************************************************************************/
 $(document).on('click',"#id_vender",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentMenusClientes").css({"display":"block"});
     $("#id_contentMenusAdmin").css({"display":"none"});
     $("#id_descripcion").css({"display":"none"});
@@ -159,10 +200,9 @@ $(document).on('click',"#id_vender",function(event){
 });
 
 /*******************************************************************************
-8.- Pintar Opciones Footer
+11.- Pintar Opciones Footer
 ********************************************************************************/
 $(document).on('click',"#id_copyright",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
     $("#id_contentMenusClientes").css({"display":"none"});
     $("#id_contentMenusAdmin").css({"display":"none"});
@@ -171,7 +211,7 @@ $(document).on('click',"#id_copyright",function(event){
     var v_pantallaCopyright = 
         '<div class="cls_footer">\n\
             <p>COPYRIGHT</p>\n\
-            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
+            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
     $("#id_contentFooter").html(v_pantallaCopyright);
@@ -180,7 +220,6 @@ $(document).on('click',"#id_copyright",function(event){
 });
 
 $(document).on('click',"#id_contacto",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
     $("#id_contentMenusClientes").css({"display":"none"});
     $("#id_contentMenusAdmin").css({"display":"none"});
@@ -189,7 +228,7 @@ $(document).on('click',"#id_contacto",function(event){
     var v_pantallaContacto = 
         '<div class="cls_footer">\n\
             <p>CONTACTO</p>\n\
-            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
+            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
     $("#id_contentFooter").html(v_pantallaContacto);
@@ -198,7 +237,6 @@ $(document).on('click',"#id_contacto",function(event){
 });
 
 $(document).on('click',"#id_somos",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
     $("#id_contentMenusClientes").css({"display":"none"});
     $("#id_contentMenusAdmin").css({"display":"none"});
@@ -207,7 +245,7 @@ $(document).on('click',"#id_somos",function(event){
     var v_pantallaSomos = 
         '<div class="cls_footer">\n\
             <p>QUIENES SOMOS</p>\n\
-            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
+            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
     $("#id_contentFooter").html(v_pantallaSomos);
@@ -216,7 +254,6 @@ $(document).on('click',"#id_somos",function(event){
 });
 
 $(document).on('click',"#id_politica",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
     $("#id_contentMenusClientes").css({"display":"none"});
     $("#id_contentMenusAdmin").css({"display":"none"});
@@ -225,7 +262,7 @@ $(document).on('click',"#id_politica",function(event){
     var v_pantallaPolitica = 
         '<div class="cls_footer">\n\
             <p>POLITICA PRIVACIDAD</p>\n\
-            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
+            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
     $("#id_contentFooter").html(v_pantallaPolitica);
@@ -234,7 +271,6 @@ $(document).on('click',"#id_politica",function(event){
 });
 
 $(document).on('click',"#id_condiciones",function(event){
-    //$("#id_footer").css({"margin-top":"-66px"});
     $("#id_contentFooter").css({"display":"block"});
     $("#id_contentMenusClientes").css({"display":"none"});
     $("#id_contentMenusAdmin").css({"display":"none"});
@@ -243,7 +279,7 @@ $(document).on('click',"#id_condiciones",function(event){
     var v_pantallaCondiciones = 
         '<div class="cls_footer">\n\
             <p>CONDICIONES GENERALES</p>\n\
-            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
+            <p>Breve descripcion de opcion footer. Breve descripcion de opcion footer. Breve descripcion de opcion footer.</p>\n\
         </div>';
     
     $("#id_contentFooter").html(v_pantallaCondiciones);
