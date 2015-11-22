@@ -1,20 +1,20 @@
 /*==============================================================================
-1.- STILOS GENERALES
-2.- MENÚ PRINCIPAL
-    2.1.- Pantalla de inicio
-    2.2.- Cabeceras
-        2.2.1.- Cookies
-        2.2.2.- Titulo y logo
-    2.3.- Cuerpo Opciones Menus
+1.- Stilos Generles
+2.- Pantalla de inicio
 3.- Formulario Login
-4.- Menus Desplegable
-5.- Modales
+4.- Modales
+5.- Cookies
+6.- Titulo y logo
+7.- Menus Desplegable
+8.- Cuerpo Opciones Menus
+
+
 6.- Contenido Menus
 7.- Gestiones Administracion
 8.- Slider
 	
 ================================================================================
-1.- ESTILOS GENERALES
+1.- Estilos Generales
 ================================================================================*/
 @media screen and (max-width: 1050px){ 
     #id_cabeceraIni{ font-size: 15px;}
@@ -105,7 +105,6 @@
     #id_contentFooter{ font-size: 5px;}
 }
 
-
 *{
     margin: 0;
     padding: 0;
@@ -126,234 +125,207 @@ body{
 }
 
 /*================================================================================
-1.- MENÚ PRINCIPAL
-================================================================================
-    /*================================================================================
-    2.1.- Pantalla de inicio
-    ================================================================================*/
-    #id_body{
-        width: 100%;
-        background: url(../img/fondo.jpg) no-repeat center;
-        background-size: cover;
-        text-align: center;
-    }
-    
-    #id_wrapper{
-        padding-top: 125px;
-        min-height: 92.5%;
-    }
-
-    #id_header{
-        width: 100%;
-	top: 0; 
-	position: fixed;
-    }
-
-    #id_content{
-        width: 100%;
-        padding: 0px;
-        margin: 0px auto;
-    }
-
-    #id_footer{
-        bottom: 0;
-        width: 100%;
-        padding: 15px 0px;
-        background: black;
-        background: rgba(0,0,0,.8);
-        overflow: hidden;
-        float: left;
-    }
-
-    #id_footer h1{
-        font: 1.5em sans-serif;
-        font-weight: 300;
-        color: white;
-    }
-
-    #id_footer h1 a{
-        width: 20%;
-        margin: 0 auto;
-        padding: 25px;
-        text-align: center;
-        text-decoration: none;
-        color: #99AABB;
-    }
-    
-    #id_footer h1 a:hover{
-        cursor: pointer;
-    }
-    
-   /*================================================================================
-    2.2.- Cabeceras
-    ================================================================================*/
-        /*================================================================================
-        2.2.1.- Cookies
-        ================================================================================*/
-        #id_cookies{
-	    width: 100%;
-            top: 0; 
-            position: fixed;
-	    margin: 0px auto;
-            padding: 10px;
-	    background: black;
-            background: rgba(0,0,0,.7);
-            overflow: hidden;
-	}
-        
-        #id_cookies img{
-            float: right;
-            height: 22px;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-	#id_cookies h1{
-	   font: 1.5em sans-serif;
-	   line-height: 30px;
-	}
-
-	#id_cookies h1 span{
-	    color: #99AABB;
-	}
-        
-        /*================================================================================
-        2.2.2.- Titulo y logo
-        ================================================================================*/
-        #id_cabeceraIni{
-	    width: 100%;
-	    background: url(../img/cabezera.jpg);
-	    overflow: hidden;
-	}
-
-	#id_cabeceraIni h1{
-	   float: left;
-	   width: 100%;
-	   font: 4em Impact, Charcoal, sans-serif;
-	   line-height: 100px;
-	}
-	
-	#id_cabeceraIni h1 span{
-	    color: maroon;
-	}
-        
-        #id_cabeceraIni :hover{
-            cursor: pointer;
-	}
-        
-    /*================================================================================
-    2.3.- Cuerpo Opciones Menus
-    ================================================================================*/
-    #id_contentMenusClientes{
-        width: 100%;
-        padding: 2.5%;
-        display: none;
-    }
- 
-    #id_contentMenusAdmin{
-        width: 100%;
-        padding: 2.5%;
-        display: none;
-    }
-    
-    #id_contentFooter{
-        width: 100%;
-        padding: 2.5%;
-        display: none;
-    }
-    
-    #id_descripcion{
-        width: 100%;
-        padding: 0% 2.5% 1% 2.5%;
-    }
-    
-    .cls_descri{
-        width: 40%;
-        float: left;
-        margin: 5% 5% 0% 5%;
-        text-align: justify;
-        font: 1em Impact, Charcoal, sans-serif;
-    }
-    
-    .cls_footer{
-        width: 75%;
-        margin: 0 auto;
-        background-color: #F5F5DC;
-        border-radius: 15px;
-    }
-    
-    #id_contentFooter p{
-        padding: 1px;
-        font: 1.5em auto;
-        text-align: justify;
-    }
-     
-/*================================================================================
-3.- Formularios
+2.- Pantalla de inicio
 ================================================================================*/
-    /*================================================================================
-    3.1.- Formulario Login
-    ================================================================================*/
-    #id_formularioLogin{
-        background: url(../img/cuadro.jpg);
-        border-radius: 20px;
-        border: 10px solid black;
-        padding: 15px;
-    }
+#id_body{
+    width: 100%;
+    background: url(../img/fondo.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+}
 
-    #id_txt_error{
-        font-weight: 300;
-        margin: 30px auto;
-        display: none;
-        text-align: center;
-        font: 1.5em sans-serif;
-        color: white;
-        font-weight: 600;
-        width: 50%;
-        background: black;
-    }
+#id_wrapper{
+    padding-top: 125px;
+    min-height: 92.5%;
+}
 
-    #id_formularioEntradaIni input{
-        width: 90%;
-        margin: 0 auto;
-        padding: 5px 0;
-        font: .9em sans-serif;
-        text-align: center;
-        border: 1px solid #99AABB;
-    }
-    
-    #id_formularioEntradaIni div{
-        width: 90%;
-    }
-    
-    #id_formularioEntradaIni h2{
-        overflow: auto;
-        width: 90%;
-        margin: 0 auto;
-        font: 1.5em sans-serif;
-        color: white;
-        font-weight: 600;
-        text-align: center;
-    }
+#id_header{
+    width: 100%;
+    top: 0; 
+    position: fixed;
+}
 
-    .cls_btn{
-        width: 270px;
-        margin: 10px auto;
-        padding: 7px 0;
-        font: .9em sans-serif;
-        text-align: center;
-        color: white;
-        background: #335566;
-        cursor: pointer;
-    }
+#id_content{
+    width: 100%;
+    height: 100%;
+    margin: 2% auto 0 auto;
+}
 
-    .cls_btn:hover{
-        color: white;
-        background: #4B4E50;
-    }
+#id_footer{
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0px;
+    background: black;
+    background: rgba(0,0,0,.8);
+    overflow: hidden;
+    float: left;
+}
+
+#id_footer h1{
+    font: 1.5em sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+#id_footer h1 a{
+    width: 20%;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #99AABB;
+}
+
+#id_footer h1 a:hover{
+    cursor: pointer;
+}
 
 /*================================================================================
-4.- Menu Desplegable
+3.- Formulario Login
+================================================================================*/
+#id_formularioLogin{
+    background: url(../img/cuadro.jpg);
+    border-radius: 20px;
+    border: 10px solid black;
+    padding: 15px;
+}
+
+#id_txt_error{
+    font-weight: 300;
+    margin: 30px auto;
+    display: none;
+    text-align: center;
+    font: 2em sans-serif;
+    color: white;
+    font-weight: 600;
+    width: 50%;
+    background: black;
+}
+
+#id_formularioEntradaIni input{
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px 0;
+    font: 1em sans-serif;
+    text-align: center;
+    border: 1px solid #99AABB;
+}
+
+#id_formularioEntradaIni div{
+    width: 90%;
+}
+
+#id_formularioEntradaIni h2{
+    overflow: auto;
+    width: 90%;
+    margin: 0 auto;
+    font: 2em sans-serif;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cls_btn{
+    width: 270px;
+    margin: 10px auto;
+    padding: 7px 0;
+    font: .9em sans-serif;
+    text-align: center;
+    color: white;
+    background: #335566;
+    cursor: pointer;
+}
+
+.cls_btn:hover{
+    color: white;
+    background: #4B4E50;
+}
+
+/*******************************************************************************
+4.- Modales
+*******************************************************************************/
+#id_modalFondo{
+    display: none;
+    opacity: .80;
+    filter: alpha(opacity=80);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 85;
+}
+
+#id_modalPantalla{
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 37%;
+    border-radius: 20px;
+    width: 22%;
+    height: 22%;
+    margin: 0 auto;
+    background: #ddd;
+    z-index: 86;
+}
+
+/*================================================================================
+5.- Cookies
+================================================================================*/
+#id_cookies{
+    width: 100%;
+    top: 0; 
+    position: fixed;
+    margin: 0px auto;
+    padding: 10px;
+    background: black;
+    background: rgba(0,0,0,.7);
+    overflow: hidden;
+}
+
+#id_cookies img{
+    float: right;
+    height: 22px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#id_cookies h1{
+   font: 1.4em sans-serif;
+   line-height: 30px;
+}
+
+#id_cookies h1 span{
+    color: #99AABB;
+}
+
+/*================================================================================
+6.- Titulo y logo
+================================================================================*/
+#id_cabeceraIni{
+    width: 100%;
+    background: url(../img/cabezera.jpg);
+    overflow: hidden;
+}
+
+#id_cabeceraIni h1{
+   float: left;
+   width: 100%;
+   font: 4em Impact, Charcoal, sans-serif;
+   line-height: 100px;
+}
+
+#id_cabeceraIni h1 span{
+    color: maroon;
+}
+
+#id_cabeceraIni :hover{
+    cursor: pointer;
+}
+        
+/*================================================================================
+7.- Menu Desplegable
 ================================================================================*/
 #id_menu{
     height: auto;
@@ -405,35 +377,64 @@ body{
     top: 0;
 }
 
-/*******************************************************************************
-5.- MODALES
-*******************************************************************************/
-#id_modalFondo{
-    opacity: .80;
-    filter: alpha(opacity=80);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    background: #000;
+/*================================================================================
+8.- Cuerpo Opciones Menus
+================================================================================*/
+#id_contentMenusClientes{
     width: 100%;
-    height: 100%;
-    z-index: 85;
+    min-height: 543px;
+    margin: 1% auto;
+    padding: 0% 2.5%;
+    display: none;
 }
 
-#id_modalPantalla{
-    position: absolute;
-    top: 25%;
-    left: 37%;
-    border-radius: 20px;
-    width: 22%;
-    height: 22%;
+#id_contentMenusAdmin{
+    width: 100%;
+    min-height: 543px;
+    margin: 1% auto;
+    padding: 0% 2.5%;
+    display: none;
+}
+
+#id_contentFooter{
+    width: 100%;
+    min-height: 543px;
+    margin: 1% auto;
+    padding: 0% 2.5%;
+    display: none;
+}
+
+#id_descripcion{
+    width: 100%;
+    min-height: 543px;
+    margin: 1% auto;
+    padding: 0% 2.5%;
+}
+
+#id_descripcion .cls_descri{
+    width: 40%;
+    float: left;
+    margin: 3% 5% 2% 5%;
+    text-align: justify;
+    font: 1em Impact, Charcoal, sans-serif;
+}
+
+.cls_footer{
+    width: 75%;
     margin: 0 auto;
-    background: #ddd;
-    z-index: 86;
+    margin-top: 5%;
+    background-color: #F5F5DC;
+    border-radius: 15px;
+}
+
+#id_contentFooter p{
+    padding: 1px;
+    font: 1.5em auto;
+    text-align: justify;
 }
 
 /*******************************************************************************
-6.- Contenido Menus Compras y Ventas
+9.- Contenido Menus Compras y Ventas
 *******************************************************************************/
 .cls_ventanas{
     background-color: grey;
@@ -469,7 +470,7 @@ body{
 }
 
 /*******************************************************************************
-7.-Gestiones Administracion
+10.-Gestiones Administracion
 *******************************************************************************/
 .cls_gestiones{
     width: 75%;
@@ -572,7 +573,7 @@ body{
 }
 
 /*==============================================================================
-8.- Slider
+11- Slider
 ==============================================================================*/
 /* Contenedor general */
 #slider-wrapper {
