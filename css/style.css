@@ -14,20 +14,20 @@ Estilos de la Aplicación
 ================================================================================
 ================================================================================
 
-01.- Stilos Generles
+01.- Responsive y Estilos Generles
 02.- Pantalla de inicio
 03.- Formulario Login
 04.- Modales
 05.- Cookies
 06.- Titulo y logo
-07.- Menus Desplegable
+07.- Menu Desplegable
 08.- Contenido Opciones Menus
 09.- Contenido Menus
 10.- Gestiones Administracion
 11.- Slider
 	
 ================================================================================
-01.- Estilos Generales
+01.- Responsive y Estilos Generales
 ================================================================================*/
 @media screen and (max-width: 1050px){ 
     #id_cabeceraIni{ font-size: 15px;}
@@ -148,7 +148,7 @@ body{
 }
 
 #id_wrapper{
-    padding-top: 150px;
+    padding-top: 175px;
 }
 
 #id_header{
@@ -394,7 +394,7 @@ body{
 ================================================================================*/
 #id_contentMenusClientes{
     width: 100%;
-    min-height: 534px;
+    min-height: 525px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -402,7 +402,7 @@ body{
 
 #id_contentMenusAdmin{
     width: 100%;
-    min-height: 534px;
+    min-height: 525px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -410,7 +410,7 @@ body{
 
 #id_contentFooter{
     width: 100%;
-    min-height: 534px;
+    min-height: 525px;
     margin: 1% auto;
     padding: 0% 2.5%;
     display: none;
@@ -418,7 +418,7 @@ body{
 
 #id_descripcion{
     width: 100%;
-    min-height: 534px;
+    min-height: 525px;
     margin: 1% auto;
     padding: 0% 2.5%;
 }
@@ -596,6 +596,7 @@ body{
     font-family: arial, sans-serif;
     border: 5px solid black;
     border-radius: 50px;
+    z-index: 90;
 }
 
 #id_slider_wrapper p{
@@ -619,7 +620,7 @@ body{
 #id_slider { 
     position: relative;
     width: 100%;
-    padding-bottom: 39%; 
+    padding-bottom: 35%; 
     overflow: hidden;
     border-radius: 46px 47px 0px 0px;
 }
