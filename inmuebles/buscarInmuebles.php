@@ -92,10 +92,10 @@ while($fila = mysqli_fetch_row($result)){
 	}
 
 
-$consulta= "SELECT * from localidades ";
+
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
-echo "<option value=\" and idlocalidad = ".$localidad[0]."\">".$localidad[3]."</option>";
+echo "<option value=\" and `localidades`.idlocalidad = ".$localidad[0]."\">".$localidad[3]."</option>";
 }
 ?>  </td></tr>
     <tr valign="baseline">
@@ -131,7 +131,7 @@ if ($dni != ''){
 	$resultado=mysqli_query($conexion,$consulta);
 		echo "<tr nowrap=\"nowrap\" align=\"right\">Dnipropietario:</tr>";
 		echo "<td><select name=\"dnipropietario\">";
-                echo '<option value="" selected>Selecciona Propietario</option>';
+        echo	"<option value="" selected>Selecciona Propietario</option>";
 while ($cliente=mysqli_fetch_array($resultado)){
 echo "<option value=\" and dnipropietario='".$cliente[0]."'\">".$cliente[1].", ".$cliente[2]."</option>";
 }

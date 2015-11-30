@@ -37,13 +37,12 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO usuarios (dni_usuario, idzona, nombre, apellidos, cargo, password) VALUES (%s, %s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['dni_usuario'], "text"),
-		       GetSQLValueString($_POST['zona'], "text"),
+  $insertSQL = sprintf("INSERT INTO clientes (dni_cliente, nombre, apellidos, telefono, email) VALUES (%s, %s, %s, %s, %s)",
+                       GetSQLValueString($_POST['dni_cliente'], "text"),
                        GetSQLValueString($_POST['nombre'], "text"),
                        GetSQLValueString($_POST['apellidos'], "text"),
-                       GetSQLValueString($_POST['cargo'], "text"),
-                       GetSQLValueString($_POST['password'], "text"));
+                       GetSQLValueString($_POST['telefono'], "integer"),
+                       GetSQLValueString($_POST['email'], "text"));
 
   mysql_select_db($database_ConexionInmobiliaria, $ConexionInmobiliaria);
   $Result1 = mysql_query($insertSQL, $ConexionInmobiliaria) or die(mysql_error());
@@ -66,14 +65,14 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </head>
 
 <body>
-<h1><strong>Dar de alta nuevo usuario</strong>
+<h1><strong>Dar de alta nuevo cliente</strong>
 <hr>
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table align="center">
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Dni:</td>
       <td><span id="sprytextfield1">
-        <input type="text" name="dni" value="" size="32" />
+        <input type="text" name="dni_cliente" value="" size="32" />
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">
@@ -89,26 +88,20 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Cargo:</td>
+      <td nowrap="nowrap" align="right">Telefono:</td>
       <td><span id="sprytextfield4">
-        <input type="text" name="cargo" value="" size="32" />
+        <input type="text" name="telefono" value="" size="32" />
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Zona:</td>
+      <td nowrap="nowrap" align="right">email:</td>
       <td><span id="sprytextfield5">
-        <input type="text" name="zona" value="" size="32" />
-      <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Password:</td>
-      <td><span id="sprytextfield6">
-        <input type="password" name="password" value="" size="32" />
+        <input type="text" name="email" value="" size="32" />
       <span class="textfieldRequiredMsg">Se necesita un valor.</span></span></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">&nbsp;</td>
-      <td><input type="submit" value="Insertar usuario" /></td>
+      <td><input type="submit" value="Insertar cliente" /></td>
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />

@@ -15,7 +15,7 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	}
 ?>
 <body>
-<form action="insertar_Inmueble.php" method="POST" enctype="multipart/form-data">
+<form action="insertar_Inmueble.php" method="POST">
   <table align="center">    
   <tr valign="baseline">
       <td nowrap="nowrap" align="right">Venta:</td>
@@ -107,8 +107,16 @@ echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
       <td><input type="text" name="precio_alquiler" value="" size="32" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Insertar imagenes:</td>
-      <td><input type="file" name="imagen[]" multiple='multiple' /></td>
+      <td nowrap="nowrap" align="right">Imagen1:</td>
+      <td><input type="text" name="imagen1" value="" size="32" /></td>
+    </tr>
+    <tr valign="baseline">
+      <td nowrap="nowrap" align="right">Imagen2:</td>
+      <td><input type="text" name="imagen2" value="" size="32" /></td>
+    </tr>
+ 	<tr valign="baseline">
+      <td nowrap="nowrap" align="right">Imagen3:</td>
+      <td><input type="text" name="imagen3" value="" size="32" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Dnipropietario:</td>

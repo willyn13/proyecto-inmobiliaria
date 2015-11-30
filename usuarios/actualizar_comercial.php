@@ -10,15 +10,13 @@
 
 
 $consulta="update usuarios set 
-dni_usuario ='".$_POST['dni_usuario']."',
-idzona= '".$_POST['zona']."',
-nombre= '".$_POST['nombre']."', 
-apellidos= '".$_POST['apellidos']."', 
-cargo= '".$_POST['cargo']."'
-where dni_usuario= '".$_POST['dni_usuario']."'";
+idzona='".$_POST['zona']."',
+nombre='".$_POST['nombre']."', 
+apellidos='".$_POST['apellidos']."', 
+cargo='".$_POST['cargo']."'
+where dni_usuario=".$_POST['dni_usuario'];
 
-
-echo $consulta;
+//echo $consulta;
 echo "<br/>";
 $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion)); ;
 
