@@ -8,25 +8,16 @@
 
 	
 		
-$sql = "INSERT INTO inmuebles (idlocalidad, dni_propietario, venta, alquiler, habitaciones, m2, banios, terraza, trastero, piscina, garaje, direccion,
+$sql = "INSERT INTO inmuebles (idcasa, idlocalidad, dni_propietario, venta, alquiler, habitaciones, m2, banios, terraza, trastero, piscina, garaje, direccion,
  , precio_venta, precio_alquiler)
-	VALUES ( ".$_POST["precio_alquiler"].",'".$_POST["dnipropietario"]."',".$_POST["venta"].", ".$_POST["alquiler"].", ".$_POST["habitaciones"].", ".$_POST["m2"].",".$_POST["banios"].",
-	 ".$_POST["terraza"].", ".$_POST["trastero"].",".$_POST["piscina"].",".$_POST["garaje"].", '".$_POST["direccion"]."',".$_POST["precio_venta"].", 
+	VALUES ( ".NULL.",".$_POST["localidad"].",".$_POST["dnipropietario"].",".$_POST["venta"].",".$_POST["alquiler"].",".$_POST["habitaciones"].",".$_POST["m2"].",".$_POST["banios"].",
+	 ".$_POST["terraza"].", ".$_POST["trastero"].",".$_POST["piscina"].",".$_POST["garaje"].", ".$_POST["direccion"].",".$_POST["precio_venta"].", 
 	 ".$_POST["precio_alquiler"].")";
-
-
-	$res = mysqli_query($conexion,$sql);							
-	if ($res === TRUE) {
-	   	echo "Se ha insertado el inmueble.";
-		header ("Location: gestiondeinmuebles.php");
-	} else {
-		printf("No se pudo insertar el inmueble: 
-		%s\n", mysqli_error($conexion));
-	}
-	$ultimoId = mysqli_insert_id();// esto trae el id autoincremetable que se guardo
-	//terminamos de ingresar el inmueble
-	$FormatosPermitidos  = array("image/jpg","image/jpeg","image/gif","image/png");
-	$limiteKb = 1000; // 1000KB = 1MB
+	$res = mysqli_query($conexion,$sql);
+//Esto trae el ultimo id
+$ultimoId = mysqli_insert_id();
+$FormatosPermitidos  = array("image/jpg","image/jpeg","image/gif","image/png");
+$limiteKb = 1024; // 1000KB = 1MB
 	foreach ($_FILES["imagen"] as $it => $imagen) {
 	//esto es un ciclo que se repite segun la cantidad de datos en el formulario
 		//primero preguntamos si es el formato correcto, y si tiene el tamaño adecuado
@@ -39,5 +30,14 @@ $sql = "INSERT INTO inmuebles (idlocalidad, dni_propietario, venta, alquiler, ha
 			}
 		}
 	}
+        
+	if ($res === TRUE) {
+	   	echo "Se ha insertado el inmueble.";
+		header ("Location: gestiondeinmuebles.php");
+	} else {
+		printf("No se pudo insertar el inmueble: 
+		%s\n", mysqli_error($conexion));
+	}
+	
 
 ?>

@@ -86,12 +86,12 @@ while($fila = mysqli_fetch_row($result)){
        if($cargo=="admin"){
 		   $consulta="SELECT idlocalidad,localidad from localidades";       
        }else{
-		   $sql1="select idzona from usuarios where dni='".$dni."'";
-		   $result1= mysqli_query($conexion,$sql1);
+		   $sql="select idzona from usuarios where dni='".$dni."'";
+		   $result1= mysqli_query($conexion,$sql);
 		   while($fila = mysqli_fetch_row($result1)){
-               $zona=$fila[0];
-			}	
-//       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia from provincias where idusuario=".$zona.")";
+                        $zona=$fila[0];
+                   }	
+       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia from provincias where idusuario=".$zona.")";
 	}
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
