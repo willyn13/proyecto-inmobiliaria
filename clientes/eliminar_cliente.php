@@ -1,18 +1,25 @@
-﻿<?php
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
-	
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
-	
-$sql_delete="delete from clientes where dni_cliente='".$_GET['dni_cliente']."'";
-$result=mysqli_query($conexion,$sql_delete);
-if($result===true){
-echo "Cliente borrado";
-}
-else{
-echo "Cliente no borrado";
-}
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<div class="cls_dialog">  
+<?php
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h1>No Se Pudo Conectar: </h1>' . mysqli_error());
+
+    if (mysqli_connect_errno()) {
+        printf("<h1>No Se Pudo Conectar: %s/n</h1>", mysqli_connect_error());
+        exit();
+    }
+
+    $sql_delete="DELETE FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";
+    
+    echo "<br/>";
+    $result=mysqli_query($conexion,$sql_delete);
+
+    if($result===true){
+        echo "<h1>Cliente&nbsp;Borrado</h1>";
+        echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
+    } else {
+        echo "<h1>Cliente&nbsp;No&nbsp;Borrado</h1>";
+        echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
+    }
 ?>
+</div>

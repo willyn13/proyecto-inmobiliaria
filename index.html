@@ -47,10 +47,11 @@ Página de inicio de la Aplicación
                 <div id="id_formularioLogin">
                     <form id="id_formularioEntradaIni">
                         <h2>Usuario</h2>
-                            <input id="id_usuario" type="text" name="loginNombre" size="9" maxlength="9" placeholder="Usuario">
+                            <input id="id_usuario" type="text" name="nombre" size="9" maxlength="9" placeholder="Usuario">
                         <h2>Contraseña</h2>
-                            <input id="id_password" type="password" name="loginPassword" size="20" maxlength="20" placeholder="Contraseña">
-                        <div id="btnLogin_inicio" class="cls_btn">Aceptar</div>
+                            <input id="id_password" type="password" name="clave" size="20" maxlength="20" placeholder="Contraseña">
+                        <p>&nbsp;</p>
+                            <input type="submit" name="Enviar" id="btnLogin_inicio" class="cls_btn" onclick="validarLogin('login_ajax.php')"/>
                     </form>
                     <p id="id_txt_error">Usuario y Contraseña Incorrectos</p>
                 </div>
@@ -70,8 +71,7 @@ Página de inicio de la Aplicación
 
                 <!-- Menus -->
                 <div id="id_menu">
-                <!--
-                <ul class="cls_nav">
+                    <ul class="cls_nav">
                         <li><a><h1>Comprar</h1></a>
                             <ul>
                                 <li id="id_comprar"><a href="#"><h1>Casas</h1></a></li>
@@ -89,7 +89,6 @@ Página de inicio de la Aplicación
                         </li>
                         <li id="id_inicio"><a href="#"><h1>Inicio&nbsp;Sesión</h1></a></li>
                     </ul>
-                -->
                 </div>
             </div>
             
