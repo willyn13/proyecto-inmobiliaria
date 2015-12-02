@@ -27,7 +27,6 @@ Página de inicio de la Aplicación
 
         <!-- Ficheros CCS -->
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
-        <!--<link type="text/css" rel="stylesheet" href="SpryAssets/SpryValidationTextField.css"/>-->
     </head>
     
     <body id="id_body">
@@ -37,12 +36,12 @@ Página de inicio de la Aplicación
             <div id="id_modalPantalla">
                 <div id="id_formularioLogin">
                     <form id="id_formularioEntradaIni">
-                        <h2>Usuario</h2>
-                            <input id="id_usuario" type="text" name="nombre" size="9" maxlength="9" placeholder="Usuario">
+                        <h2>DNI</h2>
+                            <input id="id_usuario" type="text" name="dni" size="9" maxlength="9" placeholder="DNI">
                         <h2>Contraseña</h2>
                             <input id="id_password" type="password" name="clave" size="20" maxlength="20" placeholder="Contraseña">
                         <p>&nbsp;</p>
-                            <input type="submit" name="Enviar" id="btnLogin_inicio" class="cls_btn" onclick="validarLogin('login_ajax.php')"/>
+                        <input type="button" value="Enviar" id="btnLogin_inicio" class="cls_btn" />
                     </form>
                     <p id="id_txt_error">Usuario y Contraseña Incorrectos</p>
                 </div>
@@ -91,7 +90,6 @@ Página de inicio de la Aplicación
                 
                 <!-- Contenido de los Menus Usuarios y Administradores-->
                 <div id="id_contentMenusAdmin">
-                    
                 </div>
                 
                 <!-- Contenido del footer-->

@@ -16,10 +16,9 @@ javascript y jquery de la Aplicación
 
 01.- Pintar Inicio
 02.- Cerrar Cookies
-03.- Login
+03.- Logim
     03.1.- Pintar Login
     03.2.- Cerrar Login
-    03.3.- Validar Logim
 04.- Pintar Slider
 05.- Activar Slider
 06.- Activar Menu Comprar
@@ -59,7 +58,7 @@ $(document).on('click',"#id_cookies img",function(event){
 03.- Logim
 ********************************************************************************/
     /*******************************************************************************
-    03.1.- Pintar Logim
+    03.1.- Pintar Login
     ********************************************************************************/
     $(document).on("click","#id_inicio",function(event){
         $("#id_modalFondo").css({"display":"block"});
@@ -69,7 +68,7 @@ $(document).on('click',"#id_cookies img",function(event){
     });
 
     /*******************************************************************************
-    03.2.- Cerrar Logim
+    03.2.- Cerrar Login
     ********************************************************************************/
     $(document).on('mouseleave',"#id_formularioLogin",function(event){
         $("#id_modalFondo").css({"display":"none"});
@@ -79,30 +78,46 @@ $(document).on('click',"#id_cookies img",function(event){
     });
 
     /*******************************************************************************
-    03.3.- Validar Logim
+    03.3.- Validar Login
     ********************************************************************************/
-    var objetorespuesta = false;
-
-    if (window.XMLHttpRequest){
-        objetorespuesta = new XMLHttpRequest();
-    } else if (window.ActiveXObject){
-        objetorespuesta = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    function validarLogin(fuenteDatos){
-        if(objetorespuesta){
-            objetorespuesta.open("POST", fuenteDatos, true);
-            objetorespuesta.onreadystatechange=tratarRespuesta;
-            objetorespuesta.send(null);
-        }
-    }
-
-    function tratarRespuesta(){
-        console.log("readystatechange;"+objetorespuesta.readyState);
-        if(objetorespuesta.readyState==4 && objetorespuesta.status==200){
-            document.getElementById("id_menu").innerHTML = objetorespuesta.responseText;
-        }
-    }
+   
+   $(function(){
+        $("#btnLogin_inicio").on('click', function(){
+            console.log("entra");
+                var url = "usuarios/login_ajax.php";
+                var data;
+                $.ajax({ 
+                    type: 'POST',
+                    url: url,
+                    data: $("#id_formularioEntradaIni").serialize(),
+                    success: function(data){
+                        $("#id_menu").html(data); 
+                    }
+                })
+        });
+   });
+//    var objetorespuesta = false;
+//
+//    if (window.XMLHttpRequest){
+//        objetorespuesta = new XMLHttpRequest();
+//    } else if (window.ActiveXObject){
+//        objetorespuesta = new ActiveXObject("Microsoft.XMLHTTP");
+//    }
+//
+//    function validarLogin(fuenteDatos){
+//        if(objetorespuesta){
+//            objetorespuesta.open("POST", fuenteDatos, true);
+//            objetorespuesta.onreadystatechange=tratarRespuesta;
+//            objetorespuesta.send(null);
+//        }
+//    }
+//
+//    function tratarRespuesta(){
+//        console.log("readystatechange;"+objetorespuesta.readyState);
+//        if(objetorespuesta.readyState==4 && objetorespuesta.status==200){
+//            document.getElementById("id_menu").innerHTML = objetorespuesta.responseText;
+//        }
+//    }
    
 /*******************************************************************************
 04.- Pintar Slider
@@ -196,7 +211,7 @@ $(document).on('click',"#id_alquilar",function(event){
 function ventanaImagenes(){
     var v_ventana = "<h1>ALQUILERES COMPRAS</h1>";
     
-    for(var i=0; i<5; i++){
+    for(var i=0; i<3; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\

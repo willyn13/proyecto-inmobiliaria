@@ -20,7 +20,7 @@ where dni_usuario= '".$_POST['dni_usuario']."'";
 
 echo $consulta;
 echo "<br/>";
-$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion)); ;
+$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
 if ($resultado){echo "Comercial actualizado";}
 else

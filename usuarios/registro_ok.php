@@ -6,6 +6,6 @@
 </head>
 
 <body><h1>¡Resgistrado correctamente!</h1>
-<p><a href="gestion_usuarios.php">Volver</a></p>
+<p><a href="gestion_clientes.php">Volver</a></p>
 </body>
 </html>

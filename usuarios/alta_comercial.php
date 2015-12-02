@@ -49,7 +49,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_ConexionInmobiliaria, $ConexionInmobiliaria);
   $Result1 = mysql_query($insertSQL, $ConexionInmobiliaria) or die(mysql_error());
 
-  $insertGoTo = "registro_ok.php";
+  $insertGoTo = "registro-ok.php";
   if (isset($_SERVER['QUERY_STRING'])) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
