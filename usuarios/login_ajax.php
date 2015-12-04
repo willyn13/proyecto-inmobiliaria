@@ -16,7 +16,6 @@ $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 while($fila = mysqli_fetch_row($resultado)){
        $cargo=$fila[0];
        }
-       echo $cargo;
     if($cargo == "Comercial"){
         include '../menus/menu_comerciales.html';
 }else if($cargo == "admin"){
