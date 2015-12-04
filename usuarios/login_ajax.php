@@ -9,17 +9,20 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 		printf("No se pudo conectar: %s/n", mysqli_connect_error());
 		exit();
 	}
-//Falla la consulta
-$consulta = "SELECT cargo FROM usuarios WHERE dni_usuario = '.$dni.'";
-
+        
+$consulta = "SELECT cargo FROM usuarios where dni_usuario = '$dni' ";
 $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
-echo strval($resultado);
-
-if($resultado == "comercial"){
-    include("menus/menu_comerciales.html");
-}else if($resultado == "admin"){
-    include("menus/menu_administradores.html");
+while($fila = mysqli_fetch_row($resultado)){
+       $cargo=$fila[0];
+       }
+       echo $cargo;
+    if($cargo == "Comercial"){
+        include '../menus/menu_comerciales.html';
+}else if($cargo == "admin"){
+    include '../menus/menu_administradores.html';
 }
+
+
 
 ?>
