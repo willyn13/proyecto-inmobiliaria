@@ -93,7 +93,9 @@ $(document).on('click',"#id_cookies img",function(event){
                     success: function(data){
                         $("#id_menu").html(data); 
                     }
-                })
+                });
+            $("#id_modalFondo").css({"display":"none"});
+            $("#id_modalPantalla").css({"display":"none"});
         });
    });
 //    var objetorespuesta = false;

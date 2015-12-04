@@ -10,16 +10,16 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 		exit();
 	}
 //Falla la consulta
-$consulta = 'SELECT cargo from usuarios where dni_usuario = "$dni"';
+$consulta = "SELECT cargo FROM usuarios WHERE dni_usuario = '.$dni.'";
 
-$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+$resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
-echo $resultado;
+echo strval($resultado);
 
-if($resultado == "Comercial"){
+if($resultado == "comercial"){
     include("menus/menu_comerciales.html");
 }else if($resultado == "admin"){
     include("menus/menu_administradores.html");
 }
-?>
 
+?>
