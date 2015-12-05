@@ -86,7 +86,8 @@ while($fila = mysqli_fetch_row($result)){
        if($cargo=="admin"){
 		   $consulta="SELECT idlocalidad,localidad from localidades";       
        }else{
-		   $sql="select idzona from usuarios where dni='".$dni."'";
+		   //$sql="select idzona from usuarios where dni='".$dni."'";
+                   $sql="select idzona from usuarios where dni='12345678G'";
 		   $result1= mysqli_query($conexion,$sql);
 		   while($fila = mysqli_fetch_row($result1)){
                         $zona=$fila[0];
