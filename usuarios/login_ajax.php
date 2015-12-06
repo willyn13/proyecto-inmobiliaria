@@ -14,20 +14,22 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 $consulta = "SELECT cargo, password FROM usuarios where dni_usuario = '$dni' ";
 $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
-while($fila = mysqli_fetch_row($resultado)){
-       $cargo=$fila[0];
-       $password=$fila[1];
-       }
-    if($cargo == "Comercial" && $password=$contraseña){
-        include '../menus/menu_comerciales.html';
-}else if($cargo == "admin" && $password=$contraseña){
-    include '../menus/menu_administradores.html';
-}else{
-    ?>
-    <script>
-         alert("No se puede conectar, el DNI o la clave es incorrecta");
-         location.href = "http://localhost/proyecto-inmobiliaria/";
-    </script>
-    <?php
-}
+    if($contraseña != null && $dni != null){
+            while($fila = mysqli_fetch_row($resultado)){
+                 $cargo=$fila[0];
+                 $password=$fila[1];
+            }
+            if($cargo == "Comercial" && $password=$contraseña){
+                 include '../menus/menu_comerciales.html';
+            }else if($cargo != null && $cargo == "Comercial" && $password != null && $password=$contraseña){
+                 include '../menus/menu_administradores.html';
+            }
+    }else{
+        ?>
+        <script>
+             alert("No se puede conectar, el DNI o la clave es incorrecta");
+             location.href = "http://localhost/proyecto-inmobiliaria/";
+        </script>
+        <?php
+    }
 ?>
