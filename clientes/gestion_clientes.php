@@ -38,8 +38,8 @@ echo '</div>';
                 $email=$reg[4];
 
                 $display.="<tr>
-                              <td><a href=\"eliminar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Eliminar'></a></td>
-                              <td><a href=\"modificar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Modificar'></a></td>
+                              <td><a href=\"clientes/eliminar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Eliminar'></a></td>
+                              <td><a href=\"clientes/modificar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Modificar'></a></td>
                               <td>".$dni_cliente."</td>	
                               <td>".$nombre."</td>
                               <td>".$apellidos."</td>
