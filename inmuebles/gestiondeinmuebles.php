@@ -4,6 +4,7 @@
 <body>
 <table>
 <?php
+session_start();
 	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 
@@ -11,13 +12,14 @@
 		printf("No se pudo conectar: %s/n", mysqli_connect_error());
 		exit();
 	}
-	$dni= $_SESSION["MM_Username"];
-$sqlMostrar = "SELECT `idcasa`, 'idlocalidad', `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
-FROM `inmuebles` , `localidades`, `provincias`
-where where'inmuebles'.'idlocalidad'=(select idzona from usuarios where dni='".$dni."') `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia`";
+	$dni= $_SESSION["dni"];
+$sqlMostrar = "SELECT inmuebles.idcasa, inmuebles.idlocalidad, venta, alquiler, habitaciones, m2, banios, terraza, trastero, piscina, garaje, direccion, precio_venta, precio_alquiler, localidad, provincia 
+FROM inmuebles , localidades, provincias
+where inmuebles.idlocalidad=(select idzona from usuarios where dni_usuario='$dni') and inmuebles.idlocalidad=localidades.idlocalidad and localidades.idprovincia=provincias.idprovincia";
 
-$resultado =mysqli_query($conexion,$sqlMostrar);
-if (mysqli_num_rows($resultado)==0 ){
+//$resultado=mysqli_query($conexion,$sqlMostrar);
+$resultado=mysqli_query($conexion,$sqlMostrar) or die (mysqli_error($conexion));
+if (mysqli_num_rows($resultado)==0){
 			echo "<p class=\"error\">
 				&nbsp;&nbsp;&nbsp;&nbsp;<i>No hay inmuebles.</i> 
 			 </p>";

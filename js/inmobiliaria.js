@@ -85,7 +85,6 @@ $(document).on('click',"#id_cookies img",function(event){
         $("#btnLogin_inicio").on('click', function(){
             console.log("entra");
                 var url = "usuarios/login_ajax.php";
-                var data;
                 $.ajax({ 
                     type: 'POST',
                     url: url,
