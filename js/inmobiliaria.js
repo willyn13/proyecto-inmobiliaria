@@ -212,7 +212,7 @@ $(document).on('click',"#id_alquilar",function(event){
 function ventanaImagenes(){
     var v_ventana = "<h1>ALQUILERES COMPRAS</h1>";
     
-    for(var i=0; i<3; i++){
+    for(var i=0; i<9; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\
