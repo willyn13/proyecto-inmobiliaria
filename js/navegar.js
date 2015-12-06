@@ -19,7 +19,9 @@
         });
    };
 */
-
+/*
+ ******************************FUNCION GENERAL PARA CARGAR DATOS EN UN DIV**************************
+ */
 function cargarDatos(selector, url){
     $(function(){
     $(selector).click(function() {
@@ -27,15 +29,13 @@ function cargarDatos(selector, url){
     });
     });
 }
-
-/*
+ /*
  ************************************MENU COMERCIALES***********************************
  */
 //Enlace gestion de inmuebles
 cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
 //Enlace gestion de clientes
 cargarDatos("#id_gestionCliente", "clientes/gestion_clientes.php");
-
 /*
  ***********************************FIN MENU COMERCIALES*********************************
  */
