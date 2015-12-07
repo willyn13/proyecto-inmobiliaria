@@ -16,10 +16,11 @@
 
     if($result===true){
         echo "<h1>Cliente&nbsp;Borrado</h1>";
-        echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
-    } else {
-        echo "<h1>Cliente&nbsp;No&nbsp;Borrado</h1>";
-        echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
-    }
+        //echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
+        echo '<h1><a><input type="button" id="id_eliminar" value="Aceptar"></input></a></h1>';
+    } //else {
+//        echo "<h1>Cliente&nbsp;No&nbsp;Borrado</h1>";
+//        echo '<h1><a href="gestion_clientes.php"><input type="button" value="Aceptar"></a></h1>';
+//    }
 ?>
 </div>

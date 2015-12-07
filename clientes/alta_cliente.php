@@ -66,7 +66,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </div>
 <div class="cls_gestiones"> 
 <h1>Dar De Alta Nuevo Cliente</h1><br>
-<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
+<!--<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1"> -->
+<form name="form1" id="form1">
     <table>
         <tr>
             <th>Dni:</th>
@@ -104,7 +105,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
             </span></td>
         </tr>
     </table>
-    <input type="submit" value="Insertar Cliente" />
+    <!--<input type="submit" value="Insertar Cliente" />-->
+    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/alta_cliente.php', '#form1', 'clientes/registro_ok.php')" />
     <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </div>

@@ -1,34 +1,48 @@
 /*
- ***********************************FUNCION GENERAL PARA AJAX*************************************
- */
-
-/*function ajax(id_selector, url){
-    $(function(){
-        $(id_selector).on('click', function(){
-                $.ajax({ 
-                    url: url,
-                })
-                .done(function(html){
-                    $("#id_content").empty().append(html);
-                })
-                });
-            $("#id_modalFondo").css({"display":"none"});
-            $("#id_modalPantalla").css({"display":"none"});
-            $("#id_cookies").css({"display": "none"});
-            return false;
-        });
-   };
-*/
-/*
- ******************************FUNCION GENERAL PARA CARGAR DATOS EN UN DIV**************************
+ ***********************************FUNCIONES GENERALES*****************************************
  */
 function cargarDatos(selector, url){
-    $(function(){
-    $(selector).click(function() {
-	$("#id_content").load(url);
-    });
+    $(document).ready(function(){
+             $(function(){
+                    $(selector).click(function() {
+                           $("#id_content").load(url);
+                   });
+            });
     });
 }
+
+function ajaxFormulario(urlAjax, idformulario ,urlCargar){
+    $(document).ready(function(){
+             $(function(){
+                    $.ajax({ 
+                    type: "POST",
+                    url: urlAjax,
+                    data: $(idformulario).serialize(),
+                    success: function(){
+                        $("#id_content").load(urlCargar);
+                    }
+                });
+            });
+    });
+}
+
+function ajaxSinFormulario(url, dni_cliente){
+    $(document).ready(function(){
+             $(function(){
+                    $.ajax({ 
+                    url: url,
+                    data: "dni_cliente?="+dni_cliente,
+                    success: function(){
+                        $("#id_content").load(url);
+                    }
+                });
+            });
+    });
+}
+/*
+ * *****************************FIN FUNCIONES GENERALES*******************************************
+ */
+
  /*
  ************************************MENU COMERCIALES***********************************
  */
@@ -36,6 +50,9 @@ function cargarDatos(selector, url){
 cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
 //Enlace gestion de clientes
 cargarDatos("#id_gestionCliente", "clientes/gestion_clientes.php");
+//Dentro del enlace gestion de clientes, los enlaces de la tabla
+cargarDatos("#id_alta_cliente", "clientes/alta_cliente.php");
+cargarDatos("#id_registrado", "clientes/gestion_clientes.php");
 /*
  ***********************************FIN MENU COMERCIALES*********************************
  */
