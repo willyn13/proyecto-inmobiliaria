@@ -197,7 +197,7 @@ function pintaVentanasCompras(){
 function pintaVentanasAlquiler(){
     var v_ventana = "<h1>ALQUILERES</h1>";
     
-    for(var i=0; i<8; i++){
+    for(var i=0; i<2; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\
