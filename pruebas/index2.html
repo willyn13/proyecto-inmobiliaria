@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset='UTF-8'> 
+        <title>AJAX</title>
+
+        <script>
+        $(document).ready(function(){
+            $(document).on('click',"#id_boton",function(event){ 
+            pedirDatos('login_ajax.php');    
+                
+            var objetorespuesta = false;
+
+            if (window.XMLHttpRequest){
+                objetorespuesta = new XMLHttpRequest();
+            } else if (window.ActiveXObject){
+                objetorespuesta = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            function pedirDatos(fuenteDatos){
+                if(objetorespuesta){
+                    fuenteDatos += "?nombre="+document.getElementById("id_usuario").value+"&clave="+document.getElementById("id_password").value;
+                    objetorespuesta.open("GET", fuenteDatos, true);
+                    objetorespuesta.onreadystatechange=tratarRespuesta;
+                    objetorespuesta.send(null);
+                }
+            }
+
+            function tratarRespuesta(){
+                console.log("readystatechange;"+objetorespuesta.readyState);
+                if(objetorespuesta.readyState==4 && objetorespuesta.status==200){
+                    document.getElementById("id_menu").innerHTML = objetorespuesta.responseText;
+                }
+            }
+            });
+        });
+        </script>
+    </head>
+<body>
+	<form id="id_formularioEntradaIni">
+        <h2>Usuario</h2>
+            <input id="id_usuario" type="text" name="nombre" size="9" maxlength="9" placeholder="Usuario">
+        <h2>Contraseña</h2>
+            <input id="id_password" type="password" name="clave" size="20" maxlength="20" placeholder="Contraseña">
+            <input type="button" value="Enviar" id="id_boton">
+    </form>
+
+    <div id="id_menu">
+    </div>
+</body>
+</html>
