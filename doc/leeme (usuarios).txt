@@ -1,2 +1,0 @@
-En el registro-ok reenvia mediante enlace a la pagina principal q no es la misma  que tenia yo asiq referenciadlo a la que sea 
-
