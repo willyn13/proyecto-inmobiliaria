@@ -80,8 +80,7 @@ $(document).on('click',"#id_cookies img",function(event){
     /*******************************************************************************
     03.3.- Validar Login
     ********************************************************************************/
-   
-   $(function(){
+    $(function(){
         $("#btnLogin_inicio").on('click', function(){
             console.log("entra");
                 var url = "usuarios/login_ajax.php";
@@ -96,29 +95,7 @@ $(document).on('click',"#id_cookies img",function(event){
             $("#id_modalFondo").css({"display":"none"});
             $("#id_modalPantalla").css({"display":"none"});
         });
-   });
-//    var objetorespuesta = false;
-//
-//    if (window.XMLHttpRequest){
-//        objetorespuesta = new XMLHttpRequest();
-//    } else if (window.ActiveXObject){
-//        objetorespuesta = new ActiveXObject("Microsoft.XMLHTTP");
-//    }
-//
-//    function validarLogin(fuenteDatos){
-//        if(objetorespuesta){
-//            objetorespuesta.open("POST", fuenteDatos, true);
-//            objetorespuesta.onreadystatechange=tratarRespuesta;
-//            objetorespuesta.send(null);
-//        }
-//    }
-//
-//    function tratarRespuesta(){
-//        console.log("readystatechange;"+objetorespuesta.readyState);
-//        if(objetorespuesta.readyState==4 && objetorespuesta.status==200){
-//            document.getElementById("id_menu").innerHTML = objetorespuesta.responseText;
-//        }
-//    }
+    });
    
 /*******************************************************************************
 04.- Pintar Slider
@@ -152,24 +129,14 @@ $(document).on('click',"#id_informacion",function(event){
 05.- Activar Slider
 ********************************************************************************/    
 $(function(){
-    $('#id_slider a:gt(0)').hide();
-    var interval = setInterval(changeDiv, 6000);
-
-    function changeDiv(){
-        $('#id_slider a:first-child').fadeOut(1000).next('a').fadeIn(1000).end().appendTo('#id_slider');
-    };
-
     $(document).on('click',".mas",function(event){
-        changeDiv();
-        clearInterval(interval);
-        interval = setInterval(changeDiv, 6000);
+        $('#id_slider a:first-child');
+        $('#id_slider a:last-child').prependTo('#id_slider');
     });
+    
     $(document).on('click',".menos",function(event){
-        $('#id_slider a:first-child').fadeOut(1000);
-        $('#id_slider a:last-child').fadeIn(1000).prependTo('#id_slider');
-
-        clearInterval(interval);
-        interval = setInterval(changeDiv, 6000);
+        $('#id_slider a:first-child');
+        $('#id_slider a:last-child').prependTo('#id_slider');
     });
 });
 
@@ -182,7 +149,7 @@ $(document).on('click',"#id_comprar",function(event){
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
     
-    var v_pantallaComprar = ventanaImagenes();    
+    var v_pantallaComprar = pintaVentanasCompras();    
     
     $("#id_contentMenusClientes").html(v_pantallaComprar);
     
@@ -199,7 +166,7 @@ $(document).on('click',"#id_alquilar",function(event){
     $("#id_descripcion").css({"display":"none"});
     $("#id_contentFooter").css({"display":"none"});
 
-    var v_pantallaAlquilar = ventanaImagenes();
+    var v_pantallaAlquilar = pintaVentanasAlquiler();
     
     $("#id_contentMenusClientes").html(v_pantallaAlquilar);
     
@@ -207,12 +174,30 @@ $(document).on('click',"#id_alquilar",function(event){
 });
 
 /*******************************************************************************
-08- Pintar Ventanas compra-Alquiler
+08- Pintar Ventanas Compras / Alquiler
 ********************************************************************************/
-function ventanaImagenes(){
-    var v_ventana = "<h1>ALQUILERES COMPRAS</h1>";
+function pintaVentanasCompras(){
+    var v_ventana = "<h1>COMPRAS</h1>";
     
-    for(var i=0; i<9; i++){
+    for(var i=0; i<10; i++){
+        v_ventana = v_ventana + 
+        '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
+            <div class="cls_slider">\n\
+                <div class="cls_imgPrincipal"><img src="img/img1.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img2.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img3.jpg"></div>\n\
+                <div class="cls_imgSecundaria"><img src="img/img4.jpg"></div>\n\
+            </div>\n\
+            <p>Aqui iran todas la especificaciones del inmueble  &nbsp;<a href="#" id="id_informacion">+info</a></p>\n\
+        </div>';
+    }
+    return v_ventana;
+}
+
+function pintaVentanasAlquiler(){
+    var v_ventana = "<h1>ALQUILERES</h1>";
+    
+    for(var i=0; i<8; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\

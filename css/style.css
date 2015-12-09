@@ -132,6 +132,7 @@ html,body{
 }
 
 body{
+    height: 100%;
     font: 1em sans-serif;
     font-weight: 300;
     font-size: 100%;
@@ -148,6 +149,10 @@ body{
 }
 
 #id_wrapper{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
     padding-top: 175px;
 }
 
@@ -163,8 +168,11 @@ body{
     margin: 0 auto;
 }
 
+#id_footer, .push {
+    height: 60px;
+}
+
 #id_footer{
-    bottom: 0;
     width: 100%;
     padding: 15px 0px;
     background: black;
@@ -392,37 +400,6 @@ body{
 /*================================================================================
 08.- Contenido Opciones Menus
 ================================================================================*/
-#id_contentMenusClientes{
-    width: 100%;
-    min-height: 525px;
-    margin: 1% auto;
-    padding: 0% 2.5%;
-    display: none;
-}
-
-#id_contentMenusAdmin{
-    width: 100%;
-    min-height: 525px;
-    margin: 1% auto;
-    padding: 0% 2.5%;
-    display: none;
-}
-
-#id_contentFooter{
-    width: 100%;
-    min-height: 525px;
-    margin: 1% auto;
-    padding: 0% 2.5%;
-    display: none;
-}
-
-#id_descripcion{
-    width: 100%;
-    min-height: 525px;
-    margin: 1% auto;
-    padding: 0% 2.5%;
-}
-
 .cls_descri{
     width: 40%;
     float: left;
