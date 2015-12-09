@@ -1,0 +1,8 @@
+﻿el listado de inmuebles  es un listado q veria cualquier visitante de l pagina.
+Actualizado  con 2 php diferentes, uno para las casas en venta y otro para alquiler
+la gestion de inmuebles, es una vez loggeado el comercial(y solo el) podra gestionar los inmuebles de su zona dandolos de alta, modificandolos o borrandolos
+
+
+
+
+Ojo javi con las comillas de las consultas
