@@ -1,1 +1,0 @@
-En algunos ficheros uso un include de conexion este fichero es la conexion "ConexionInmobiliaria"
