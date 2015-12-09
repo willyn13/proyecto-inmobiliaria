@@ -21,7 +21,7 @@ $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
             }
             if($cargo == "Comercial" && $password==$clave){
                  include '../menus/menu_comerciales.html';
-            }else if($cargo == "Admin" && $password==$clave){
+            }else if($cargo == "admin" && $password==$clave){
                  include '../menus/menu_administradores.html';
             }
     }else{

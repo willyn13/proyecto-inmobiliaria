@@ -8,15 +8,15 @@
         printf("<h1>No Se Pudo Conectar: %s/n</h1>", mysqli_connect_error());
         exit();
     }
-
+    
     $consulta="update clientes set 
-            dni_cliente ='".$_POST['dni_cliente']."',
-            nombre='".$_POST['nombre']."', 
-            apellidos='".$_POST['apellidos']."', 
-            telefono=".$_POST['telefono'].",
-            email='".$_POST['email']."'
+            dni_cliente ='".$_GET['dni_cliente']."',
+            nombre='".$_GET['nombre']."', 
+            apellidos='".$_GET['apellidos']."', 
+            telefono=".$_GET['telefono'].",
+            email='".$_GET['email']."'
             where dni_cliente='".$_COOKIE["dni"]."'";
-
+echo $consulta;
     echo "<br/>";
     $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 

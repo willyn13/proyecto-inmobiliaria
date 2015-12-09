@@ -14,6 +14,7 @@
 
 
     $i=0;
+    echo "Hola esta bien";
     while($datos=mysqli_fetch_row($resp_sql)){
             foreach($datos as $valor){
                     $datos[$i]=$valor;
@@ -22,7 +23,7 @@
             }
             $cliente=$datos;
     }	
-
+    
     $dni=$cliente[0];
 
     setcookie('dni',$dni);
@@ -30,7 +31,7 @@
 </div>
 <div class="cls_gestiones">
 <table>
-    <form action="actualizar_cliente.php" method="POST">
+    <form id="formModificacion">
         <h1>Modificar Datos</h1>
         <table>
             <tr>
@@ -54,7 +55,20 @@
                 <td><input type="text" id="email" placeholder="Escribe Email" name="email" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>	
         </table>
-        <a><input type="submit" id="boton" value="Guardar cambios" name="boton"/></a>
+        <a><input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" /></a>
     </form>
 </table>
 </div>
+
+<script type="text/javascript">
+    function modificarCliente(url){
+        dni=$("#dni_cliente").val();
+        nombre=$("#nombre").val();
+        apellidos=$("#apellidos").val();
+        telefono=$("#telefono").val();
+        email=$("#email").val();
+        $.get(url,{"dni_cliente":dni,"nombre":nombre,"apellidos":apellidos,"telefono":telefono,"email":email},function(respuesta){
+            $("#id_content").html(respuesta);
+        })
+    }
+</script>

@@ -1,8 +1,6 @@
 <link type="text/css" rel="stylesheet" href="../css/style.css">
-
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
-
 <?php
 echo '<div class="cls_dialog">';
     $conexion = mysqli_connect('localhost','root','','inmobiliaria')
@@ -40,20 +38,18 @@ echo '</div>';
                 $apellidos=$reg[2];
                 $telefono=$reg[3];
                 $email=$reg[4];
-
+                
                 $display.="<tr>
-                              <!--<td><a href=\"http://localhost/proyecto-inmobiliaria/clientes/eliminar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' id='id_eliminar_cliente' value='Eliminar'></a></td>-->
-                                  <td><a><input type='button' id='id_eliminar_cliente' value='Eliminar' onclick='ajaxSinFormulario('clientes/eliminar_cliente.php', '$dni_cliente')></a></td>
-                              <td><a href=\"http://localhost/proyecto-inmobiliaria/clientes/modificar_cliente.php?dni_cliente=".$dni_cliente."\"><input type='button' value='Modificar'></a></td>
+                              <td><a><input type='button' id='id_eliminar_cliente' value='Eliminar' onclick=\"ajaxSinFormulario('".$dni_cliente."','clientes/eliminar_cliente.php')\"></a></td>
+                              <td><a><input type='button' id='id_modificar_cliente' value='Modificar' onclick=\"ajaxSinFormulario('".$dni_cliente."','clientes/modificar_cliente.php')\"></a></td>
                               <td>".$dni_cliente."</td>	
                               <td>".$nombre."</td>
                               <td>".$apellidos."</td>
                               <td>".$telefono."</td>
                               <td>".$email."</td>
-                          </tr>";
+                            </tr>";
             }
         }
-
     $display.="</table></div>";
         mysqli_close($conexion);
         echo $display;
