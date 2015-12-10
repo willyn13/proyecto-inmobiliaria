@@ -82,16 +82,15 @@ $(document).on('click',"#id_cookies img",function(event){
     ********************************************************************************/
     $(function(){
         $("#btnLogin_inicio").on('click', function(){
-            console.log("entra");
-                var url = "usuarios/login_ajax.php";
-                $.ajax({ 
-                    type: 'POST',
-                    url: url,
-                    data: $("#id_formularioEntradaIni").serialize(),
-                    success: function(data){
-                        $("#id_menu").html(data); 
-                    }
-                });
+            var url = "usuarios/login_ajax.php";
+            $.ajax({ 
+                type: 'POST',
+                url: url,
+                data: $("#id_formularioEntradaIni").serialize(),
+                success: function(data){
+                    $("#id_menu").html(data); 
+                }
+            });
             $("#id_modalFondo").css({"display":"none"});
             $("#id_modalPantalla").css({"display":"none"});
         });

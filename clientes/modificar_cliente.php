@@ -15,7 +15,6 @@
     $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";	
     $resp_sql = mysqli_query($conexion,$sql_cliente);
 
-
     $i=0;
     while($datos=mysqli_fetch_row($resp_sql)){
         foreach($datos as $valor){
@@ -33,9 +32,8 @@
 </div>
 
 <div class="cls_gestiones">
-<table>
-    <form id="formModificacion">
-        <h1>Modificar Datos</h1><br>
+    <form id="formulario">
+        <h1>Modificar Datos</h1>
         <table>
             <tr>
                 <th><label for="dni">Dni</label></th>
@@ -47,7 +45,7 @@
             </tr>
             <tr>
                 <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" maxlength="30" value="<?php echo $cliente[2] ?>"/></td>
+                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" maxlength="30"value="<?php echo $cliente[2] ?>"/></td>
             </tr>
             <tr>
                 <th><label for="telefono"> Telefono: </label></th>
@@ -56,23 +54,8 @@
             <tr>
                 <th><label for="mail"> Email: </label></th>
                 <td><input type="text" id="email" placeholder="Escribe Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
-            </tr>	
+            </tr>
         </table>
-        <input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" />
-        <input type="button" value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
+        <a><input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#formulario')" /></a>
     </form>
-</table>
 </div>
-
-<script type="text/javascript">
-    function modificarCliente(url){
-        dni=$("#dni_cliente").val();
-        nombre=$("#nombre").val();
-        apellidos=$("#apellidos").val();
-        telefono=$("#telefono").val();
-        email=$("#email").val();
-        $.get(url,{"dni_cliente":dni,"nombre":nombre,"apellidos":apellidos,"telefono":telefono,"email":email},function(respuesta){
-            $("#id_content").html(respuesta);
-        });
-    }
-</script>

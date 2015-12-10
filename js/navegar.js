@@ -9,15 +9,23 @@ function cargarDatos(selector, url){
     });
 }
 
-function ajaxFormulario(urlAjax, idformulario ,urlCargar){
+function cargarMenus(url){
+    $(document).ready(function(){
+        $(function(){
+                $("#id_menu").load(url);
+        });
+    });
+}
+
+function ajaxFormulario(urlAjax, idformulario){
     $(document).ready(function(){
              $(function(){
                     $.ajax({ 
                     type: "POST",
                     url: urlAjax,
                     data: $(idformulario).serialize(),
-                    success: function(){
-                        $("#id_content").load(urlCargar);
+                    success: function(data){
+                        $("#id_content").html(data);
                     }
                 });
             });
@@ -26,15 +34,13 @@ function ajaxFormulario(urlAjax, idformulario ,urlCargar){
 
 function ajaxSinFormulario(dni_cliente,url){
         $(document).ready(function(){
-                    $(function(event){
+                    $(function(){
                                $.get(url, {dni_cliente : dni_cliente}, function(respuesta) {
                                     $("#id_content").html(respuesta);
-                                    event.stopImmediatePropagation();
-                               });    
+                               });  
                     });
         });
 }
-
 /******************************FIN FUNCIONES GENERALES*************************************/
 
  /*************************************MENU COMERCIALES************************************/
@@ -47,4 +53,6 @@ function ajaxSinFormulario(dni_cliente,url){
     cargarDatos("#id_registrado", "clientes/gestion_clientes.php");
     cargarDatos("#id_eliminar", "clientes/gestion_clientes.php"); 
     cargarDatos("#id_modificar_cliente", "clientes/modificar_cliente");
+    cargarDatos("#id_actualizar_cliente", "clientes/gestion_clientes.php");
+    cargarDatos("#id_error_actualizar_cliente", "clientes/gestion_clientes.php");
 /***********************************FIN MENU COMERCIALES***********************************/

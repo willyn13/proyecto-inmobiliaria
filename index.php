@@ -70,7 +70,7 @@ Página de inicio de la Aplicación
                                 echo "<script type='text/javascript'>
                                             cargarMenus('menus/menu_comerciales.html');
                                       </script>";
-                            }else if($_SESSION["cargo"] == "admin"){
+                            }else if($_SESSION["cargo"] == "Admin"){
                                 echo "<script type='text/javascript'>
                                             cargarMenus('menus/menu_administradores.html');
                                       </script>";        
