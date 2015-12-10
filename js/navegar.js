@@ -35,12 +35,6 @@ function ajaxSinFormulario(dni_cliente,url){
         });
 }
 
-//function eliminar(){
-//    $("#id_eliminar_cliente").click(function(){
-//                    alert("Pasa");
-//             });
-// }
-
 /******************************FIN FUNCIONES GENERALES*************************************/
 
  /*************************************MENU COMERCIALES************************************/
@@ -54,4 +48,3 @@ function ajaxSinFormulario(dni_cliente,url){
     cargarDatos("#id_eliminar", "clientes/gestion_clientes.php"); 
     cargarDatos("#id_modificar_cliente", "clientes/modificar_cliente");
 /***********************************FIN MENU COMERCIALES***********************************/
-

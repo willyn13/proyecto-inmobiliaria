@@ -1,14 +1,15 @@
 <link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
+
 <?php
 echo '<div class="cls_dialog">';
     $conexion = mysqli_connect('localhost','root','','inmobiliaria')
     or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
     if (mysqli_connect_error()) {
-            printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
-            exit();
+        printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
+        exit();
     }
 echo '</div>';
     $display='<div class="cls_gestiones"><h1>Gestión de Clientes</h1>';	

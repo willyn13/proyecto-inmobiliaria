@@ -1,6 +1,7 @@
 <link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
+
 <div class="cls_dialog">
 <?php 
 require_once('../conexiones/conexion_inmobiliaria.php');
@@ -46,11 +47,11 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $insertSQL = sprintf("INSERT INTO clientes (dni_cliente, nombre, apellidos, telefono, email) VALUES (%s, %s, %s, %s, %s)",
-                       GetSQLValueString($_POST['dni_cliente'], "text"),
-                       GetSQLValueString($_POST['nombre'], "text"),
-                       GetSQLValueString($_POST['apellidos'], "text"),
-                       GetSQLValueString($_POST['telefono'], "integer"),
-                       GetSQLValueString($_POST['email'], "text"));
+                   GetSQLValueString($_POST['dni_cliente'], "text"),
+                   GetSQLValueString($_POST['nombre'], "text"),
+                   GetSQLValueString($_POST['apellidos'], "text"),
+                   GetSQLValueString($_POST['telefono'], "integer"),
+                   GetSQLValueString($_POST['email'], "text"));
 
     mysql_select_db($database_ConexionInmobiliaria, $ConexionInmobiliaria);
     $Result1 = mysql_query($insertSQL, $ConexionInmobiliaria) or die(mysql_error());
