@@ -13,7 +13,6 @@
     
     $sql_delete="DELETE FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";
     
-    
     $result=mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
 
     if($result===true){

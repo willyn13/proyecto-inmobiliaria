@@ -14,7 +14,6 @@
 
 
     $i=0;
-    echo "Hola esta bien";
     while($datos=mysqli_fetch_row($resp_sql)){
             foreach($datos as $valor){
                     $datos[$i]=$valor;
@@ -55,7 +54,8 @@
                 <td><input type="text" id="email" placeholder="Escribe Email" name="email" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>	
         </table>
-        <a><input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" /></a>
+        <input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" />
+        <input type="button" value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
     </form>
 </table>
 </div>
@@ -69,6 +69,6 @@
         email=$("#email").val();
         $.get(url,{"dni_cliente":dni,"nombre":nombre,"apellidos":apellidos,"telefono":telefono,"email":email},function(respuesta){
             $("#id_content").html(respuesta);
-        })
+        });
     }
 </script>

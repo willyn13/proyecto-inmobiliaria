@@ -4,6 +4,6 @@
 
 <div class="cls_dialog">
     </br>
-    <h1>¡Resgistrado&nbsp;Correctamente!</h1>
-    <h1><a><input type="button" id="id_registrado" value="Aceptar"></a></h1>
+    <h2>¡Resgistrado&nbsp;Correctamente!</h2>
+    <a><input type="button" id="id_registrado" value="Aceptar"></a>
 </div>

@@ -548,10 +548,9 @@ body{
 }
 
 .cls_dialog{
-    border: 3px solid black;
     border-radius: 15px;
     margin: 0px auto;
-    width: 30%;
+    width: 35%;
     background: #b9c9fe;
     text-align: center;
     overflow: auto;
@@ -573,6 +572,13 @@ body{
     display: none;
 }
 
+.error{
+    
+}
+
+.button{
+    
+}
 /*==============================================================================
 11- Slider
 ==============================================================================*/

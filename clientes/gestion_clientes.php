@@ -19,7 +19,7 @@ echo '</div>';
 
     $display.="<table>";
         if (mysqli_num_rows($resultado)==0 ){
-            $display.='<p class="error"><i>No hay Clientes</i></p>';
+            $display.='<p class="error">No hay Clientes</p>';
         } else {
             //$display.="<a href=\"http://localhost/proyecto-inmobiliaria/clientes/alta_cliente.php\"><input type='SUBMIT' id='id_alta_cliente' name='SUBMIT' value='Dar de Alta un Cliente'></a>";
             $display.="<a><input type='button' id='id_alta_cliente' name='SUBMIT' value='Dar de Alta un Cliente'></a>";
