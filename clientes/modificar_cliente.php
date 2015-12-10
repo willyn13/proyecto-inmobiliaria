@@ -33,7 +33,7 @@
 <div class="cls_gestiones">
 <table>
     <form id="formModificacion">
-        <h1>Modificar Datos</h1>
+        <h1>Modificar Datos</h1><br>
         <table>
             <tr>
                 <th><label for="dni">Dni</label></th>
@@ -56,8 +56,8 @@
                 <td><input type="text" id="email" placeholder="Escribe Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>	
         </table>
-        <input type="button" class='cls_buttons' id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" />
-        <input type="button" class='cls_buttons' value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
+        <input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" />
+        <input type="button" value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
     </form>
 </table>
 </div>

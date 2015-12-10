@@ -510,11 +510,7 @@ body{
     background-color: #99AABB;
     font: 0.9em sans-serif;
     font-weight: normal;
-}
-
-.cls_buttons{
     margin: 2%;
-    font-weight: bold;
 }
 
 .cls_gestiones input[type="submit"]{

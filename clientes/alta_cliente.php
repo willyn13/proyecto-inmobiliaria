@@ -108,8 +108,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         </tr>
     </table>
     <!--<input type="submit" value="Insertar Cliente" />-->
-    <input type="button" class='cls_buttons' value="Insertar Cliente" onclick="ajaxFormulario('clientes/alta_cliente.php', '#form1', 'clientes/registro_ok.php')" />
-    <input type="button" class='cls_buttons' value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
+    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/alta_cliente.php', '#form1', 'clientes/registro_ok.php')" />
+    <input type="button" value="Cancelar" onclick="ajaxSinFormulario('1','clientes/gestion_clientes.php')">
     <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </div>
