@@ -1,11 +1,13 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
 <div class="cls_dialog">
 <?php
     $conexion = mysqli_connect('localhost','root','','inmobiliaria')
-    or die('<h1>No Se Pudo Conectar: </h1>' . mysqli_error());
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
     if (mysqli_connect_errno()) {
-            printf('<h1>No Se Pudo Conectar: %s/n</h1>', mysqli_connect_error());
+            printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
             exit();
     }
 
@@ -35,23 +37,23 @@
         <table>
             <tr>
                 <th><label for="dni">Dni</label></th>
-                <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" value="<?php echo $cliente[0] ?>" required/></td>
+                <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="<?php echo $cliente[0] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="nombre"> Nombre </label></th>
-                <td><input type="text" id="nombre" placeholder="Escribe Nombre" name="nombre" value="<?php echo $cliente[1] ?>" required/></td>
+                <td><input type="text" id="nombre" placeholder="Escribe Nombre" name="nombre" maxlength="15" value="<?php echo $cliente[1] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" value="<?php echo $cliente[2] ?>"/></td>
+                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" maxlength="30" value="<?php echo $cliente[2] ?>"/></td>
             </tr>
             <tr>
                 <th><label for="telefono"> Telefono: </label></th>
-                <td><input type="text" id="telefono" placeholder="Escribe Telefono" name="telefono" value="<?php echo $cliente[3] ?>" required/></td>
+                <td><input type="text" id="telefono" placeholder="Escribe Telefono" name="telefono" maxlength="12" value="<?php echo $cliente[3] ?>" required/></td>
             </tr>		
             <tr>
                 <th><label for="mail"> Email: </label></th>
-                <td><input type="text" id="email" placeholder="Escribe Email" name="email" value="<?php echo $cliente[4] ?>" required/></td>
+                <td><input type="text" id="email" placeholder="Escribe Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>	
         </table>
         <input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="modificarCliente('clientes/actualizar_cliente.php')" />
