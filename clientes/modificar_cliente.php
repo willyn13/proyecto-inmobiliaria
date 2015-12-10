@@ -56,6 +56,7 @@
                 <td><input type="text" id="email" placeholder="Escribe Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>
         </table>
-        <a><input type="button" id="id_modificar" value="Guardar cambios" name="modificar" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#formulario')" /></a>
+        <input type="button" id="id_modificar" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#formulario')" />
+        <input type="button" value="Cancelar" onclick="ajaxSinFormulario('','clientes/gestion_clientes.php')">
     </form>
 </div>

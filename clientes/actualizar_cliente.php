@@ -12,13 +12,13 @@
         exit();
     }
     
-    $consulta="update clientes set 
-            dni_cliente ='".$_GET['dni_cliente']."',
-            nombre='".$_GET['nombre']."', 
-            apellidos='".$_GET['apellidos']."', 
-            telefono=".$_GET['telefono'].",
-            email='".$_GET['email']."'
-            where dni_cliente='".$_COOKIE["dni"]."'";
+    $consulta="UPDATE clientes SET"
+            . "dni_cliente ='".$_POST['dni_cliente']."',"
+            . "nombre='".$_POST['nombre']."',"
+            . "apellidos='".$_POST['apellidos']."',"
+            . "telefono='".$_POST['telefono']."',"
+            . "email='".$_POST['email']."'"
+            . "WHERE dni_cliente='".$_POST['dni']."' ";
     
     $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 

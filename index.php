@@ -65,12 +65,12 @@ Página de inicio de la Aplicación
                 <div id="id_menu">
 <?php
                     session_start();
-                        if(isset($_SESSION["dni"])){
-                            if ($_SESSION["cargo"] == "Comercial") {
+                        if(isset($_SESSION['dni'])){
+                            if ($_SESSION['cargo'] == "Comercial") {
                                 echo "<script type='text/javascript'>
                                             cargarMenus('menus/menu_comerciales.html');
                                       </script>";
-                            }else if($_SESSION["cargo"] == "Admin"){
+                            }else if($_SESSION['cargo'] == "Admin"){
                                 echo "<script type='text/javascript'>
                                             cargarMenus('menus/menu_administradores.html');
                                       </script>";        
