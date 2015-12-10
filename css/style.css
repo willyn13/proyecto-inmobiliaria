@@ -29,81 +29,98 @@ Estilos de la Aplicación
 ================================================================================
 01.- Responsive y Estilos Generales
 ================================================================================*/
-@media screen and (max-width: 1050px){ 
-    #id_cabeceraIni{ font-size: 15px;}
+@media screen and (max-width: 1390px){ 
     #id_menu{ font-size: 14px;} 
-    #id_content{ font-size: 14px;}
-    #id_cookies{ font-size: 14px;}
-    #id_footer{ font-size: 14px;}
-    #id_contentFooter{ font-size: 14px;}
 }
-@media screen and (max-width: 975px){ 
-    #id_cabeceraIni{ font-size: 14px;}
-    #id_menu{ font-size: 14px;} 
-    #id_content{ font-size: 14px;}
-    #id_cookies{ font-size: 14px;}
-    #id_footer{ font-size: 14px;}
-    #id_contentFooter{ font-size: 14px;}
-}
-@media screen and (max-width: 900px){ 
-    #id_cabeceraIni{ font-size: 13px;}
+
+@media screen and (max-width: 1225px){ 
+    .cls_gestiones{ font-size: 14px;}
     #id_menu{ font-size: 13px;} 
+}
+
+@media screen and (max-width: 1170px){ 
+    .cls_gestiones{ font-size: 13px;}
+    #id_menu{ font-size: 12px;} 
+}
+
+@media screen and (max-width: 1060px){ 
+    .cls_gestiones{ font-size: 12px;}
+    #id_menu{ font-size: 11px;} 
+    #id_cabeceraIni{ font-size: 15px;}
+}
+@media screen and (max-width: 985px){ 
+    .cls_gestiones{ font-size: 11px;}
+    #id_cabeceraIni{ font-size: 14px;}
+    #id_menu{ font-size: 10px;} 
+    #id_content{ font-size: 14px;}
+    #id_cookies{ font-size: 14px;}
+    #id_footer{ font-size: 14px;}
+    #id_contentFooter{ font-size: 14px;}
+}
+@media screen and (max-width: 920px){ 
+    .cls_gestiones{ font-size: 10px;}
+    #id_cabeceraIni{ font-size: 13px;}
+    #id_menu{ font-size: 9px;} 
     #id_content{ font-size: 13px;}
     #id_cookies{ font-size: 13px;}
     #id_footer{ font-size: 13px;}
     #id_contentFooter{ font-size: 13px;}
 }
-@media screen and (max-width: 825px){ 
+@media screen and (max-width: 835px){ 
+    .cls_gestiones{ font-size: 9px;}
     #id_cabeceraIni{ font-size: 12px;}
-    #id_menu{ font-size: 12px;} 
+    #id_menu{ font-size: 8px;} 
     #id_content{ font-size: 12px;}
     #id_cookies{ font-size: 12px;}
     #id_footer{ font-size: 12px;}
     #id_contentFooter{ font-size: 12px;}
 }
 @media screen and (max-width: 750px){ 
+    .cls_gestiones{ font-size: 8px;}
     #id_cabeceraIni{ font-size: 11px;}
-    #id_menu{ font-size: 11px;} 
+    #id_menu{ font-size: 7px;} 
     #id_content{ font-size: 11px;}
     #id_cookies{ font-size: 11px;}
     #id_footer{ font-size: 11px;}
     #id_contentFooter{ font-size: 11px;}
 }
 @media screen and (max-width: 675px){ 
+    .cls_gestiones{ font-size: 7px;}
     #id_cabeceraIni{ font-size: 10px;}
-    #id_menu{ font-size: 10px;} 
+    #id_menu{ font-size: 6px;} 
     #id_content{ font-size: 10px;}
     #id_cookies{ font-size: 10px;}
     #id_footer{ font-size: 10px;}
     #id_contentFooter{ font-size: 10px;}
 }
 @media screen and (max-width: 600px){ 
+    .cls_gestiones{ font-size: 6px;}
     #id_cabeceraIni{ font-size: 9px;}
-    #id_menu{ font-size: 9px;} 
+    #id_menu{ font-size: 5px;} 
     #id_content{ font-size: 9px;}
     #id_cookies{ font-size: 9px;}
     #id_footer{ font-size: 9px;}
     #id_contentFooter{ font-size: 9px;}
 }
 @media screen and (max-width: 550px){ 
+    .cls_gestiones{ font-size: 5px;}
     #id_cabeceraIni{ font-size: 8px;}
-    #id_menu{ font-size: 8px;} 
+    #id_menu{ font-size: 4px;} 
     #id_content{ font-size: 8px;}
     #id_cookies{ font-size: 8px;}
     #id_footer{ font-size: 8px;}
     #id_contentFooter{ font-size: 8px;}
 }
 @media screen and (max-width: 475px){ 
+    .cls_gestiones{ font-size: 4px;}
     #id_cabeceraIni{ font-size: 7px;}
-    #id_menu{ font-size: 7px;} 
+    #id_menu{ font-size: 3px;} 
     #id_content{ font-size: 7px;}
     #id_cookies{ font-size: 7px;}
     #id_footer{ font-size: 7px;}
     #id_contentFooter{ font-size: 7px;}
 }
 @media screen and (max-width: 425px){ 
-    #id_cabeceraIni{ font-size: 6px;}
-    #id_menu{ font-size: 6px;} 
     #id_content{ font-size: 6px;}
     #id_cookies{ font-size: 6px;}
     #id_footer{ font-size: 6px;}
@@ -111,7 +128,6 @@ Estilos de la Aplicación
 }
 @media screen and (max-width: 350px){ 
     #id_cabeceraIni{ font-size: 5px;} 
-    #id_menu{ font-size: 5px;} 
     #id_content{ font-size: 5px;}
     #id_cookies{ font-size: 5px;}
     #id_footer{ font-size: 5px;}
@@ -283,7 +299,7 @@ body{
     top: 25%;
     left: 37%;
     border-radius: 20px;
-    width: 25%;
+    width: 350px;
     height: 22%;
     margin: 0 auto;
     background: #ddd;
@@ -474,24 +490,27 @@ body{
 10.-Gestiones Administracion
 *******************************************************************************/
 .cls_gestiones{
-    width: 75%;
-    margin: 0 auto;
-    min-width: 1200px;
+    width: 85%;
+    margin: 0 auto 2%;
     background-color: #ddd;
     border: 2px solid black;
     border-radius: 15px;
+    padding-bottom: 1.5%;
 }
 
 .cls_gestiones h1{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     text-align: center;
     margin-top: 1.5%;
+    text-decoration: underline;
 }
 
 .cls_gestiones input[type="button"]{
-    padding: 15px;
+    padding: 10px;
     background-color: #99AABB;
-    font: 1em sans-serif;
+    font: 0.9em sans-serif;
+    font-weight: normal;
+    margin: 2%;
 }
 
 .cls_gestiones input[type="submit"]{
@@ -501,7 +520,7 @@ body{
     margin: 0% 41% 2%;
 }
 
-.cls_gestiones input[type="text"]{
+.cls_gestiones input[type="text"], .cls_gestiones input[type="password"]{
     padding: 15px;
     background-color: #eee;
     font: 1em sans-serif;
@@ -515,10 +534,10 @@ body{
 
 .cls_gestiones table{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-    font-size: 1em;
+    font-size: 1.2em;
     padding: 10px;
-    margin: 0% 3% 2% 3%;
-    width: 1100px;
+    margin: 0 auto;
+    width: auto;
     text-align: left;
     border-collapse: collapse; 
     border: 0px;
@@ -548,7 +567,6 @@ body{
 }
 
 .cls_dialog{
-    border: 3px solid black;
     border-radius: 15px;
     margin: 0px auto;
     width: 30%;
@@ -557,7 +575,7 @@ body{
     overflow: auto;
 }
 
-.cls_dialog h1{
+.cls_dialog h2{
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     margin: 1%;
 }
@@ -572,6 +590,16 @@ body{
 .textfieldRequiredMsg{
     display: none;
 }
+
+.error{
+    border-radius: 15px;
+    margin: 0px auto;
+    width: 35%;
+    background: #b9c9fe;
+    text-align: center;
+    overflow: auto;
+}
+
 
 /*==============================================================================
 11- Slider

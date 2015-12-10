@@ -1,17 +1,17 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css">
-<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
 <?php
 echo '<div class="cls_dialog">';
     $conexion = mysqli_connect('localhost','root','','inmobiliaria')
-    or die('<h1>No Se Pudo Conectar: </h1>' . mysqli_error());
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
     if (mysqli_connect_error()) {
-            printf('<h1>No Se Pudo Conectar: %s/n</h1>', mysqli_connect_error());
+            printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
             exit();
     }
 echo '</div>';
-    $display='<div class="cls_gestiones"><h1>Gestión de Clientes</h1></br>';	
+    $display='<div class="cls_gestiones"><h1>Gestión de Clientes</h1>';	
 
     $consulta = 'SELECT * FROM clientes';
     $resultado= mysqli_query($conexion,$consulta)
@@ -19,9 +19,8 @@ echo '</div>';
 
     $display.="<table>";
         if (mysqli_num_rows($resultado)==0 ){
-            $display.='<p class="error"><i>No hay Clientes</i></p>';
+            $display.='<p class="error">No hay Clientes</p>';
         } else {
-            //$display.="<a href=\"http://localhost/proyecto-inmobiliaria/clientes/alta_cliente.php\"><input type='SUBMIT' id='id_alta_cliente' name='SUBMIT' value='Dar de Alta un Cliente'></a>";
             $display.="<a><input type='button' id='id_alta_cliente' name='SUBMIT' value='Dar de Alta un Cliente'></a>";
             $display.="<tr>
                           <th></th>
