@@ -1,11 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
-</head>
+<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
 
-<body><h1>¡Resgistrado correctamente!</h1>
-<p><a href="gestion_clientes.php">Volver</a></p>
-</body>
-</html>
+<div class="cls_dialog">
+    </br><h2>¡Usuario&nbsp;Resgistrado!</h2>
+    <a><input type="button" id="id_registrado" value="Aceptar"></a>
+</div>

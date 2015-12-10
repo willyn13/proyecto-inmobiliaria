@@ -520,7 +520,7 @@ body{
     margin: 0% 41% 2%;
 }
 
-.cls_gestiones input[type="text"]{
+.cls_gestiones input[type="text"], .cls_gestiones input[type="password"]{
     padding: 15px;
     background-color: #eee;
     font: 1em sans-serif;

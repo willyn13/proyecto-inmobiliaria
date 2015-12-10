@@ -1,29 +1,35 @@
+<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
+<div class="cls_dialog">
+    
 <?php
 
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
-	
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
+    if (mysqli_connect_errno()) {
+        printf("<h2>No Se Pudo Conectar: %s/n</h2>", mysqli_connect_error());
+        exit();
+    }
 
-$consulta="update usuarios set 
-dni_usuario ='".$_POST['dni_usuario']."',
-idzona= '".$_POST['zona']."',
-nombre= '".$_POST['nombre']."', 
-apellidos= '".$_POST['apellidos']."', 
-cargo= '".$_POST['cargo']."'
-where dni_usuario= '".$_POST['dni_usuario']."'";
+    $consulta="UPDATE usuarios SET"
+            . " dni_usuario ='".$_POST['dni_usuario']."',"
+            . "idzona= '".$_POST['zona']."',"
+            . "nombre= '".$_POST['nombre']."',"
+            . "apellidos= '".$_POST['apellidos']."',"
+            . "cargo= '".$_POST['cargo']."',"
+            . "password= '".$_POST['password']."'"
+            . "WHERE dni_usuario= '".$_POST['dni_usuario']."'";
 
+    $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
-echo $consulta;
-echo "<br/>";
-$resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
-
-if ($resultado){echo "Comercial actualizado";}
-else
-{echo "Comercial NO actualizado";}
-
+    if ($resultado===true){
+        echo "</br><h2>Usuario&nbsp;Actualizado</h2>";
+        echo '<a><input type="button" id="id_actualizar" value="Aceptar"></a>';
+    } else {
+        echo "</br><h2>Usuario&nbsp;No&nbsp;Actualizado</h2>";
+        echo '<a><input type="button" id="id_actualizar" value="Aceptar"></a>';
+    }
 ?>
+</div>
