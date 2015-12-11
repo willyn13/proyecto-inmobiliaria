@@ -496,6 +496,7 @@ body{
     border: 2px solid black;
     border-radius: 15px;
     padding-bottom: 1.5%;
+    text-align: center;
 }
 
 .cls_gestiones h1{

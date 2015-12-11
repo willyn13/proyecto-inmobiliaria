@@ -82,7 +82,7 @@ $(document).on('click',"#id_cookies img",function(event){
     ********************************************************************************/
     $(function(){
         $("#btnLogin_inicio").on('click', function(){
-            var url = "usuarios/login_ajax.php";
+            var url = "ajax/login_ajax.php";
             $.ajax({ 
                 type: 'POST',
                 url: url,
