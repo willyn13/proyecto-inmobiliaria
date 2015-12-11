@@ -52,7 +52,8 @@ function ajaxSinFormulario(dni_cliente,url){
     cargarDatos("#id_alta_cliente", "clientes/alta_cliente.php");
     cargarDatos("#id_registrado", "clientes/gestion_clientes.php");
     cargarDatos("#id_eliminar", "clientes/gestion_clientes.php"); 
-    cargarDatos("#id_modificar_cliente", "clientes/modificar_cliente");
     cargarDatos("#id_actualizar_cliente", "clientes/gestion_clientes.php");
     cargarDatos("#id_error_actualizar_cliente", "clientes/gestion_clientes.php");
+    cargarDatos("#id_cancelar_modificacion", "clientes/gestion_clientes.php");
+    cargarDatos("#id_cancelar_alta", "clientes/gestion_clientes.php");
 /***********************************FIN MENU COMERCIALES***********************************/
