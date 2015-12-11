@@ -22,7 +22,7 @@
         if (mysqli_num_rows($resultado) == 0 ){
             $display.="<p class=\"error\"><i>No hay comerciales.</i></p>";
         } else{
-            $display.="<a href=\"alta_usuario.php\"><input type='submit' name='submit' value='Dar de Alta un Usuario'></a>";
+            $display.="<a href=\"form_alta_usuario.php\"><input type='submit' name='submit' value='Dar de Alta un Usuario'></a>";
             $display.="<tr>
                     <th></th>
                     <th></th>
@@ -43,7 +43,7 @@
 
             $display.="<tr>
                          <td><a href=\"eliminar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_eliminar_usuario' value='Eliminar'></a></td>
-                         <td><a href=\"modificar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_modificar_usuario' value='Modificar'></a></td>
+                         <td><a href=\"form_modificar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_modificar_usuario' value='Modificar'></a></td>
                          <td>".$dni_usuario."</td>	
                          <td>".$nombre."</td>
                          <td>".$apellidos."</td>

@@ -57,7 +57,7 @@
         mysql_select_db($database_ConexionInmobiliaria, $ConexionInmobiliaria);
         $Result1 = mysql_query($insertSQL, $ConexionInmobiliaria) or die(mysql_error());
 
-        $insertGoTo = "registro_ok.php";
+        $insertGoTo = "insertar_usuario.php";
 
         if (isset($_SERVER['QUERY_STRING'])) {
             $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
