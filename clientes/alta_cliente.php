@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
-<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">
 <?php 
@@ -109,8 +109,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         </tr>
     </table>
     <!--<input type="submit" value="Insertar Cliente" />-->
-    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/alta_cliente.php', '#form1')" />
-    <input type="button" value="Cancelar" onclick="ajaxSinFormulario('','clientes/gestion_clientes.php')">
+    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#form1')" />
+    <input type="button" id="id_cancelar_alta" value="Cancelar" />
     <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </div>

@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="http://localhost/proyecto-inmobiliaria/css/style.css"/>
-<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="http://localhost/proyecto-inmobiliaria/js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">    
 <?php
@@ -12,22 +12,22 @@
         exit();
     }
     
-    $consulta="UPDATE clientes SET"
-            . "dni_cliente ='".$_POST['dni_cliente']."',"
-            . "nombre='".$_POST['nombre']."',"
-            . "apellidos='".$_POST['apellidos']."',"
-            . "telefono='".$_POST['telefono']."',"
-            . "email='".$_POST['email']."'"
-            . "WHERE dni_cliente='".$_POST['dni']."' ";
-    
+   $consulta="update clientes set 
+            dni_cliente ='".$_POST['dni_cliente']."',
+            nombre='".$_POST['nombre']."', 
+            apellidos='".$_POST['apellidos']."', 
+            telefono=".$_POST['telefono'].",
+            email='".$_POST['email']."'
+            where dni_cliente='".$_COOKIE["dni"]."'";
+ 
+    echo "<br/>";
     $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
-
-    if ($resultado===true){
-        echo "</br><h2>Cliente&nbsp;Actualizado</h2>";
-        echo '<a><input type="button" id="id_actualizar" value="Aceptar"></a>';
+    if ($resultado){
+        echo "<h1>Cliente&nbsp;Actualizado</h1>";
+        echo '<h1><a><input type="button" id="id_actualizar_cliente" value="Aceptar"></a></h1>';
     } else {
-        echo "</br><h2>Cliente&nbsp;No&nbsp;Actualizado</h2>";
-        echo '<a><input type="button" id="id_actualizar" value="Aceptar"></a>';
+        echo "<h1>Cliente&nbsp;No&nbsp;Actualizado</h1>";
+        echo '<h1><a><input type="button" id="id_error_actualizar_cliente" value="Aceptar"></a></h1>';
     }
 ?>
 </div>

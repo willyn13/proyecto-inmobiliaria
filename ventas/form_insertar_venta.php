@@ -11,105 +11,97 @@
         printf("<h2>No Se Pudo Conectar: %s/n</h2>", mysqli_connect_error());
         exit();
     }
-
     
-if (!empty($_POST['boton'])){
+    if (!empty($_POST['boton'])){
+        $idcasa = $_POST['IDCASA'];
+        
+        //campos del insert
+        session_start();
+        $dni = $_SESSION["dni"];
+        $consulta = "INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES "
+                . "(".$_POST['IDCASA'].",".$_POST['DNIPROPIETARIO'].",".$dni.",".$_POST['FECHACOMPRA'].",".$_POST["PRECIOVENTA"].")";
 
-$idcasa=$_POST['idcasa'];
-//campos del insert
-session_start();
-$dni= $_SESSION["dni"];
+        $resultado = mysqli_query($conexion,$consulta);
 
-$consulta="INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES (".$_POST["idcasa"].",'".$_POST["dnipropietario"]."'
-	,'".$dni."',".$_POST["FECHACOMPRA"]."',".$_POST["PRECIOVENTA"].")";
-
-$resultado_insert=mysqli_query($conexion,$consulta);
-if($resultado_insert === TRUE){
-header("Location: gestion_ventas.php");
-}else{
-printf("No se pudo insertar el registro. Por favor revise los datos ");
-}
-
-}
-
-if (empty($_POST['idcasa'])){}
-$id_padre=$_POST['idcasa'];
-echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"POST\">\n\n";
+        if ($resultado === true){
+            echo "</br><h2>Venta&nbsp;Registrada</h2>";
+            echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
+        } else {
+            echo "</br><h2>Venta&nbsp;No&nbsp;Registrada</h2>";
+            echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
+        }
+    }
+    
+    echo "</div>";
+    
+    if (empty($_POST['IDCASA'])){
+        $_POST['IDCASA'] = '10';
+    }
+    $id_padre = $_POST['IDCASA'];
+    
+    echo '<div class="cls_gestiones">';
+    echo '<h1>Dar De Alta Nueva Venta</h1><br>';
+    echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"POST\">";
 ?>
-
-
-<table cellpadding="5">		
-			
-<tr>
-<td><label for="idcasa">Casa</label></td>
-<td><font>(*) 
-<select name="idcasa" onChange='this.form.submit()' style="width: 200px;">
-
+<table>		
+    <tr>
+        <th><label for="IDCASA"> Casa: </label></th>
+        <td><select name="IDCASA" onChange='this.form.submit()' >
+                <option value="" selected>Selecciona Inmueble</option>
 <?php		
-$consulta="SELECT idcasa from inmuebles where venta=1";
-$resultado=mysqli_query($conexion,$consulta);
-while ($casa=mysqli_fetch_array($resultado))
-{
-if ($id_padre==$casa[0])
-echo "<option value=".$casa[0]." selected>".$casa[0]."</option>";
-else
-{echo "<option value=".$casa[0].">".$casa[0]."</option>";}
-}
-echo $casa[0];
+                $consulta = "SELECT idcasa FROM inmuebles WHERE venta=1";
+                $resultado = mysqli_query($conexion,$consulta);
+
+                while ($casa = mysqli_fetch_array($resultado)){
+                    if ($id_padre == $casa[0]){
+                        echo "<option value=".$casa[0]." selected>".$casa[0]."</option>";
+                    }else{
+                        echo "<option value=".$casa[0].">".$casa[0]."</option>";
+                    }
+                }
+                echo $casa[0];
 ?>
-
-</select>
-
-				</font></td>
-			<tr>	<td><label for="Precio">Precio</label></td>
-				<td><font>(*) 
-				
-				<?php
-					
-					if (!empty($id_padre)){
-					$consulta="SELECT precio_venta from inmuebles where idcasa='".$id_padre."'";
-					$resultado=mysqli_query($conexion,$consulta);
-					if (mysqli_num_rows($resultado) !=0){
-					while ($casa=mysqli_fetch_array($resultado))
-						{
-						echo "<input type =\"text\" name =\"PRECIOVENTA\" value=".$casa[0].">";
-						}
-						}else{
-						echo "<input type =\"text\" value=''>";
-						}
-						}
-					
-				
-				//mysqli_free_result($consulta);
-				?>
-
-</select></td></tr>
-		</table>
-		<tr>
-<p> FECHA VENTA: <br>
-<input type="text" name="FECHACOMPRA" value="AAAA/MM/DD" size="100">
-</tr>		
-<tr>
-<p> DNI DEL COMPRADOR: <br>
-<select name="dnipropietario">
-     <option value="" selected>Selecciona Comprador</option>
+        </select></td>
+    </tr>
+    <tr>
+        <th><label for="PRECIOVENTA"> Precio: </label></th>
+        <td>
+<?php
+            if (!empty($id_padre)){
+                $consulta = "SELECT precio_venta FROM inmuebles WHERE idcasa='".$id_padre."'";
+                $resultado = mysqli_query($conexion,$consulta);
+                if (mysqli_num_rows($resultado) !=0){
+                    while ($casa=mysqli_fetch_array($resultado)){
+                        echo "<input type =\"text\" name =\"PRECIOVENTA\" value=".$casa[0]." required>";
+                    }
+                } else {
+                    echo "<input type =\"text\" value='' required>";
+                }
+            }
+            //mysqli_free_result($consulta);
+?>
+        </td>
+    </tr>
+    <tr>
+        <th><label for="FECHACOMPRA"> Fecha Venta: </label></th>
+        <td><input type="text" name="FECHACOMPRA" placeholder="AAAA/MM/DD" required/></td>
+    </tr>		
+    <tr>
+        <th><label for="DNIPROPIETARIO"> DNI Comprador: </label></th>
+        <td><select name="DNIPROPIETARIO">
+                <option value="" selected>Selecciona Comprador</option>
 <?php                 
-$consulta="SELECT dni_cliente,nombre, apellidos from clientes where dni_cliente NOT IN(select dni_inquilino from alquileres ) and dni_cliente NOT IN (select dni_comprador from ventas) and dni_cliente NOT IN(select dni_propietario from inmuebles)";
-$resultado=mysqli_query($conexion,$consulta);
-while ($cliente=mysqli_fetch_array($resultado)){
-echo "<option value=\"".$cliente[0]."\">".$cliente[1].", ".$cliente[2]."</option>";
-}
-?></select>
-	</div>
-	<div class="flotados3">
-		<table cellpadding="5">
-			<tr>
-				<td><br><input type="submit" id="boton" value="Guardar Venta" name="boton"/></td>
-			</tr>
-		</table>
-	</div>
-</form>
-
-</body>		
-
-</html>		
+                $consulta = "SELECT dni_cliente, nombre, apellidos FROM clientes WHERE dni_cliente NOT IN(select dni_inquilino from alquileres ) AND dni_cliente NOT IN (select dni_comprador from ventas) AND dni_cliente NOT IN(select dni_propietario from inmuebles)";
+                $resultado = mysqli_query($conexion,$consulta);
+                while ($cliente=mysqli_fetch_array($resultado)){
+                    echo "<option value=\"".$cliente[0]."\">".$cliente[1].", ".$cliente[2]."</option>";
+                }
+?>
+            </select>
+        </td>
+    </tr>
+</table>
+<input type="submit" id="boton" value="Insertar Venta" name="boton"/>
+<a href="gestion_ventas.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar" /></a>
+<?php   
+echo "</form></div>";

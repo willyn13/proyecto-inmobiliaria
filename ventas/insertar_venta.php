@@ -14,7 +14,8 @@
 
     session_start();
     $dni = $_SESSION["dni"];
-    $sql ="INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES (".$_POST["idcasa"].",'".$_POST["dnipropietario"]."','".$dni."',".$_POST["FECHACOMPRA"]."',".$_POST["PRECIOVENTA"].")";
+    $sql = "INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES "
+            . "(".$_POST['IDCASA'].",".$_POST['DNIPROPIETARIO'].",".$dni.",".$_POST['FECHACOMPRA'].",".$_POST["PRECIOVENTA"].")";
 
     $resultado = mysqli_query($conexion,$sql);
 

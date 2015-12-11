@@ -521,14 +521,14 @@ body{
     margin: 0% 41% 2%;
 }
 
-.cls_gestiones input[type="text"], .cls_gestiones input[type="password"]{
+.cls_gestiones input[type="text"], .cls_gestiones input[type="password"], .cls_gestiones select{
     padding: 15px;
     background-color: #eee;
     font: 1em sans-serif;
     margin: 0px auto;
 }
 
-.cls_gestiones input:hover{
+.cls_gestiones input:hover, .cls_gestiones select:hover{
     cursor: pointer;
     background-color: #335566;
 }

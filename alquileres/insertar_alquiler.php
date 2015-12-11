@@ -19,7 +19,7 @@
 
     $resultado = mysqli_query($conexion,$sql);
 
-    if ($resultado===true){
+    if ($resultado === true){
         echo "</br><h2>Alquiler&nbsp;Registrado</h2>";
         echo '<a href="gestion_alquileres.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
     } else {

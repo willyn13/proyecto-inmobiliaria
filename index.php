@@ -21,13 +21,12 @@ Página de inicio de la Aplicación
         <title>Proyecto Inmobiliaria</title>
 
         <!-- Ficheros JavaScript jQuery -->
-        <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="js/inmobiliaria.js"></script>
-        <script type="text/javascript" src="js/navegar.js"></script>
+        <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="/proyecto-inmobiliaria/js/inmobiliaria.js"></script>
+        <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
         <!-- Ficheros CCS -->
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
     </head>
     
     <body id="id_body">
