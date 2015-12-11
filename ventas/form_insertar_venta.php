@@ -72,19 +72,18 @@
                 $resultado = mysqli_query($conexion,$consulta);
                 if (mysqli_num_rows($resultado) !=0){
                     while ($casa=mysqli_fetch_array($resultado)){
-                        echo "<input type =\"text\" name =\"PRECIOVENTA\" value=".$casa[0]." required>";
+                        echo "<input type =\"text\" name =\"PRECIOVENTA\" value=".$casa[0]." maxlength='8' required>";
                     }
                 } else {
-                    echo "<input type =\"text\" value='' required>";
+                    echo "<input type =\"text\" value='' maxlength='8' required>";
                 }
             }
-            //mysqli_free_result($consulta);
 ?>
         </td>
     </tr>
     <tr>
         <th><label for="FECHACOMPRA"> Fecha Venta: </label></th>
-        <td><input type="text" name="FECHACOMPRA" placeholder="AAAA/MM/DD" required/></td>
+        <td><input type="text" name="FECHACOMPRA" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
     </tr>		
     <tr>
         <th><label for="DNIPROPIETARIO"> DNI Comprador: </label></th>
