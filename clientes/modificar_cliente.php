@@ -15,17 +15,17 @@
     $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";	
     $resp_sql = mysqli_query($conexion,$sql_cliente);
 
-    $i=0;
-    while($datos=mysqli_fetch_row($resp_sql)){
+    $i = 0;
+    while($datos = mysqli_fetch_row($resp_sql)){
         foreach($datos as $valor){
-            $datos[$i]=$valor;
+            $datos[$i] = $valor;
             $i++;			
-            if ($i==3){break;}
+            if ($i == 3){break;}
         }
-        $cliente=$datos;
+        $cliente = $datos;
     }	
     
-    $dni=$cliente[0];
+    $dni = $cliente[0];
 
     setcookie('dni',$dni);
 ?>
@@ -33,30 +33,30 @@
 
 <div class="cls_gestiones">
     <form id="formulario">
-        <h1>Modificar Datos</h1>
+        <h1>Modificar Datos Cliente</h1>
         <table>
             <tr>
-                <th><label for="dni">Dni</label></th>
+                <th><label for="dni"> DNI Cliente: </label></th>
                 <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="<?php echo $cliente[0] ?>" required/></td>
             </tr>
             <tr>
-                <th><label for="nombre"> Nombre </label></th>
-                <td><input type="text" id="nombre" placeholder="Escribe Nombre" name="nombre" maxlength="15" value="<?php echo $cliente[1] ?>" required/></td>
+                <th><label for="nombre"> Nombre: </label></th>
+                <td><input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="15" value="<?php echo $cliente[1] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Escribe Apellidos" name="apellidos" maxlength="30"value="<?php echo $cliente[2] ?>"/></td>
+                <td><input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" maxlength="30" value="<?php echo $cliente[2] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="telefono"> Telefono: </label></th>
-                <td><input type="text" id="telefono" placeholder="Escribe Telefono" name="telefono" maxlength="12" value="<?php echo $cliente[3] ?>" required/></td>
+                <td><input type="text" id="telefono" placeholder="Telefono" name="telefono" maxlength="12" value="<?php echo $cliente[3] ?>" required/></td>
             </tr>		
             <tr>
                 <th><label for="mail"> Email: </label></th>
-                <td><input type="text" id="email" placeholder="Escribe Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
+                <td><input type="text" id="email" placeholder="Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>
         </table>
         <input type="button" id="id_modificar" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#formulario')" />
-        <input type="button" id="id_cancelar_modificacion" value="Cancelar" />
+        <input type="button" id="id_cancelar" value="Cancelar" />
     </form>
 </div>

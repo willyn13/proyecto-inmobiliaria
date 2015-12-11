@@ -35,7 +35,7 @@
 </div>
 
 <div class="cls_gestiones">
-    <h1>Modificar Datos</h1><br>
+    <h1>Modificar Datos Usuario</h1><br>
     <form action="modificar_usuario.php" method="POST">
         <table>
             <tr>
@@ -44,23 +44,23 @@
             </tr>
             <tr>
                 <th><label for="zona"> Zona: </label></th>
-                <td><input type="text" id="zona" placeholder="Escribe zona" name="zona" maxlength="3" value="<?php echo $comercial[1] ?>" required/></td>
+                <td><input type="text" id="zona" placeholder="Zona" name="zona" maxlength="3" value="<?php echo $comercial[1] ?>" required/></td>
             </tr>	
             <tr>
                 <th><label for="nombre"> Nombre </label></th>
-                <td><input type="text" id="nombre" placeholder="Escribe nombre" name="nombre" maxlength="15" value="<?php echo $comercial[2] ?>" required/></td>
+                <td><input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="15" value="<?php echo $comercial[2] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Escribe apellidos" name="apellidos" maxlength="30" value="<?php echo $comercial[3] ?>" required/></td>
+                <td><input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" maxlength="30" value="<?php echo $comercial[3] ?>" required/></td>
             </tr>
             <tr>
                 <th><label for="cargo"> Cargo: </label></th>
-                <td><input type="text" id="cargo" placeholder="Escribe cargo" name="cargo" maxlength="15" value="<?php echo $comercial[4] ?>" required/></td>
+                <td><input type="text" id="cargo" placeholder="Cargo" name="cargo" maxlength="15" value="<?php echo $comercial[4] ?>" required/></td>
             </tr>		
             <tr>
                 <th><label for="password"> Password: </label></th>
-                <td><input type="text" id="password" placeholder="Escribe password" name="password" maxlength="10" value="<?php echo $comercial[5] ?>" required/></td>
+                <td><input type="text" id="password" placeholder="Password" name="password" maxlength="10" value="<?php echo $comercial[5] ?>" required/></td>
             </tr>	
         </table>
         
