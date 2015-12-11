@@ -23,7 +23,7 @@
         if (mysqli_num_rows($resultado) == 0 ){
             $display.="<p class=\"error\"><i>No hay comerciales.</i></p>";
         } else{
-            $display.="<a href=\"form_alta_usuario.php\"><input type='submit' name='submit' value='Dar de Alta un Usuario'></a>";
+            $display.="<a href=\"form_insertar_usuario.php\"><input type='submit' name='submit' value='Dar de Alta un Usuario'></a>";
             $display.="<tr>
                     <th></th>
                     <th></th>

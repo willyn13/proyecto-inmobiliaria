@@ -21,7 +21,7 @@
             . "password= '".$_POST['password']."'"
             . " WHERE dni_usuario= '".$_COOKIE['dni_usuario']."'";
 
-    $resultado=mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+    $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
     if ($resultado === true){
         echo "</br><h2>Usuario&nbsp;Actualizado</h2>";

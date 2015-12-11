@@ -19,7 +19,7 @@
     $result = mysqli_query($conexion,$sql);
     
     while($fila = mysqli_fetch_row($result)){
-        $cargo=$fila[0];
+        $cargo = $fila[0];
     }
     
     if($cargo == "Admin"){

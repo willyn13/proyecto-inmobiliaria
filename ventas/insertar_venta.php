@@ -18,12 +18,12 @@
 
     $resultado = mysqli_query($conexion,$sql);
 
-    if ($resultado===true){
+    if ($resultado === true){
         echo "</br><h2>Venta&nbsp;Registrada</h2>";
-        echo '<a href="gestion_ventas.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
+        echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
     } else {
         echo "</br><h2>Venta&nbsp;No&nbsp;Registrada</h2>";
-        echo '<a href="gestion_ventas.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
+        echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
     }
     
     mysqli_close($conexion);

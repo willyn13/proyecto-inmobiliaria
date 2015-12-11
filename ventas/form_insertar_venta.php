@@ -2,15 +2,17 @@
 <script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="../js/navegar.js"></script>
 
+<div class="cls_dialog">    
 <?php
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
-	
+    if (mysqli_connect_errno()) {
+        printf("<h2>No Se Pudo Conectar: %s/n</h2>", mysqli_connect_error());
+        exit();
+    }
+
+    
 if (!empty($_POST['boton'])){
 
 $idcasa=$_POST['idcasa'];
