@@ -77,23 +77,19 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 
 session_start();
 $dni= $_SESSION["MM_Username"];
-$sql="select cargo from usuarios where dni='".$dni."'";
+$cargo= "";
+$zona="";
+$sql="select cargo, idzona from usuarios where dni='".$dni."'";
 $result= mysqli_query($conexion,$sql);
 while($fila = mysqli_fetch_row($result)){
        $cargo=$fila[0];
+       $zona =$fila[1];
        }
-       //MIRAR AQUI LA FUNCIONALIDAD
-       if($cargo=="admin"){
-		   $consulta="SELECT idlocalidad,localidad from localidades";       
+	if($cargo=="admin"){
+           $consulta="SELECT idlocalidad,localidad from localidades";       
        }else{
-		   //$sql="select idzona from usuarios where dni='".$dni."'";
-                   $sql="select idzona from usuarios where dni='12345678G'";
-		   $result1= mysqli_query($conexion,$sql);
-		   while($fila = mysqli_fetch_row($result1)){
-                        $zona=$fila[0];
-                   }	
-       $consulta= "SELECT * from localidades where idprovincia=(select idprovincia from provincias where idusuario=".$zona.")";
-	}
+           $consulta="SELECT idlocalidad,localidad from localidades where idlocalidad='".$zona."'";
+       }
 $resultado=mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
 echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
