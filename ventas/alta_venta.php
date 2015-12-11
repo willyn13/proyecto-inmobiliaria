@@ -11,20 +11,19 @@
         printf("<h2>No Se Pudo Conectar: %s/n</h2>", mysqli_connect_error());
         exit();
     }
-    
+
     session_start();
     $dni = $_SESSION["dni"];
-    $sql = "INSERT INTO alquileres(idcasa,dni_inquilino,dni_usuario ,fecha_nicio,fecha_fin,precio_final)"
-            . " VALUES (".$_POST["IDCASA"].",'".$_POST["DNIINQUILINO"]."','".$dni."','".$_POST["FECHAINICIO"]."','".$_POST["FECHAFIN"]."',".$_POST["PRECIOFINAL"].")";
+    $sql ="INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES (".$_POST["idcasa"].",'".$_POST["dnipropietario"]."','".$dni."',".$_POST["FECHACOMPRA"]."',".$_POST["PRECIOVENTA"].")";
 
     $resultado = mysqli_query($conexion,$sql);
 
     if ($resultado===true){
-        echo "</br><h2>Alquiler&nbsp;Registrado</h2>";
-        echo '<a href="gestion_alquileres.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
+        echo "</br><h2>Venta&nbsp;Registrada</h2>";
+        echo '<a href="gestion_ventas.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
     } else {
-        echo "</br><h2>Alquiler&nbsp;No&nbsp;Registrado</h2>";
-        echo '<a href="gestion_alquileres.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
+        echo "</br><h2>Venta&nbsp;No&nbsp;Registrada</h2>";
+        echo '<a href="gestion_ventas.php"><input type="button" id="id_actualizar" value="Aceptar"></a>';
     }
     
     mysqli_close($conexion);

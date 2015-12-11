@@ -28,6 +28,7 @@
     } else {
         $sql1 = "SELECT zona FROM usuarios WHERE dni_usuario='".$dni."'";
         $result1 = mysqli_query($conexion,$sql1);
+        
         while($fila = mysqli_fetch_row($result1)){
             $zona = $fila[0];
         }	
@@ -63,7 +64,7 @@
                     <td>".$IDCASA."</td>
                     <td>".$FECHAINICIO."</td>
                     <td>".$FECHAFIN."</td>
-                    <td>".$PRECIOALQUILER."</td>
+                    <td>".$PRECIOALQUILER." €</td>
                     <td>".$DNIINQUILINO."</td>
                   </tr>";
     }

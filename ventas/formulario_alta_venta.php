@@ -12,7 +12,7 @@ if (!empty($_POST['boton'])){
 $idcasa=$_POST['idcasa'];
 //campos del insert
 session_start();
-$dni= $_SESSION["MM_Username"];
+$dni= $_SESSION["dni"];
 
 $consulta="INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,precio_final) VALUES (".$_POST["idcasa"].",'".$_POST["dnipropietario"]."'
 	,'".$dni."',".$_POST["FECHACOMPRA"]."',".$_POST["PRECIOVENTA"].")";
