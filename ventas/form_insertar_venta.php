@@ -1,3 +1,7 @@
+<link type="text/css" rel="stylesheet" href="../css/style.css"/>
+<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../js/navegar.js"></script>
+
 <?php
 	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
@@ -19,22 +23,13 @@ $consulta="INSERT INTO ventas(idcasa,dni_comprador,dni_usuario,fecha_compra,prec
 
 $resultado_insert=mysqli_query($conexion,$consulta);
 if($resultado_insert === TRUE){
-header("Location: mostrarventas.php");
+header("Location: gestion_ventas.php");
 }else{
 printf("No se pudo insertar el registro. Por favor revise los datos ");
 }
 
 }
-?>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<html>
- <head>
- <link rel=stylesheet href="style.css" type="text/css">
- </head>
- <h3>Insertar venta</h3>
-<body>
 
-<?php
 if (empty($_POST['idcasa'])){}
 $id_padre=$_POST['idcasa'];
 echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"POST\">\n\n";

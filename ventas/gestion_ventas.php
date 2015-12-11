@@ -14,7 +14,7 @@
     echo '</div>';
     
     session_start();
-    $dni = $_SESSION["MM_Username"];
+    $dni = $_SESSION["dni"];
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
     $result = mysqli_query($conexion,$sql);
     
@@ -39,7 +39,7 @@
     $resultado1 = mysqli_query($conexion,$consulta);
 
      $display.= '<table>
-                <a href="formulario_alta_venta.php"><input type="submit" id="id_alta_venta" name="submit" value="Dar de Alta una Compra-Venta"></a>
+                <a href="form_insertar_venta.php"><input type="submit" id="id_alta_venta" name="submit" value="Dar de Alta una Compra-Venta"></a>
                     <tr>
                         <th>&nbsp</th>
                         <th>&nbsp</th>
@@ -57,7 +57,7 @@
         
         $display.="<tr>
                         <td><a href=\"eliminar_venta.php?IDCASA=".$IDCASA."&&FECHACOMPRA=".$FECHACOMPRA."\"><input type=\"button\" id=\"id_eliminar_venta\" value=\"Eliminar\"/></a></td>
-                        <td><a href=\"formulario_modificar_venta.php?IDCASA=".$IDCASA."&&FECHACOMPRA=".$FECHACOMPRA."&&PRECIOVENTA=".$PRECIOVENTA."&&DNICOMPRADOR=".$DNICOMPRADOR."\"><input type=\"button\" id=\"id_modificar_venta\" value=\"Modificar\"/></a></td>
+                        <td><a href=\"form_modificar_venta.php?IDCASA=".$IDCASA."&&FECHACOMPRA=".$FECHACOMPRA."&&PRECIOVENTA=".$PRECIOVENTA."&&DNICOMPRADOR=".$DNICOMPRADOR."\"><input type=\"button\" id=\"id_modificar_venta\" value=\"Modificar\"/></a></td>
                         <td>".$IDCASA."</td>
                         <td>".$FECHACOMPRA."</td>
                         <td>".$PRECIOVENTA." €</td>
