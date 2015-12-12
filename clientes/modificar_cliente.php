@@ -8,55 +8,26 @@
     or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
     if (mysqli_connect_errno()) {
-        printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
+        printf("<h2>No Se Pudo Conectar: %s/n</h2>", mysqli_connect_error());
         exit();
     }
-
-    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";	
-    $resp_sql = mysqli_query($conexion,$sql_cliente);
-
-    $i = 0;
-    while($datos = mysqli_fetch_row($resp_sql)){
-        foreach($datos as $valor){
-            $datos[$i] = $valor;
-            $i++;			
-            if ($i == 3){break;}
-        }
-        $cliente = $datos;
-    }	
     
-    $dni = $cliente[0];
-
-    setcookie('dni',$dni);
+   $consulta="update clientes set 
+            dni_cliente ='".$_POST['dni_cliente']."',
+            nombre='".$_POST['nombre']."', 
+            apellidos='".$_POST['apellidos']."', 
+            telefono=".$_POST['telefono'].",
+            email='".$_POST['email']."'
+            where dni_cliente='".$_COOKIE["dni"]."'";
+ 
+    $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+    
+    if ($resultado){
+        echo "</br><h2>Cliente&nbsp;Actualizado</h2>";
+        echo '<a><input type="button" id="id_clientes" value="Aceptar"></a>';
+    } else {
+        echo "</br><h2>Cliente&nbsp;No&nbsp;Actualizado</h2>";
+        echo '<a><input type="button" id="id_clientes" value="Aceptar"></a>';
+    }
 ?>
-</div>
-
-<div class="cls_gestiones">
-    <form id="formulario">
-        <h1>Modificar Datos Cliente</h1>
-        <table>
-            <tr>
-                <th><label for="dni"> DNI Cliente: </label></th>
-                <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="<?php echo $cliente[0] ?>" required/></td>
-            </tr>
-            <tr>
-                <th><label for="nombre"> Nombre: </label></th>
-                <td><input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="15" value="<?php echo $cliente[1] ?>" required/></td>
-            </tr>
-            <tr>
-                <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" maxlength="30" value="<?php echo $cliente[2] ?>" required/></td>
-            </tr>
-            <tr>
-                <th><label for="telefono"> Telefono: </label></th>
-                <td><input type="text" id="telefono" placeholder="Telefono" name="telefono" maxlength="12" value="<?php echo $cliente[3] ?>" required/></td>
-            </tr>		
-            <tr>
-                <th><label for="mail"> Email: </label></th>
-                <td><input type="text" id="email" placeholder="Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
-            </tr>
-        </table>
-        <input type="button" id="id_modificar" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('clientes/actualizar_cliente.php', '#formulario')" />
-        <input type="button" id="id_cancelar" value="Cancelar" />
-    </form>
 </div>

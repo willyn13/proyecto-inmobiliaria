@@ -14,14 +14,14 @@
     
     $sql_delete="DELETE FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";
     
-    $result=mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
+    $result = mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
 
-    if($result===true){
+    if($result === true){
         echo "</br><h2>Cliente&nbsp;Borrado</h2>";
-        echo '<a><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_clientes" value="Aceptar"></a>';
     }else{
         echo "</br><h2>Cliente&nbsp;No&nbsp;Borrado</h2>";
-        echo '<a><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_clientes" value="Aceptar"></a>';
     }
 ?>
 </div>

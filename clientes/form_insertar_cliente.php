@@ -73,44 +73,29 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 <form name="form1" id="form1">
     <table>
         <tr>
-            <th>Dni:</th>
-            <td><span id="sprytextfield1">
-                <input type="text" name="dni_cliente" value="" size="32" maxlength="9"/>
-                <span class="textfieldRequiredMsg">Se necesita un valor.</span>
-            </span></td>
+            <th><label for="dni_cliente"> DNI Cliente: </label></th>
+            <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="" required/></td>
         </tr>
         <tr>
-            <th>Nombre:</th>
-            <td><span id="sprytextfield2">
-                <input type="text" name="nombre" value="" size="32" maxlength="15"/>
-                <span class="textfieldRequiredMsg">Se necesita un valor.</span>
-            </span></td>
+            <th><label for="nombre"> Nombre: </label></th>
+            <td><input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="15" value="" required/></td>
         </tr>
         <tr>
-            <th>Apellidos:</th>
-            <td><span id="sprytextfield3">
-                <input type="text" name="apellidos" value="" size="32" maxlength="30"/>
-                <span class="textfieldRequiredMsg">Se necesita un valor.</span>
-            </span></td>
+            <th><label for="apellidos"> Apellidos: </label></th>
+            <td><input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" maxlength="30" value="" required/></td>
         </tr>
         <tr>
-            <th>Telefono:</th>
-            <td><span id="sprytextfield4">
-                <input type="text" name="telefono" value="" size="32" maxlength="12"/>
-                <span class="textfieldRequiredMsg">Se necesita un valor.</span>
-            </span></td>
-        </tr>
+            <th><label for="telefono"> Telefono: </label></th>
+            <td><input type="text" id="telefono" placeholder="Telefono" name="telefono" maxlength="12" value="" required/></td>
+        </tr>		
         <tr>
-            <th>email:</th>
-            <td><span id="sprytextfield5">
-                <input type="text" name="email" value="" size="32" maxlength="60"/>
-                <span class="textfieldRequiredMsg">Se necesita un valor.</span>
-            </span></td>
+            <th><label for="email"> Email: </label></th>
+            <td><input type="text" id="email" placeholder="Email" name="email" maxlength="60" value="" required/></td>
         </tr>
     </table>
-    <!--<input type="submit" value="Insertar Cliente" />-->
-    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/alta_cliente.php', '#form1')" />
-    <input type="button" id="id_cancelar_alta" value="Cancelar" />
+    
+    <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/form_insertar_cliente.php', '#form1')" />
+    <input type="button" id="id_clientes" value="Cancelar" />
     <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </div>

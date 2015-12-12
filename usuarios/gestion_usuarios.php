@@ -35,12 +35,12 @@
                     </tr>";
 
 
-        while($reg=mysqli_fetch_array($resultado) ){
-            $dni_usuario=$reg[0];
-            $zona=$reg[1];
-            $nombre=$reg[2];
-            $apellidos=$reg[3];
-            $cargo=$reg[4];
+        while($reg = mysqli_fetch_array($resultado) ){
+            $dni_usuario = $reg[0];
+            $zona = $reg[1];
+            $nombre = $reg[2];
+            $apellidos = $reg[3];
+            $cargo = $reg[4];
 
             $display.="<tr>
                          <td><a href=\"eliminar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_eliminar_usuario' value='Eliminar'></a></td>

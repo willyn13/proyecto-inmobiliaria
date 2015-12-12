@@ -58,6 +58,7 @@ Página de inicio de la Aplicación
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
                     <h1><span>Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Mas&nbsp;Cercana</span></h1>
+                    <a><p id="id_cerrar_sesion">CERRAR SESIÓN</p></a>
                 </div>
 
                 <!-- Menus -->
@@ -116,10 +117,10 @@ Página de inicio de la Aplicación
                 
                 <!-- Descripcion de la web -->
                 <div id="id_descripcion">
-                    <h1><span class="cls_descri">Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.Vende tu vivienda mas rapido</span></h1>
-                    <h1><span class="cls_descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
-                    <h1><span class="cls_descri">Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal</span></h1>
-                    <h1><span class="cls_descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas) Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
+                    <h1><span class="cls_descri">Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
+                    <h1><span class="cls_descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
+                    <h1><span class="cls_descri">Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal</span></h1>
+                    <h1><span class="cls_descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
                 </div>
             </div>
             
