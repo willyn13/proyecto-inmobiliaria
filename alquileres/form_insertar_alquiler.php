@@ -1,9 +1,12 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">    
 <?php
+session_start();
+$dni = $_SESSION["dni"];
+echo $dni;
     $conexion = mysqli_connect('localhost','root','','inmobiliaria')
     or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
@@ -16,40 +19,38 @@
         $idcasa = $_POST['IDCASA'];
 
         //campos del insert
-        session_start();
-        $dni = $_SESSION["dni"];
         $consulta = "INSERT INTO alquileres(idcasa,dni_inquilino,dni_usuario,fecha_inicio,fecha_fin,precio_final) VALUES "
                 . "(".$_POST['IDCASA'].",".$_POST['DNIINQUILINO'].",".$dni.",".$_POST['FECHAINICIO'].",".$_POST['FECHAFIN']."',".$_POST['PRECIOFINAL'].")";
 
-        $resultado = mysqli_query($conexion,$consulta);
+        $resultado = mysqli_query($conexion,$consulta) or die(mysql_error($conexion));
         
         if ($resultado === true){
-            echo "</br><h2>Venta&nbsp;Registrada</h2>";
-            echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
+            echo "</br><h2>Alquiler&nbsp;Registrado</h2>";
+            echo '<a><input type="button" id="id_alquiler" value="Aceptar"></a>';
         } else {
-            echo "</br><h2>Venta&nbsp;No&nbsp;Registrada</h2>";
-            echo '<a href="gestion_ventas.php"><input type="button" id="id_insertar" value="Aceptar"></a>';
+            echo "</br><h2>Alquiler&nbsp;No&nbsp;Registrado</h2>";
+            echo '<a><input type="button" id="id_alquiler" value="Aceptar"></a>';
         }
     }
     
     echo "</div>";
     
-    if (empty($_POST['IDCASA'])){
-        $_POST['IDCASA'] = '10';
-    }
-    $id_padre=$_POST['IDCASA'];
+//    if (empty($_POST['IDCASA'])){
+//        $_POST['IDCASA'] = '10';
+//    }
+    //$id_padre=$_POST['IDCASA'];
     
     echo '<div class="cls_gestiones">';
     echo '<h1>Dar De Alta Nuevo Alquiler</h1><br>';
-    echo "<form action=\"".$_SERVER['PHP_SELF']."\" method=\"POST\">";
+    echo "<form  name='form1' id='form1'>";
 ?>
 <table>		
     <tr>
         <th><label for="IDCASA"> Casa: </label></th>
-        <td><select name="IDCASA" onChange='this.form.submit()' >
+        <td><select name="IDCASA" <!--onChange='this.form.submit()'--> >
                 <option value="" selected>Selecciona Inmueble</option>
 <?php		
-                $consulta = "SELECT idcasa FROM inmuebles WHERE venta=1";
+                $consulta = "SELECT idcasa FROM inmuebles";
                 $resultado = mysqli_query($conexion,$consulta);
 
                 while ($casa = mysqli_fetch_array($resultado)){
@@ -65,21 +66,21 @@
     </tr>
     <tr>
         <th><label for="PRECIOFINAL"> Precio: </label></th>
-        <td>
+        <td><input type="text"></td>
 <?php
-            if (!empty($id_padre)){
-                $consulta = "SELECT precio_alquiler FROM inmuebles WHERE idcasa='".$id_padre."'";
-                $resultado = mysqli_query($conexion,$consulta);
-                if (mysqli_num_rows($resultado) !=0){
-                    while ($casa=mysqli_fetch_array($resultado)){
-                        echo "<input type =\"text\" name =\"PRECIOFINAL\" value=".$casa[0]." maxlength='4' required>";
-                    }
-                } else {
-                    echo "<input type =\"text\" value='' maxlength='4' required>";
-                }
-            }
+//            if (!empty($id_padre)){
+//                $consulta = "SELECT precio_alquiler FROM inmuebles WHERE idcasa='".$id_padre."'";
+//                $resultado = mysqli_query($conexion,$consulta);
+//                if (mysqli_num_rows($resultado) !=0){
+//                    while ($casa=mysqli_fetch_array($resultado)){
+//                        echo "<input type =\"text\" name =\"PRECIOFINAL\" value=".$casa[0]." maxlength='4' required>";
+//                    }
+//                } else {
+//                    echo "<input type =\"text\" value='' maxlength='4' required>";
+//                }
+//            }
 ?>
-        </td>
+        <!--</td>-->
     </tr>
     <tr>
         <th><label for="FECHAINICIO"> Fecha Inicio: </label></th>
@@ -94,17 +95,19 @@
         <td><select name="DNIPROPIETARIO">
                 <option value="" selected>Selecciona Comprador</option>
 <?php                 
-                $consulta = "SELECT dni_cliente, nombre, apellidos FROM clientes WHERE dni_cliente NOT IN(select dni_inquilino from alquileres ) AND dni_cliente NOT IN (select dni_comprador from ventas) AND dni_cliente NOT IN(select dni_propietario from inmuebles)";
+                $consulta = "SELECT dni_cliente, nombre, apellidos FROM clientes WHERE dni_cliente NOT IN(select dni_inquilino from alquileres) AND dni_cliente NOT IN (select dni_comprador from ventas) AND dni_cliente NOT IN(select dni_propietario from inmuebles)";
                 $resultado = mysqli_query($conexion,$consulta);
                 while ($cliente=mysqli_fetch_array($resultado)){
-                    echo "<option value=\"".$cliente[0]."\">".$cliente[1].", ".$cliente[2]."</option>";
+                    echo "<option value=\"".$cliente[0]."\">".$cliente[1]." ".$cliente[2]."</option>";
                 }
 ?>
             </select>
         </td>
     </tr>
 </table>
-<input type="submit" id="boton" value="Insertar Alquiler" name="boton"/>
-<a href="gestion_alquileres.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar" /></a>
+<!--<input type="submit" id="boton" value="Insertar Alquiler" name="boton"/>-->
+<!--<a href="gestion_alquileres.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar" /></a>-->
+<input type="button" value="Insertar Alquiler" onclick="ajaxFormulario('alquileres/form_insertar_alquiler.php', '#form1')" />
+<input type="button" id="id_alquileres" value="Cancelar" />
 <?php   
 echo "</form></div>";	

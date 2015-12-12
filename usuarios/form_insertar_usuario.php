@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">
 <?php 
@@ -71,7 +71,7 @@
 
 <div class="cls_gestiones"> 
     <h1>Dar De Alta Nuevo Usuario</h1><br>
-    <form action="<?php echo $editFormAction; ?>" method="POST" name="form1" id="form1">
+    <form name="form1" id="form1">
         <table>
             <tr>
                 <th><label for="dni_usuario"> DNI Usuario: </label></th>
@@ -99,8 +99,8 @@
             </tr>
         </table>
         
-        <input type="submit" id="id_insertar" value="Insertar Usuario" name="insertar" />
-        <a href="gestion_usuarios.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar" /></a>
+        <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('usuarios/form_insertar_usuario.php', '#form1')" />
+        <input type="button" id="id_usuarios" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1"/>
     </form>
 </div>

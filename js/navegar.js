@@ -32,10 +32,10 @@ function ajaxFormulario(urlAjax, idformulario){
     });
 }
 
-function ajaxSinFormulario(dni_cliente,url){
+function ajaxSinFormulario(dato,url){
         $(document).ready(function(){
                     $(function(){
-                               $.get(url, {dni_cliente : dni_cliente}, function(respuesta) {
+                               $.get(url, {dato : dato}, function(respuesta) {
                                     $("#id_content").html(respuesta);
                                });  
                     });
@@ -44,11 +44,20 @@ function ajaxSinFormulario(dni_cliente,url){
 /******************************FIN FUNCIONES GENERALES*************************************/
 
  /*************************************MENU COMERCIALES************************************/
-    //Enlace gestion de inmuebles
+ //Gestión de inmuebles
     cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
-    //Enlace gestion de clientes
     cargarDatos("#id_gestionCliente", "clientes/gestion_clientes.php");
-    //Dentro del enlace gestion de clientes, los enlaces de la tabla
     cargarDatos("#id_alta_cliente", "clientes/form_insertar_cliente.php");
     cargarDatos("#id_clientes", "clientes/gestion_clientes.php");
 /***********************************FIN MENU COMERCIALES***********************************/
+
+/***********************************MENU ADMINISTRADORES***********************************/
+//Gestión de clientes
+cargarDatos("#id_gestionusuarios", "usuarios/gestion_usuarios.php");
+cargarDatos("#id_alta_usuario", "usuarios/form_insertar_usuario.php");
+cargarDatos("#id_usuarios", "usuarios/gestion_usuarios.php");
+//Gestión de alquileres
+cargarDatos("#id_gestionAlquiler", "alquileres/gestion_alquileres.php");
+cargarDatos("#id_alta_alquiler", "alquileres/form_insertar_alquiler.php");
+cargarDatos("#id_usuarios", "usuarios/gestion_usuarios.php");
+/**********************************FIN MENU ADMINISTRADORES********************************/

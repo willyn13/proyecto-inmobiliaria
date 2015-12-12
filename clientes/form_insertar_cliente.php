@@ -40,9 +40,9 @@ if (!function_exists("GetSQLValueString")) {
     }
 }
 
-$editFormAction = $_SERVER['PHP_SELF'];
+//$editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
-    $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+  //  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {

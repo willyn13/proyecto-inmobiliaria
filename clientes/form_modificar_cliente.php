@@ -12,7 +12,7 @@
         exit();
     }
 
-    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dni_cliente']."'";	
+    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dato']."'";	
     $resp_sql = mysqli_query($conexion,$sql_cliente);
 
     $i = 0;

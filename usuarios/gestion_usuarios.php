@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <?php
     echo '<div class="cls_dialog">';
@@ -23,7 +23,7 @@
         if (mysqli_num_rows($resultado) == 0 ){
             $display.="<p class=\"error\"><i>No hay comerciales.</i></p>";
         } else{
-            $display.="<a href=\"form_insertar_usuario.php\"><input type='submit' name='submit' value='Dar de Alta un Usuario'></a>";
+            $display.="<a><input type='button' id='id_alta_usuario' name='id_alta_usuario' value='Dar de Alta un Usuario'></a>";
             $display.="<tr>
                     <th></th>
                     <th></th>
@@ -43,8 +43,8 @@
             $cargo = $reg[4];
 
             $display.="<tr>
-                         <td><a href=\"eliminar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_eliminar_usuario' value='Eliminar'></a></td>
-                         <td><a href=\"form_modificar_usuario.php?dni_usuario=".$dni_usuario."\"><input type='button' id='id_modificar_usuario' value='Modificar'></a></td>
+                         <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$dni_usuario."','usuarios/eliminar_usuario.php')\"></a></td>
+                         <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$dni_usuario."','usuarios/form_modificar_usuario.php')\"></a></td>
                          <td>".$dni_usuario."</td>	
                          <td>".$nombre."</td>
                          <td>".$apellidos."</td>

@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">   
 <?php
@@ -11,8 +11,7 @@
         printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
         exit();
     }
-
-    $sql_comercial = "SELECT * FROM usuarios WHERE dni_usuario='".$_GET['dni_usuario']."'";
+    $sql_comercial = "SELECT * FROM usuarios WHERE dni_usuario='".$_GET['dato']."'";
     
     $resp_sql = mysqli_query($conexion,$sql_comercial);
 
@@ -36,7 +35,7 @@
 
 <div class="cls_gestiones">
     <h1>Modificar Datos Usuario</h1><br>
-    <form action="modificar_usuario.php" method="POST">
+    <form id="formulario" method="POST">
         <table>
             <tr>
                 <th><label for="dni_usuario"> DNI Usuario:</label></th>
@@ -64,8 +63,8 @@
             </tr>	
         </table>
         
-        <input type="submit" id="id_modificar" value="Guardar Usuario" name="modificar" />
-        <a href="gestion_usuarios.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar" /></a>
+        <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('usuarios/modificar_usuario.php', '#formulario')" />
+        <input type="button" id="id_usuarios" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1"/>
     </form>
 </div>

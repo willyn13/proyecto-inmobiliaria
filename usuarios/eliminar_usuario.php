@@ -1,6 +1,6 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">
 <?php
@@ -12,16 +12,16 @@
         exit();
     }
 
-    $sql_delete = "DELETE FROM usuarios WHERE dni_usuario='".$_GET['dni_usuario']."'";
+    $sql_delete = "DELETE FROM usuarios WHERE dni_usuario='".$_GET['dato']."'";
     
     $result=mysqli_query($conexion,$sql_delete);
     
     if($result === true){
         echo "</br><h2>Usuario&nbsp;Borrado</h2>";
-        echo '<a href="gestion_usuarios.php"><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_usuarios" value="Aceptar"></a>';
     }else{
         echo "</br><h2>Usuario&nbsp;No&nbsp;Borrado</h2>";
-        echo '<a href="gestion_usuarios.php"><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_usuarios" value="Aceptar"></a>';
     }
 ?>
 </div>

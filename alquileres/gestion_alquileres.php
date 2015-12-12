@@ -1,8 +1,10 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <?php
+session_start();
+$dni = $_SESSION["dni"];
     echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
@@ -13,9 +15,6 @@
         }
     echo '</div>';
 
-    session_start();
-    $_SESSION["dni"] = $_POST["dni"];
-    $dni = $_SESSION["dni"];
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
 
     $result = mysqli_query($conexion,$sql);
@@ -40,7 +39,7 @@
     $resultado1 = mysqli_query($conexion,$consulta);
 
     $display.= '<table>
-                <a href="form_insertar_alquiler.php"><input type="submit" name="submit" value="Dar de Alta un Alquiler"></a>
+                <a><input type="button" id="id_alta_alquiler" name="id_alta_alquiler" value="Dar de Alta un Alquiler"></a>
                 <tr>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -59,8 +58,10 @@
         $PRECIOALQUILER = $fila[5];
 
         $display.="<tr>
-                    <td><a href=\"eliminar_alquiler.php?IDCASA=".$IDCASA."&&FECHAINICIO=".$FECHAINICIO."&&FECHAFIN=".$FECHAFIN."\"><input type=\"button\" id=\"id_eliminar_alquiler\" value=\"Eliminar\"/></a></td>
-                    <td><a href=\"form_modificar_alquiler.php?IDCASA=".$IDCASA."&&FECHAINICIO=".$FECHAINICIO."&&FECHAFIN=".$FECHAFIN."&&PRECIOALQUILER=".$PRECIOALQUILER."&&DNIINQUILINO=".$DNIINQUILINO."\"><input type=\"button\" id=\"id_modificar_alquiler\" value=\"Modificar\"/></a></td>
+                    <!--<td><a href=\"eliminar_alquiler.php?IDCASA=".$IDCASA."&&FECHAINICIO=".$FECHAINICIO."&&FECHAFIN=".$FECHAFIN."\"><input type=\"button\" id=\"id_eliminar_alquiler\" value=\"Eliminar\"/></a></td>-->
+                    <!--<td><a href=\"form_modificar_alquiler.php?IDCASA=".$IDCASA."&&FECHAINICIO=".$FECHAINICIO."&&FECHAFIN=".$FECHAFIN."&&PRECIOALQUILER=".$PRECIOALQUILER."&&DNIINQUILINO=".$DNIINQUILINO."\"><input type=\"button\" id=\"id_modificar_alquiler\" value=\"Modificar\"/></a></td>
+                    <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/eliminar_alquiler.php')\"></a></td>
+                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/form_modificar_alquiler.php')\"></a></td>
                     <td>".$IDCASA."</td>
                     <td>".$FECHAINICIO."</td>
                     <td>".$FECHAFIN."</td>
