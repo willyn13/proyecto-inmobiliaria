@@ -71,7 +71,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 </div>
 
 <div class="cls_gestiones"> 
-<h1>Dar De Alta Nueva Venta</h1><br>
+<h1>Dar De Alta Nuevo Alquiler</h1><br>
 <form name="form1" id="form1">
     <table>
     <tr>
