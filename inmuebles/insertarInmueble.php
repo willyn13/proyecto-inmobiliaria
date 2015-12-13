@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel=stylesheet href="style.css" type="text/css">
@@ -74,11 +77,9 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
       <td><select name="localidad">
 	  <option selected>Selecciona localidad</option>
 <?php	
-
 session_start();
-$dni= $_SESSION["MM_Username"];
-$cargo= "";
-$zona="";
+$dni= $_SESSION["dni"];
+
 $sql="select cargo, idzona from usuarios where dni='".$dni."'";
 $result= mysqli_query($conexion,$sql);
 while($fila = mysqli_fetch_row($result)){
@@ -115,7 +116,7 @@ echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
 $consulta="SELECT dni_cliente,nombre, apellidos from clientes";
 $resultado=mysqli_query($conexion,$consulta);
 while ($cliente=mysqli_fetch_array($resultado)){
-echo "<option value='".$cliente[0]."'>".$cliente[1].", ".$cliente[2]."</option>";
+echo "<option value='".$cliente[0]."'>".$cliente[1]." ".$cliente[2]."</option>";
 }
 ?></td></tr>
   <td><input type="SUBMIT" align="center" name="SUBMIT" value="Insertar Inmueble"></td>

@@ -46,6 +46,8 @@ function ajaxSinFormulario(dato,url){
  /*************************************MENU COMERCIALES************************************/
  //Gestión de inmuebles
     cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
+    cargarDatos("#id_alta_inmueble", "inmuebles/insertarInmueble.php")
+//Gestión de clientes
     cargarDatos("#id_gestionCliente", "clientes/gestion_clientes.php");
     cargarDatos("#id_alta_cliente", "clientes/form_insertar_cliente.php");
     cargarDatos("#id_clientes", "clientes/gestion_clientes.php");

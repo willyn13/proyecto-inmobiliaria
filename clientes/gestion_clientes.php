@@ -11,7 +11,6 @@
             printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
             exit();
         }
-        
     echo '</div>';
         $display='<div class="cls_gestiones"><h1>Gestión de Clientes</h1>';	
 

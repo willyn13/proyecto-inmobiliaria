@@ -318,4 +318,21 @@ $(document).on('click',"#id_condiciones",function(event){
     event.stopImmediatePropagation();
 });
 
-});  
+});
+//Recoger localidades segun la provincia seleccionada
+$(function(){
+    $("#localidades").css({"display":"none"});
+    $("#provincia").on("change",function(){
+           var id = $("#provincia").val();
+           var url = "../peticiones/recogerLocalidades.php";
+           $.ajax({
+               type: 'POST',
+               url:url,
+               data: 'id='+id,
+               success: function (data) {
+                   $("#localidades").css({"display":"block"});
+                   $("#localidad").html(data);    
+            }
+           });
+    });
+});

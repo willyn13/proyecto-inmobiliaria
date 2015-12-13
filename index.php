@@ -97,7 +97,7 @@ Página de inicio de la Aplicación
                     </ul>
 <?php
                         }
-                        session_destroy();
+                        //session_destroy();
 ?>
                 </div>
             </div>
