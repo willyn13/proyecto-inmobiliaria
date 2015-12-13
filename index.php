@@ -58,7 +58,7 @@ Página de inicio de la Aplicación
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
                     <h1><span>Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Mas&nbsp;Cercana</span></h1>
-                    <a><p id="id_cerrar_sesion">CERRAR SESIÓN</p></a>
+                    <input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" />
                 </div>
 
                 <!-- Menus -->
@@ -80,17 +80,17 @@ Página de inicio de la Aplicación
                     <ul class="cls_nav">
                         <li><a><h1>Comprar</h1></a>
                             <ul>
-                                <li id="id_comprar"><a><h3>Casas</h3></a></li>
+                                <li id="id_comprar"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li><a><h1>Alquilar</h1></a>
                             <ul>
-                                <li id="id_alquilar"><a><h3>Casas</h3></a></li>
+                                <li id="id_alquilar"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li><a><h1>Vender</h1></a>
                             <ul>
-                                <li id="id_vender"><a><h3>Casas</h3></a></li>
+                                <li id="id_vender"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li id="id_inicio"><a><h1>Inicio&nbsp;Sesión</h1></a></li>

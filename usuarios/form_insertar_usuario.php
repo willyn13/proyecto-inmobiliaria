@@ -99,7 +99,7 @@
             </tr>
         </table>
         
-        <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('usuarios/form_insertar_usuario.php', '#form1')" />
+        <input type="button" value="Insertar Usuario" onclick="ajaxFormulario('usuarios/form_insertar_usuario.php', '#form1')" />
         <input type="button" id="id_usuarios" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1"/>
     </form>

@@ -67,12 +67,23 @@ $(document).on('click',"#id_cookies img",function(event){
         event.stopImmediatePropagation();
     });
 
+    $(document).on("click","#btnLogin_inicio",function(event){
+        $("#id_cerrar").css({"display":"block"});
+
+        event.stopImmediatePropagation();
+    });
     /*******************************************************************************
     03.2.- Cerrar Login
     ********************************************************************************/
     $(document).on('mouseleave',"#id_formularioLogin",function(event){
         $("#id_modalFondo").css({"display":"none"});
         $("#id_modalPantalla").css({"display":"none"});
+
+        event.stopImmediatePropagation();
+    });
+    
+    $(document).on("click","#id_cerrar",function(event){
+        $("#id_cerrar").css({"display":"none"});
 
         event.stopImmediatePropagation();
     });
@@ -114,7 +125,7 @@ $(document).on('click',"#id_informacion",function(event){
                 <a href="#"><img src="img/img4.jpg"/></a>\n\
             </div>\n\
             <p>Aqui iran todas la especificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmueble</p>\n\
-            <input type="button" value="Contratar"/>\n\
+            <input type="button" value="Contratar" id="id_contratar"/>\n\
             <a href="javascript:void();" class="mas">></a>\n\
             <a href="javascript:void();" class="menos"><</a>\n\
         </div>';
@@ -230,6 +241,22 @@ $(document).on('click',"#id_vender",function(event){
     event.stopImmediatePropagation();
 });
 
+$(document).on('click',"#id_contratar",function(event){
+    $("#id_contentMenusClientes").css({"display":"block"});
+    $("#id_contentMenusAdmin").css({"display":"none"});
+    $("#id_descripcion").css({"display":"none"});
+    $("#id_contentFooter").css({"display":"none"});
+
+    var v_pantallaVender = 
+        '<div class="cls_vender">\n\
+            <h1>CONTRATAR</h1>\n\
+        </div>';
+    
+    $("#id_contentMenusClientes").html(v_pantallaVender);
+    
+    event.stopImmediatePropagation();
+});
+
 /*******************************************************************************
 10.- Pintar Opciones Footer
 ********************************************************************************/
@@ -319,6 +346,7 @@ $(document).on('click',"#id_condiciones",function(event){
 });
 
 });
+
 //Recoger localidades segun la provincia seleccionada
 $(function(){
     $("#localidades").css({"display":"none"});
@@ -336,3 +364,4 @@ $(function(){
            });
     });
 });
+

@@ -352,6 +352,15 @@ body{
    line-height: 100px;
 }
 
+#id_cerrar{
+    float: right;
+    width: 10%;
+    position: fixed;
+    top: 3.5%;
+    right: 2%;
+    display: none;
+}
+
 #id_cabeceraIni h1 span{
     color: maroon;
 }
@@ -377,7 +386,11 @@ body{
 }
 
 #id_admin > li {
-    width: 16.66%;
+    width: 14.28%;
+}
+
+#id_comercial > li {
+    width: 20%;
 }
 
 .cls_nav li a {
@@ -394,16 +407,13 @@ body{
     background: grey;
 }
 
-.cls_nav li h1:hover, .cls_nav li h2:hover{
+.cls_nav li h1:hover{
     cursor: default;
 }
 
-.cls_nav li h3:hover {
+.cls_nav li h2:hover {
     cursor: pointer;
 }
-/*#id_comprar:hover, #id_alquilar:hover, #id_vender:hover, #id_inicio:hover, #id_gestionProvincias:hover, #id_gestionLocalidades:hover, #id_gestionComercial:hover, #id_gestionAdmin:hover, #id_gestionCliente:hover, #id_gestionCompra:hover, #id_gestionAlquiler:hover, #id_gestionInmueble:hover{
-    cursor: pointer !important;
-}*/
 
 .cls_nav li ul {
     display: none;
@@ -428,9 +438,9 @@ body{
 08.- Contenido Opciones Menus
 ================================================================================*/
 .cls_descri{
-    width: 40%;
+    width: 30%;
     float: left;
-    margin: 2.5% 5%;
+    margin: 2.5% 10%;
     text-align: justify;
     font: 1em Impact, Charcoal, sans-serif;
 }

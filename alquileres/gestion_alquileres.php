@@ -31,7 +31,7 @@ $dni = $_SESSION["dni"];
         while($fila = mysqli_fetch_row($result1)){
             $zona = $fila[0];
         }	
-        $consulta = "SELECT * FROM alquileres"; //WHERE dni_usuario='".$dni."'";
+        $consulta = "SELECT * FROM alquileres WHERE dni_usuario='".$dni."'";
     }
 
     $display = '<div class="cls_gestiones"><h1>Gestión de Alquileres</h1>';	

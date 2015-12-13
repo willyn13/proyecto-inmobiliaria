@@ -24,7 +24,7 @@ if (mysqli_num_rows($resultado)==0){
 			 </p>";
 			} else{
          echo '</div>';
-        $display='<div class="cls_gestiones"><h1>Gestión de Alquileres</h1>';
+        $display='<div class="cls_gestiones"><h1>Gestión de Inmuebles</h1>';
         $display.="<table>";
 	$display.="<a><input type='button' id='id_alta_inmueble' name='id_alta_inmueble' value='Dar de Alta un Inmueble'></a>";
                 $display.="<tr>
