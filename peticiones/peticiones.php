@@ -54,8 +54,8 @@ echo '<div class="cls_dialog">';
                         <th>Venta</th>
                         <td>
                             <select name="venta">
-                                <option value="SI">SI</option>
-                                <option value="NO" selected="selected">NO</option>
+                                <option value="S">SI</option>
+                                <option value="N" selected="selected">NO</option>
                             </select>
                         </td>
                     </tr>
@@ -67,8 +67,8 @@ echo '<div class="cls_dialog">';
                         <th>Alquiler</th>
                         <td>
                             <select name="alquiler">
-                                <option value="SI">si</option>
-                                <option value="NO" selected="selected">NO</option>
+                                <option value="S">si</option>
+                                <option value="N" selected="selected">NO</option>
                             </select>
                         </td>
                     </tr>
@@ -90,26 +90,46 @@ echo '<div class="cls_dialog">';
                     </tr>
                     <tr>
                         <th>Terraza</th>
-                        <td><input type="text" name="terraza"/></td>
+                        <td>
+                            <select name="terraza">
+                                <option value="S">si</option>
+                                <option value="N" selected="selected">NO</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Garaje</th>
-                        <td><input type="text" name="garaje"/></td>
+                        <td>
+                            <select name="garaje">
+                                <option value="S">si</option>
+                                <option value="N" selected="selected">NO</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Trastero</th>
-                        <td><input type="text" name="trastero"/></td>
+                        <td>
+                            <select name="trastero">
+                                <option value="S">si</option>
+                                <option value="N" selected="selected">NO</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Piscina</th>
-                        <td><input type="text" name="piscina"/></td>
+                        <td>
+                            <select name="piscina">
+                                <option value="S">si</option>
+                                <option value="N" selected="selected">NO</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <th>Direccion</th>
                         <td><input type="text" name="direccion"/></td>
                     </tr>
                 </table>
-                <input type="button" id="insertar_peticion" value="Insertar petición" />
+                <input type="button" value="Insertar Petición" onclick="ajaxFormulario('peticiones/insertaPeticiones.php', '#form1')" />
                 <input type="button" id="id_cancelar" value="Cancelar" />
             </form>
         </div>
