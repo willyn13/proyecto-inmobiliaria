@@ -25,19 +25,13 @@
     
     if($cargo == "Admin"){
         $consulta = "SELECT * FROM alquileres";  
-    } else {
-        $sql1 = "SELECT zona FROM usuarios WHERE dni_usuario='".$dni."'";
-        $result1 = mysqli_query($conexion,$sql1);
-        
-        while($fila = mysqli_fetch_row($result1)){
-            $zona = $fila[0];
-        }	
+    } else {	
         $consulta = "SELECT * FROM alquileres WHERE dni_usuario='".$dni."'";
     }
 
     $display = '<div class="cls_gestiones"><h1>Gestión de Alquileres</h1>';	
     
-    $resultado1 = mysqli_query($conexion,$consulta);
+    $resultado1 = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
     
     $display.= '<table>
                 <a><input type="button" id="id_alta_alquiler" name="alta_alquiler" value="Dar de Alta un Alquiler"></a>

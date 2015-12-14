@@ -3,6 +3,9 @@
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <?php
+    session_start();
+    $dni = $_SESSION["dni"];
+    
     echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
@@ -16,8 +19,8 @@
     $display = '<div class="cls_gestiones"><h1>Gestión de Usuarios</h1>';	
 
     $consulta = 'SELECT * FROM usuarios';
-    $resultado = mysqli_query($conexion,$consulta)
-    or die('Consulta fallida: ' . mysqli_error());
+    
+    $resultado = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
 
     $display.= "<table>";
         if (mysqli_num_rows($resultado) == 0 ){

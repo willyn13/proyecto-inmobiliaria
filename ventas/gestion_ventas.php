@@ -17,6 +17,7 @@
     echo '</div>';
     
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
+    
     $result = mysqli_query($conexion,$sql);
     
     while($fila = mysqli_fetch_row($result)){
@@ -25,19 +26,13 @@
     
     if($cargo == "Admin"){
         $consulta = "SELECT * FROM ventas";        
-    } else {
-        $sql1 = "SELECT zona FROM usuarios WHERE dni='".$dni."'";
-        $result1 = mysqli_query($conexion,$sql1);
-        
-        while($fila = mysqli_fetch_row($result1)){
-            $zona = $fila[0];
-        }	
+    } else {	
         $consulta = "SELECT * FROM ventas WHERE dni_usuario ='".$dni."'";
     }
 
     $display = '<div class="cls_gestiones"><h1>Gestión de Crompra-Venta</h1>';	
     
-    $resultado1 = mysqli_query($conexion,$consulta);
+    $resultado1 = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
 
     $display.= '<table>
                 <a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>

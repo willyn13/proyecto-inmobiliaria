@@ -16,20 +16,33 @@
         }
     echo '</div>';
     
-    $dni = $_SESSION["dni"];
+    $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
+
+    $result = mysqli_query($conexion,$sql);
+    while($fila = mysqli_fetch_row($result)){
+        $cargo = $fila[0];
+    }
     
-    $sqlMostrar = "SELECT i.idcasa, i.venta, i.alquiler, i.habitaciones, i.m2, i.banios, i.terraza, i.trastero, i.piscina,
-        i.garaje, i.direccion, i.precio_venta, i.precio_alquiler, l.localidad, p.provincia 
-        FROM inmuebles i, localidades l, provincias p
-        WHERE i.idlocalidad = l.idlocalidad AND l.idprovincia = p.idprovincia 
-        AND i.idlocalidad = (SELECT idzona FROM usuarios WHERE dni_usuario='".$dni."')";
+    if($cargo == "Admin"){
+        $sqlMostrar = "SELECT i.idcasa, i.venta, i.alquiler, i.habitaciones, i.m2, i.banios, i.terraza, i.trastero, i.piscina,
+            i.garaje, i.direccion, i.precio_venta, i.precio_alquiler, l.localidad, p.provincia 
+            FROM inmuebles i, localidades l, provincias p
+            WHERE i.idlocalidad = l.idlocalidad AND l.idprovincia = p.idprovincia ";  
+    } else {
+    
+        $sqlMostrar = "SELECT i.idcasa, i.venta, i.alquiler, i.habitaciones, i.m2, i.banios, i.terraza, i.trastero, i.piscina,
+            i.garaje, i.direccion, i.precio_venta, i.precio_alquiler, l.localidad, p.provincia 
+            FROM inmuebles i, localidades l, provincias p
+            WHERE i.idlocalidad = l.idlocalidad AND l.idprovincia = p.idprovincia 
+            AND i.idlocalidad = (SELECT idzona FROM usuarios WHERE dni_usuario='".$dni."')";
+    }
 
     $resultado = mysqli_query($conexion,$sqlMostrar) or die (mysqli_error($conexion));
     
     if (mysqli_num_rows($resultado) == 0){
         echo "<h1 class=\"error\">No hay inmuebles.</h1>";
     } else {
-        $display.= '<div class="cls_gestiones"><h1>Gestión de Inmuebles</h1>
+        $display = '<div class="cls_gestiones"><h1>Gestión de Inmuebles</h1>
                         <table>
                             <a><input type="button" id="id_alta_inmueble" name="alta_inmueble" value="Dar de Alta un Inmueble"></a>
                             <tr>
@@ -47,7 +60,7 @@
                                 <th>LOCALIDAD</th>
                                 <th>PROVINCIA</th>
                             </tr>';
-            
+        
         while ($inmueble = mysqli_fetch_array($resultado)){
             if($inmueble['piscina'] == 0) {$piscina = "no";} else {$piscina = "si";}
             if($inmueble['terraza'] == 0) {$terraza = "no";} else {$terraza = "si";}
