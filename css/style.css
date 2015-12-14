@@ -508,6 +508,7 @@ body{
     border-radius: 15px;
     padding-bottom: 1.5%;
     text-align: center;
+    overflow: auto;
 }
 
 .cls_gestiones h1{

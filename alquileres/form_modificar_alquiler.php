@@ -36,23 +36,23 @@
     <form id="formulario">
         <table>
             <tr>
-                <th><label for="idcasa">Id Casa</label></th>
+                <th><label for="idcasa">Id Casa:</label></th>
                 <td><input type="text" id="idcasa" placeholder="id Casa" name="IDCASA" maxlength="3" value="<?php echo $alquiler[0] ?>" required readonly="readonly"/></td>
             </tr>
             <tr>
-                <th><label for="fechaInicio">Fecha Inicio</label></th>
+                <th><label for="fechaInicio">Fecha Inicio:</label></th>
                 <td><input type="text" id="fechaInicio" placeholder="Fecha Inicio" name="FECHAINICIO" maxlength="10" value="<?php echo $alquiler[3] ?>" required /></td>
             </tr>
             <tr>
-                <th><label for="fechaFin">Fecha Fin</label></th>
+                <th><label for="fechaFin">Fecha Fin:</label></th>
                 <td><input type="text" id="fechaFin" placeholder="Fecha Fin" name="FECHAFIN" maxlength="10" value="<?php echo $alquiler[4] ?>" required /></td>
             </tr>
             <tr>
-                <th><label for="precioAlquiler">Precio Alquiler</label></th>
-                <td><input type="text" id="precioAlquiler" placeholder="Precio Alquiler" name="PRECIOALQUILER" maxlength="4" value="<?php echo $alquiler[5] ?>" required/></td>
+                <th><label for="precioAlquiler">Precio Alquiler:</label></th>
+                <td><input type="text" id="precioAlquiler" placeholder="Precio Alquiler" name="PRECIOALQUILER" maxlength="4" value="<?php echo $alquiler[5] ?> " required/></td>
             </tr>		
             <tr>
-                <th><label for="dniInquilino">DNI Inquilino</label></th>
+                <th><label for="dniInquilino">DNI Inquilino:</label></th>
                 <td><input type="text" id="dniInquilino" placeholder="DNI Inquilino" name="DNIINQUILINO" maxlength="9" value="<?php echo $alquiler[1] ?>" required/></td>
             </tr>
         </table>

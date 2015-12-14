@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <th><label for="precioVenta">Precio Venta</label></th>
-                <td><input type="text" id="precioVenta" placeholder="Precio Venta" maxlength="8" name="PRECIOVENTA" value="<?php echo $venta[4] ?>" required/></td>
+                <td><input type="text" id="precioVenta" placeholder="Precio Venta" maxlength="8" name="PRECIOVENTA" value="<?php echo $venta[4] ?> " required/></td>
             </tr>
             <tr>
                 <th><label for="dniComprador">DNI Comprador</label></th>
