@@ -501,12 +501,12 @@ body{
 10.-Gestiones Administracion
 *******************************************************************************/
 .cls_gestiones{
-    width: 85%;
+    width: 92%;
     margin: 0 auto 2%;
     background-color: #ddd;
     border: 2px solid black;
     border-radius: 15px;
-    padding-bottom: 1.5%;
+    padding: 1.5%;
     text-align: center;
     overflow: auto;
 }
