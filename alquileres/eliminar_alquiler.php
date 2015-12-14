@@ -14,14 +14,14 @@
 
     $sql_delete = "DELETE FROM alquileres WHERE idcasa=".$_GET['IDCASA']." AND fecha_inicio='".$_GET['FECHAINICIO']."' AND fecha_fin='".$_GET['FECHAFIN']."'";
 
-    $result = mysqli_query($conexion,$sql_delete);
+    $result = mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
 
     if($result === true){
         echo "</br><h2>Alquiler&nbsp;Borrado</h2>";
-        echo '<a href="gestion_alquileres.php"><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_alquileres" value="Aceptar"></a>';
     }else{
         echo "</br><h2>Alquiler&nbsp;No&nbsp;Borrado</h2>";
-        echo '<a href="gestion_alquileres.php"><input type="button" id="id_eliminar" value="Aceptar"></a>';
+        echo '<a><input type="button" id="id_alquileres" value="Aceptar"></a>';
     }
 ?>
 </div>

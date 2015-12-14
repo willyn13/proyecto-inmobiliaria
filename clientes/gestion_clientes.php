@@ -22,7 +22,7 @@
             if (mysqli_num_rows($resultado) == 0 ){
                 $display.='<p class="error">No hay Clientes</p>';
             } else {
-                $display.="<a><input type='button' id='id_alta_cliente' name='id_alta_cliente' value='Dar de Alta un Cliente'></a>";
+                $display.="<a><input type='button' id='id_alta_cliente' name='alta_cliente' value='Dar de Alta un Cliente'></a>";
                 $display.="<tr>
                               <th></th>
                               <th></th>

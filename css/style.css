@@ -438,9 +438,10 @@ body{
 08.- Contenido Opciones Menus
 ================================================================================*/
 .cls_descri{
-    width: 30%;
+    width: 26%;
     float: left;
-    margin: 2.5% 10%;
+    margin: 2.5% 0;
+    margin-left: 16%;
     text-align: justify;
     font: 1em Impact, Charcoal, sans-serif;
 }

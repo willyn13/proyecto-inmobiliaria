@@ -12,7 +12,7 @@
         exit();
     }
     
-    $sql_delete="DELETE FROM clientes WHERE dni_cliente='".$_GET['dato']."'";
+    $sql_delete = "DELETE FROM clientes WHERE dni_cliente='".$_GET['dato']."'";
     
     $result = mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
 

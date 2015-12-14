@@ -39,7 +39,7 @@ $dni = $_SESSION["dni"];
     $resultado1 = mysqli_query($conexion,$consulta);
     
     $display.= '<table>
-                <a><input type="button" id="id_alta_alquiler" name="id_alta_alquiler" value="Dar de Alta un Alquiler"></a>
+                <a><input type="button" id="id_alta_alquiler" name="alta_alquiler" value="Dar de Alta un Alquiler"></a>
                 <tr>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
