@@ -124,7 +124,7 @@ $(document).on('click',"#id_informacion",function(event){
                 <a href="#"><img src="img/img3.jpg"/></a>\n\
                 <a href="#"><img src="img/img4.jpg"/></a>\n\
             </div>\n\
-            <p>Aqui iran todas la especificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmuebleespecificaciones del inmueble</p>\n\
+            <p>AQUI IRAN TODAS LA ESPECIFICACIONES DEL INMUEBLE</p>\n\
             <input type="button" value="Contratar" id="id_contratar"/>\n\
             <a href="javascript:void();" class="mas">></a>\n\
             <a href="javascript:void();" class="menos"><</a>\n\
@@ -189,7 +189,7 @@ $(document).on('click',"#id_alquilar",function(event){
 function pintaVentanasCompras(){
     var v_ventana = "<h1>COMPRAS</h1>";
     
-    for(var i=0; i<10; i++){
+    for(var i=0; i<4; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\
@@ -207,7 +207,7 @@ function pintaVentanasCompras(){
 function pintaVentanasAlquiler(){
     var v_ventana = "<h1>ALQUILERES</h1>";
     
-    for(var i=0; i<2; i++){
+    for(var i=0; i<7; i++){
         v_ventana = v_ventana + 
         '<div class="cls_ventanas" id="id_inmuebleAlquiler1">\n\
             <div class="cls_slider">\n\
