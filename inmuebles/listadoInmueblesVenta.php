@@ -17,11 +17,11 @@
 		printf("No se pudo conectar: %s/n", mysqli_connect_error());
 		exit();
 	}
-	
-$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`,
- `idlocalidad`, `precio_venta`, `precio_alquiler`, `dni_propietario`
-FROM `inmuebles` , `localidades`, `provincias`
-where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.'idprovincia' and 'venta' = 'S'";
+	//$dni = $_SESSION['dni'];
+$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
+FROM `inmuebles` , `localidades`, `provincias` 
+where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` 
+and `localidades`.`idprovincia`=`provincias`.`idprovincia` and `venta` = 1";
 
 $resultado =mysqli_query($conexion,$sqlMostrar);
 if (mysqli_num_rows($resultado)==0 ){
@@ -36,10 +36,11 @@ while ($inmueble = mysqli_fetch_array($resultado)){
 	if($inmueble['trastero']==0) {$trastero="no";} else {$trastero="si";}
 	if($inmueble['garaje']==0) {$garaje="no";} else {$garaje="si";}
 			echo "<tr>";
-			echo "<td> <img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></td>";
+			
+			//echo "<td> <img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></td>";
 			echo '<td><p> Precio de venta: ' .$inmueble['precio_venta'].'</p>';
 			echo '<p> El inmueble consta de: ' .$inmueble['habitaciones'].' habitaciones, '.$inmueble['banios'].' baños y se encuentra en la calle '.
-			$inmueble['direccion'].' en la comunidad de '.$inmueble['localidad'].' de la provincia de '.$inmueble['provincia'].'</p>';
+			$inmueble['direccion'].'</p>';
 			echo '<p>Piscina: '.$piscina;
 			echo '<p>Terraza: '.$terraza;
 			echo '<p>Trastero: '.$trastero;

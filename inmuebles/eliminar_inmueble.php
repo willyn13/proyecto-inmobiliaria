@@ -19,7 +19,7 @@ $sql_delete="delete from inmuebles where idcasa='".$_GET['idcasa']."'";
 $result=mysqli_query($conexion,$sql_delete);
 if($result===true){
 echo "Inmueble borrado
-<p><a href=\"principal.php\"><img src='home.png' alt='home' WIDTH='100' HEIGHT='100' border='0'>";
+<p><a href=\"gestiondeinmuebles.php\"><img src='home.png' alt='home' WIDTH='100' HEIGHT='100' border='0'>";
 }
 else{
 echo "Inmueble no borrado";

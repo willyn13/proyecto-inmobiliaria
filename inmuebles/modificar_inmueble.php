@@ -193,7 +193,7 @@ if($idlocalidad[0]<>$inmueble[1]) echo "<option value='".$idlocalidad[0]."'>".$i
 			*/		-->
 			<tr>
 				<td><label for="dnipropietario"> Dni propietario: </label></td>
-				<td><input type="text" id="dnipropietario" placeholder="Escribe dnipropietario" name="dnipropietario" value="<?php echo $inmueble[2] ?>" /></td>
+				<td><input type="text" id="dni_propietario" placeholder="Escribe dnipropietario" name="dni_propietario" value="<?php echo $inmueble[2] ?>" /></td>
 			</tr>
 		</table>
 	</div>

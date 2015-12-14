@@ -1,7 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
-<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel=stylesheet href="style.css" type="text/css">
@@ -9,6 +6,7 @@
 <title>Insertar Inmueble</title>
 </head>
 <?php
+session_start();
 $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 	or die('No se pudo conectar: ' . mysqli_error());
 
@@ -16,6 +14,22 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
 		printf("No se pudo conectar: %s/n", mysqli_connect_error());
 		exit();
 	}
+  
+//$dni="1";
+//$dni= $_SESSION["MM_Username"];
+$dni= $_SESSION["dni"];
+//echo $dni;
+$cargo= "";
+$zona="";
+$sql="select cargo, idzona from usuarios where dni_usuario='".$dni."'";
+$result= mysqli_query($conexion,$sql);
+while($fila = mysqli_fetch_row($result)){
+       $cargo=$fila[0];
+      // echo $cargo;
+       $zona =$fila[1];
+      // echo $zona;
+       }
+      //echo $zona;
 ?>
 <body>
 <form action="insertar_Inmueble.php" method="POST" enctype="multipart/form-data">
@@ -74,28 +88,37 @@ $conexion = mysqli_connect('localhost','root','','inmobiliaria')
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Localidad:</td>
-      <td><select name="localidad">
-	  <option selected>Selecciona localidad</option>
+      <td>
+	  <select name="localidad">
+    <option selected>Selecciona localidad</option>
 <?php	
-session_start();
-$dni= $_SESSION["dni"];
 
-$sql="select cargo, idzona from usuarios where dni='".$dni."'";
-$result= mysqli_query($conexion,$sql);
-while($fila = mysqli_fetch_row($result)){
+//$dni="";
+$dni= $_SESSION['dni'];
+/*$result= mysqli_query($conexion,$sql);
        $cargo=$fila[0];
        $zona =$fila[1];
-       }
+       
+      echo $zona;
+      */
 	if($cargo=="admin"){
-           $consulta="SELECT idlocalidad,localidad from localidades";       
+          $consulta="SELECT idlocalidad,localidad from localidades";       
        }else{
-           $consulta="SELECT idlocalidad,localidad from localidades where idlocalidad='".$zona."'";
+          $consulta="SELECT idlocalidad,localidad from localidades where idlocalidad=".$zona;
        }
-$resultado=mysqli_query($conexion,$consulta);
+       $resultado= mysqli_query($conexion,$consulta);
 while ($localidad=mysqli_fetch_array($resultado)){
 echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
 }
-?>  </td></tr>
+//<input type="text" name="localidad" value="" size="32" /></td>
+echo $zona;
+?> 
+
+ </td>
+ </tr>
+ <?php
+  echo "Zona= ".$zona." y cargo = ".$cargo;
+ ?>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Precio_venta:</td>
       <td><input type="text" name="precio_venta" value="" size="32" /></td>
@@ -116,7 +139,7 @@ echo "<option value='".$localidad[0]."'>".$localidad[1]."</option>";
 $consulta="SELECT dni_cliente,nombre, apellidos from clientes";
 $resultado=mysqli_query($conexion,$consulta);
 while ($cliente=mysqli_fetch_array($resultado)){
-echo "<option value='".$cliente[0]."'>".$cliente[1]." ".$cliente[2]."</option>";
+echo "<option value='".$cliente[0]."'>".$cliente[1].", ".$cliente[2]."</option>";
 }
 ?></td></tr>
   <td><input type="SUBMIT" align="center" name="SUBMIT" value="Insertar Inmueble"></td>
