@@ -12,7 +12,7 @@
         exit();
     }
     
-   $consulta="update clientes set 
+   $consulta = "UPDATE clientes SET 
             dni_cliente ='".$_POST['dni_cliente']."',
             nombre='".$_POST['nombre']."', 
             apellidos='".$_POST['apellidos']."', 

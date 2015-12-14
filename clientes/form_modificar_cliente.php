@@ -32,8 +32,8 @@
 </div>
 
 <div class="cls_gestiones">
+    <h1>Modificar Datos Cliente</h1><br>
     <form id="formulario">
-        <h1>Modificar Datos Cliente</h1>
         <table>
             <tr>
                 <th><label for="dni_cliente"> DNI Cliente: </label></th>

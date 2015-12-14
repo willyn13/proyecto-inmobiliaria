@@ -12,42 +12,52 @@
         exit();
     }
 
-    $IDCASA = $_GET["IDCASA"];
-    $FECHAINICIO = $_GET["FECHAINICIO"];
-    $FECHAFIN = $_GET["FECHAFIN"];
-    $PRECIOALQUILER = $_GET["PRECIOALQUILER"];
-    $DNIINQUILINO = $_GET["DNIINQUILINO"];
+    $sql_alquileres = "SELECT * FROM alquileres WHERE idcasa='".$_GET['dato']."'";	
+    $resp_sql = mysqli_query($conexion,$sql_alquileres);
+
+    $i = 0;
+    while($datos = mysqli_fetch_row($resp_sql)){
+        foreach($datos as $valor){
+            $datos[$i] = $valor;
+            $i++;			
+            if ($i == 3){break;}
+        }
+        $alquiler = $datos;
+    }	
+    
+    $dni = $alquiler[0];
+
+    setcookie('dni',$dni);
 ?>
 </div>
 
 <div class="cls_gestiones">
     <h1>Modificar Datos</h1><br>
-    <form action="modificar_alquiler.php" method="POST">
+    <form id="formulario">
         <table>
             <tr>
                 <th><label for="idcasa">Id Casa</label></th>
-                <td><input type="text" id="idcasa" placeholder="id Casa" name="IDCASA" maxlength="3" value="<?php echo $IDCASA ?>" required readonly="readonly"/></td>
+                <td><input type="text" id="idcasa" placeholder="id Casa" name="IDCASA" maxlength="3" value="<?php echo $alquiler[0] ?>" required readonly="readonly"/></td>
             </tr>
             <tr>
                 <th><label for="fechaInicio">Fecha Inicio</label></th>
-                <td><input type="text" id="fechaInicio" placeholder="Fecha Inicio" name="FECHAINICIO" maxlength="10" value="<?php echo $FECHAINICIO ?>" required /></td>
+                <td><input type="text" id="fechaInicio" placeholder="Fecha Inicio" name="FECHAINICIO" maxlength="10" value="<?php echo $alquiler[3] ?>" required /></td>
             </tr>
             <tr>
                 <th><label for="fechaFin">Fecha Fin</label></th>
-                <td><input type="text" id="fechaFin" placeholder="Fecha Fin" name="FECHAFIN" maxlength="10" value="<?php echo $FECHAFIN ?>" required /></td>
+                <td><input type="text" id="fechaFin" placeholder="Fecha Fin" name="FECHAFIN" maxlength="10" value="<?php echo $alquiler[4] ?>" required /></td>
             </tr>
             <tr>
                 <th><label for="precioAlquiler">Precio Alquiler</label></th>
-                <td><input type="text" id="precioAlquiler" placeholder="Precio Alquiler" name="PRECIOALQUILER" maxlength="4" value="<?php echo $PRECIOALQUILER ?>" required/></td>
+                <td><input type="text" id="precioAlquiler" placeholder="Precio Alquiler" name="PRECIOALQUILER" maxlength="4" value="<?php echo $alquiler[5] ?>" required/></td>
             </tr>		
             <tr>
                 <th><label for="dniInquilino">DNI Inquilino</label></th>
-                <td><input type="text" id="dniInquilino" placeholder="DNI Inquilino" name="DNIINQUILINO" maxlength="9" value="<?php echo $DNIINQUILINO ?>" required/></td>
+                <td><input type="text" id="dniInquilino" placeholder="DNI Inquilino" name="DNIINQUILINO" maxlength="9" value="<?php echo $alquiler[1] ?>" required/></td>
             </tr>
         </table>
 
-        <input type="submit" id="id_modificar" value="Guardar Alquiler" name="modificar"/>
-        <a href="gestion_alquileres.php"><input type="button" id="id_cancelar" value="Cancelar" name="cancelar"/></a>
-        <input type="hidden" name="MM_insert" value="form1"/>
+        <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('alquileres/modificar_alquiler.php', '#formulario')" />
+        <input type="button" id="id_alquileres" value="Cancelar" />
     </form>
 </div>    
