@@ -38,7 +38,7 @@
             $idcasa = $inmueble['idcasa'];
             
             $display.= '<table>
-                <a><input type="button" id="id_alta_alquiler" name="alta_alquiler" value="Dar de Alta un Inmueble"></a>
+                <a><input type="button" id="id_alta_inmueble" name="alta_inmueble" value="Dar de Alta un Inmueble"></a>
                 <tr>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -56,12 +56,12 @@
                 </tr>';
             
             $display.="<tr>
-                    <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$idcasa."','inmuebles/eliminar_inmueble.php')\"></a></td>
-                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$idcasa."','inmuebles/modificar_inmueble.php')\"></a></td>
-                    <td>".$inmueble['precio_venta']."</td>
-                    <td>".$inmueble['precio_alquiler']."</td>
+                    <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$idcasa."','inmuebles_usuarios/eliminar_inmueble.php')\"></a></td>
+                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$idcasa."','inmuebles_usuarios/modificar_inmueble.php')\"></a></td>
+                    <td>".$inmueble['precio_venta']."&nbsp;&nbsp;€</td>
+                    <td>".$inmueble['precio_alquiler']."&nbsp;&nbsp;€</td>
                     <td>".$inmueble['habitaciones']."</td>
-                    <td>".$inmueble['banios']." €</td>
+                    <td>".$inmueble['banios']."</td>
                     <td>".$piscina."</td>
                     <td>".$terraza."</td>
                     <td>".$trastero."</td>

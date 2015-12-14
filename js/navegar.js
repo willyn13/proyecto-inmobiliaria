@@ -60,14 +60,19 @@ function ajaxSinFormulario(dato,url){
     cargarDatos("#id_alquileres", "alquileres/gestion_alquileres.php");
     
 //Gestión de compra-ventas
-    cargarDatos("#id_gestionCompra", "ventas/gestion_ventas.php");
+    cargarDatos("#id_gestionVenta", "ventas/gestion_ventas.php");
     cargarDatos("#id_alta_venta", "ventas/form_insertar_venta.php");
     cargarDatos("#id_ventas", "ventas/gestion_ventas.php");
     
- //Gestión de inmuebles
-    cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
-    cargarDatos("#id_alta_inmueble", "inmuebles/insertarInmueble.php");
-    cargarDatos("#id_inmuebles", "inmuebles/gestiondeinmuebles.php");
+ //Gestión de inmuebles Usuarios
+    cargarDatos("#id_gestionInmueble", "inmuebles_usuarios/gestiondeinmuebles.php");
+    cargarDatos("#id_alta_inmueble", "inmuebles_usuarios/insertarInmueble.php");
+    cargarDatos("#id_inmuebles", "inmuebles_usuarios/gestiondeinmuebles.php");
+
+//Gestión de inmuebles Clientes
+    cargarDatos("#id_gestionInmueble2", "inmuebles_clientes/gestiondeinmuebles.php");
+    cargarDatos("#id_alta_inmueble2", "inmuebles_clientes/insertarInmueble.php");
+    cargarDatos("#id_inmuebles2", "inmuebles_clientes/gestiondeinmuebles.php");
     
 //Gestión de peticiones
     cargarDatos("#id_gestionPeticiones", "peticiones/gestion_peticiones.php");

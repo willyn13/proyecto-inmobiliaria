@@ -208,7 +208,7 @@
             </tr>
         </table>
         
-        <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('inmuebles/actualizar_inmueble.php', '#formulario')" />
+        <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('inmuebles_usuarios/actualizar_inmueble.php', '#formulario')" />
         <input type="button" id="id_inmuebles" value="Cancelar" />
     </form>
 </div>  
