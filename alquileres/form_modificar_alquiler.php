@@ -25,7 +25,7 @@
         $alquiler = $datos;
     }	
     
-    $dni = $alquiler[0];
+    $dni = $alquiler[2];
 
     setcookie('dni',$dni);
 ?>

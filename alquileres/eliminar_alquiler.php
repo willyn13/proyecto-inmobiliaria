@@ -12,7 +12,7 @@
         exit();
     }
 
-    $sql_delete = "DELETE FROM alquileres WHERE idcasa=".$_GET['IDCASA']." AND fecha_inicio='".$_GET['FECHAINICIO']."' AND fecha_fin='".$_GET['FECHAFIN']."'";
+    $sql_delete = "DELETE FROM alquileres WHERE idcasa='".$_GET['dato']."'";
 
     $result = mysqli_query($conexion,$sql_delete) or die(mysqli_error($conexion));
 

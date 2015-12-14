@@ -76,31 +76,33 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <table>
     <tr>
         <th><label for="IDCASA"> Casa: </label></th>
-        <td><select name="IDCASA" >
+        <td>
+            <select name="IDCASA" onChange='this.form.submit()' >
                 <option value="" selected>Selecciona Inmueble</option>
 <?php       
-                $dni = $_SESSION["dni"];
-                $consulta = "SELECT idcasa FROM inmuebles WHERE alquiler=1 and idlocalidad=(select idzona from usuarios where dni='".$dni."')";
-                $resultado = mysqli_query($conexion,$consulta);
-
-                while ($casa = mysqli_fetch_array($resultado)){
-                    echo "<option value=".$casa[0].">".$casa[0]."</option>";
-                }
-                echo $casa[0];
+                $consulta = "SELECT idcasa FROM inmuebles WHERE alquiler = '1'";
+                    $resultado = mysqli_query($conexion,$consulta);
+                    while ($casa = mysqli_fetch_array($resultado)){
+                        if ($id_padre==$casa[0]){
+                            echo "<option value=".$casa[0]." selected>".$casa[0]."</option>";
+                        }else{
+                            echo "<option value=".$casa[0].">".$casa[0]."</option>";
+                        }
+                    }
+                    echo $casa[0];
 ?>
-        </select></td>
-    </tr>
-        <tr>
-            <th><label for="dni_cliente"> DNI Comprador: </label></th>
-            <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="" required/></td>
-        </tr>
-        <tr>
-        <th><label for="PRECIOALQUILER"> Precio: </label></th>
-        <td>
-            <input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" required/>
+            </select>
         </td>
     </tr>
-        <tr>
+    <tr>
+        <th><label for="dni_cliente"> DNI Comprador: </label></th>
+        <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="" required/></td>
+    </tr>
+    <tr>
+        <th><label for="PRECIOALQUILER"> Precio: </label></th>
+        <td><input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" required/></td>
+    </tr>
+    <tr>
         <th><label for="FECHAINICIO"> Fecha Inicio: </label></th>
         <td><input type="text" name="FECHAINICIO" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
     </tr>
@@ -110,8 +112,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     </tr>
     </table>
     
-    <input type="button" value="Insertar Venta" onclick="ajaxFormulario('alquileres/form_insertar_alquiler.php', '#form1')" />
-    <input type="button" id="ventas" value="Cancelar" />
+    <input type="button" value="Insertar Alquiler" onclick="ajaxFormulario('alquileres/form_insertar_alquiler.php', '#form1')" />
+    <input type="button" id="id_alquileres" value="Cancelar" />
     <input type="hidden" name="MM_insert" value="form1" />
 </form>
 </div>

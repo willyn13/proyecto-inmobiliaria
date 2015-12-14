@@ -4,5 +4,5 @@
 
 <div class="cls_dialog">
     </br><h2>Alquiler&nbsp;Resgistrado!</h2>
-    <input type="button" id="id_Alquileres" value="Aceptar">
+    <input type="button" id="id_alquileres" value="Aceptar">
 </div>

@@ -4,6 +4,7 @@
 
 <div class="cls_dialog">
 <?php 
+session_start();
 require_once('../conexiones/conexion_inmobiliaria.php');
 
 if (!function_exists("GetSQLValueString")) {
@@ -45,6 +46,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
   //  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
+$dni = $_SESSION["dni"];
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $insertSQL = sprintf("INSERT INTO clientes (dni_cliente, nombre, apellidos, telefono, email) VALUES (%s, %s, %s, %s, %s)",
                    GetSQLValueString($_POST['dni_cliente'], "text"),

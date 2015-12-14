@@ -44,32 +44,38 @@ function ajaxSinFormulario(dato,url){
 /******************************FIN FUNCIONES GENERALES*************************************/
 
  /**************************MENU COMERCIALES - ADMINISTRADORES*****************************/
- //Gestión de inmuebles
-    cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
-    cargarDatos("#id_alta_inmueble", "inmuebles/insertarInmueble.php");
-    cargarDatos("#id_inmuebles", "clientes/gestiondeinmuebles.php");
 //Gestión de clientes
     cargarDatos("#id_gestionCliente", "clientes/gestion_clientes.php");
     cargarDatos("#id_alta_cliente", "clientes/form_insertar_cliente.php");
     cargarDatos("#id_clientes", "clientes/gestion_clientes.php");
+    
 //Gestión de usuarios
     cargarDatos("#id_gestionUsuarios", "usuarios/gestion_usuarios.php");
     cargarDatos("#id_alta_usuario", "usuarios/form_insertar_usuario.php");
     cargarDatos("#id_usuarios", "usuarios/gestion_usuarios.php");
+    
 //Gestión de alquileres
     cargarDatos("#id_gestionAlquiler", "alquileres/gestion_alquileres.php");
     cargarDatos("#id_alta_alquiler", "alquileres/form_insertar_alquiler.php");
-    cargarDatos("#id_alquileres", "usuarios/gestion_alquileres.php");
+    cargarDatos("#id_alquileres", "alquileres/gestion_alquileres.php");
+    
 //Gestión de compra-ventas
-    cargarDatos("#id_gestionCompra", "alquileres/gestion_ventas.php");
-    cargarDatos("#id_alta_compra", "alquileres/form_insertar_venta.php");
-    cargarDatos("#id_compras", "usuarios/gestion_venta.php");
+    cargarDatos("#id_gestionCompra", "ventas/gestion_ventas.php");
+    cargarDatos("#id_alta_compra", "ventas/form_insertar_venta.php");
+    cargarDatos("#id_compras", "ventas/gestion_venta.php");
+    
+ //Gestión de inmuebles
+    cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
+    cargarDatos("#id_alta_inmueble", "inmuebles/insertarInmueble.php");
+    cargarDatos("#id_inmuebles", "inmuebles/gestiondeinmuebles.php");
+    
 //Gestión de peticiones
-    cargarDatos("#id_gestionAPeticiones", "alquileres/gestion_peticiones.php");
-    cargarDatos("#id_alta_peticion", "alquileres/form_insertar_peticion.php");
-    cargarDatos("#id_peticion", "usuarios/gestion_peticion.php");
+    cargarDatos("#id_gestionPeticiones", "peticiones/gestion_peticiones.php");
+    cargarDatos("#id_alta_peticion", "peticiones/form_insertar_peticion.php");
+    cargarDatos("#id_peticion", "peticiones/gestion_peticion.php");
+    
 //Gestión de localizaciones
-    cargarDatos("#id_gestionLocalizacion", "alquileres/gestion_localizaciones.php");
-    cargarDatos("#id_alta_localizacion", "alquileres/form_insertar_localizacion.php");
-    cargarDatos("#id_localizaciones", "usuarios/gestion_localizaciones.php");
+    cargarDatos("#id_gestionLocalizacion", "localizaciones/gestion_localizaciones.php");
+    cargarDatos("#id_alta_localizacion", "localizaciones/form_insertar_localizacion.php");
+    cargarDatos("#id_localizaciones", "localizaciones/gestion_localizaciones.php");
 /***************************************FIN MENUS******************************************/
