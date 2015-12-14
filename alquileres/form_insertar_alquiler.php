@@ -6,6 +6,13 @@
 <?php 
 session_start();
 require_once('../conexiones/conexion_inmobiliaria.php');
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
+
+    if (mysqli_connect_errno()) {
+        printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
+        exit();
+    }
 
 if (!function_exists("GetSQLValueString")) {
     function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = ""){
@@ -77,19 +84,17 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     <tr>
         <th><label for="IDCASA"> Casa: </label></th>
         <td>
-            <select name="IDCASA" onChange='this.form.submit()' >
+            <select name="IDCASA">
                 <option value="" selected>Selecciona Inmueble</option>
 <?php       
-                $consulta = "SELECT idcasa FROM inmuebles WHERE alquiler = '1'";
-                    $resultado = mysqli_query($conexion,$consulta);
-                    while ($casa = mysqli_fetch_array($resultado)){
-                        if ($id_padre==$casa[0]){
-                            echo "<option value=".$casa[0]." selected>".$casa[0]."</option>";
-                        }else{
-                            echo "<option value=".$casa[0].">".$casa[0]."</option>";
-                        }
-                    }
-                    echo $casa[0];
+                $dni = $_SESSION["dni"];
+                $consulta = "SELECT idcasa FROM inmuebles WHERE alquiler='1' AND idlocalidad = (SELECT idzona FROM usuarios WHERE dni_usuario='".$dni."')";
+                
+                $resultado = mysqli_query($conexion,$consulta);
+                
+                while ($casa = mysqli_fetch_array($resultado)){
+                    echo "<option value='".$casa[0]."'>".$casa[0]."</option>";
+                }
 ?>
             </select>
         </td>

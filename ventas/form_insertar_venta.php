@@ -77,7 +77,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                 <option value="" selected>Selecciona Inmueble</option>
 <?php       
 $dni = $_SESSION["dni"];
-                $consulta = "SELECT idcasa FROM inmuebles WHERE venta=1 and idlocalidad=(select idzona from usuarios where dni='".$dni."')";
+                $consulta = "SELECT idcasa FROM inmuebles WHERE venta=1 and idlocalidad=(select idzona from usuarios where dni_usuario='".$dni."')";
                 $resultado = mysqli_query($conexion,$consulta);
 
                 while ($casa = mysqli_fetch_array($resultado)){
