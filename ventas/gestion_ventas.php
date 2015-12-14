@@ -1,8 +1,11 @@
-<link type="text/css" rel="stylesheet" href="../css/style.css"/>
-<script type="text/javascript" src="../js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="../js/navegar.js"></script>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <?php
+    session_start();
+    $dni = $_SESSION["dni"];
+    
     echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
@@ -13,8 +16,6 @@
         }
     echo '</div>';
     
-    session_start();
-    $dni = $_SESSION["dni"];
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
     $result = mysqli_query($conexion,$sql);
     
@@ -31,15 +32,15 @@
         while($fila = mysqli_fetch_row($result1)){
             $zona = $fila[0];
         }	
-        $consulta = "SELECT * FROM ventas";// WHERE dni_usuario ='".$dni."'";
+        $consulta = "SELECT * FROM ventas WHERE dni_usuario ='".$dni."'";
     }
 
     $display = '<div class="cls_gestiones"><h1>Gestión de Crompra-Venta</h1>';	
     
     $resultado1 = mysqli_query($conexion,$consulta);
 
-     $display.= '<table>
-                <a href="form_insertar_venta.php"><input type="submit" id="id_alta_venta" name="submit" value="Dar de Alta una Compra-Venta"></a>
+    $display.= '<table>
+                <a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>
                     <tr>
                         <th>&nbsp</th>
                         <th>&nbsp</th>
@@ -56,8 +57,8 @@
         $DNICOMPRADOR = $fila[1];
         
         $display.="<tr>
-                        <td><a href=\"eliminar_venta.php?IDCASA=".$IDCASA."&&FECHACOMPRA=".$FECHACOMPRA."\"><input type=\"button\" id=\"id_eliminar_venta\" value=\"Eliminar\"/></a></td>
-                        <td><a href=\"form_modificar_venta.php?IDCASA=".$IDCASA."&&FECHACOMPRA=".$FECHACOMPRA."&&PRECIOVENTA=".$PRECIOVENTA."&&DNICOMPRADOR=".$DNICOMPRADOR."\"><input type=\"button\" id=\"id_modificar_venta\" value=\"Modificar\"/></a></td>
+                        <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/eliminar_venta.php')\"></a></td>
+                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/form_modificar_venta.php')\"></a></td>
                         <td>".$IDCASA."</td>
                         <td>".$FECHACOMPRA."</td>
                         <td>".$PRECIOVENTA." €</td>

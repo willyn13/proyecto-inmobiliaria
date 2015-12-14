@@ -105,7 +105,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     </tr>
     <tr>
         <th><label for="PRECIOALQUILER"> Precio: </label></th>
-        <td><input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" required/></td>
+        <td><input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" maxlength="4" required/></td>
     </tr>
     <tr>
         <th><label for="FECHAINICIO"> Fecha Inicio: </label></th>

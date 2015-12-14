@@ -61,8 +61,8 @@ function ajaxSinFormulario(dato,url){
     
 //Gestión de compra-ventas
     cargarDatos("#id_gestionCompra", "ventas/gestion_ventas.php");
-    cargarDatos("#id_alta_compra", "ventas/form_insertar_venta.php");
-    cargarDatos("#id_compras", "ventas/gestion_venta.php");
+    cargarDatos("#id_alta_venta", "ventas/form_insertar_venta.php");
+    cargarDatos("#id_ventas", "ventas/gestion_ventas.php");
     
  //Gestión de inmuebles
     cargarDatos("#id_gestionInmueble", "inmuebles/gestiondeinmuebles.php");
