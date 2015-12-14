@@ -57,7 +57,7 @@ Página de inicio de la Aplicación
 
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
-                    <h1><span>Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Mas&nbsp;Cercana</span></h1>
+                    <h1><span id="id_nombre">Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Mas&nbsp;Cercana</span></h1>
                     <input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" />
                 </div>
 
@@ -88,7 +88,7 @@ Página de inicio de la Aplicación
                                 <li id="id_alquilar"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
-                        <li><a><h1>Vender</h1></a>
+                        <li><a><h1>Pon Tu Anuncio</h1></a>
                             <ul>
                                 <li id="id_vender"><a><h2>Casas</h2></a></li>
                             </ul>
@@ -118,10 +118,10 @@ Página de inicio de la Aplicación
                 
                 <!-- Descripcion de la web -->
                 <div id="id_descripcion">
-                    <h1><span class="cls_descri">Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
-                    <h1><span class="cls_descri">Te ayudamos a contactar con usuarios interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
-                    <h1><span class="cls_descri">Un poquito de texto para que salga en la principal Un poquito de texto para que salga en la principal</span></h1>
-                    <h1><span class="cls_descri">Estos cuatro divs son exclusivos del index les podemos poner una imagen al lado (porfavor Ideas)</span></h1>
+                    <h1><span class="cls_descri"><img src="img/logo2.jpg" id="id_imagen"></img>Vende tu vivienda mas rapido y al mejor precio, te ofrecemos los mejores servicios para multiplicar tus posibilidades de venta.</span></h1>
+                    <h1><span class="cls_descri"><img src="img/logo1.png" id="id_imagen"></img>Te ayudamos a contactar con usuarios potenciales interesados en tu inmueble y te gestionamos todo el papeleo.</span></h1>
+                    <h1><span class="cls_descri"><img src="img/logo4.jpg" id="id_imagen"></img>Elige tu nuevo Hogar, y te aseguraremos la mejor hipoteca que puedas encontrar.</span></h1>
+                    <h1><span class="cls_descri"><img src="img/logo3.jpg" id="id_imagen"></img>Publica tus anuncios de forma facil y totalmente gratis. Ademas tendras toda la ayuda de nuestros comerciales.</span></h1>
                 </div>
             </div>
             
@@ -131,10 +131,9 @@ Página de inicio de la Aplicación
         <!-- Contenido Inferior -->
         <div id="id_footer">
             <h1><span>
-                <a id="id_copyright">Copyright&nbsp;2015</a>|
+                <a>Copyright&nbsp;2015</a>|
                 <a id="id_contacto">Contacto</a>|
                 <a id="id_somos">Quienes&nbsp;Somos</a>|
-                <a id="id_politica">Politica&nbsp;Privacidad</a>|
                 <a id="id_condiciones">Condiciones&nbsp;Generales</a>
             </span></h1>
         </div>
