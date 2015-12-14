@@ -3,8 +3,9 @@
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <?php
-session_start();
-$dni = $_SESSION["dni"];
+    session_start();
+    $dni = $_SESSION["dni"];
+    
     echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());

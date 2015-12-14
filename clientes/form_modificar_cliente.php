@@ -56,6 +56,7 @@
                 <td><input type="text" id="email" placeholder="Email" name="email" maxlength="60" value="<?php echo $cliente[4] ?>" required/></td>
             </tr>
         </table>
+        
         <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('clientes/modificar_cliente.php', '#formulario')" />
         <input type="button" id="id_clientes" value="Cancelar" />
     </form>
