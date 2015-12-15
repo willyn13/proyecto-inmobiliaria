@@ -57,7 +57,7 @@ Página de inicio de la Aplicación
 
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
-                    <h1><span id="id_nombre">Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Mas&nbsp;Cercana</span></h1>
+                    <h1><span id="id_nombre">Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Más&nbsp;Cercana</span></h1>
                     <input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" />
                 </div>
 
@@ -90,7 +90,7 @@ Página de inicio de la Aplicación
                         </li>
                         <li><a><h1>Pon Tu Anuncio</h1></a>
                             <ul>
-                                <li id="id_vender"><a><h2>Casas</h2></a></li>
+                                <li id="id_vender"><a id='id_alta_peticion' name='alta_peticion'><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li id="id_inicio"><a><h1>Inicio&nbsp;Sesión</h1></a></li>

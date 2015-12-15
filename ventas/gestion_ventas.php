@@ -34,8 +34,11 @@
     
     $resultado1 = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
 
-    $display.= '<table>
-                <a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>
+    $display.="<table>";
+        if (mysqli_num_rows($resultado1) == 0 ){
+            $display.='<h2 class="error">No Hay Compra-Ventas</h2>';
+        } else {
+            $display.='<a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>
                     <tr>
                         <th>&nbsp</th>
                         <th>&nbsp</th>
@@ -44,24 +47,24 @@
                         <th>PRECIO VENTA</th>
                         <th>DNI COMPRADOR</th>
                     </tr>';
-     
-     while($fila = mysqli_fetch_row($resultado1)){
-        $IDCASA = $fila[0];
-        $FECHACOMPRA = $fila[3];
-        $PRECIOVENTA = $fila[4];
-        $DNICOMPRADOR = $fila[1];
-        
-        $display.="<tr>
-                        <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/eliminar_venta.php')\"></a></td>
-                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/form_modificar_venta.php')\"></a></td>
-                        <td>".$IDCASA."</td>
-                        <td>".$FECHACOMPRA."</td>
-                        <td>".$PRECIOVENTA." €</td>
-                        <td>".$DNICOMPRADOR."</td>
-                  </tr>";
-    }
-    
-    $display.="</table></div>";
-    mysqli_close($conexion);
-    echo $display;
+
+                while($fila = mysqli_fetch_row($resultado1)){
+                   $IDCASA = $fila[0];
+                   $FECHACOMPRA = $fila[3];
+                   $PRECIOVENTA = $fila[4];
+                   $DNICOMPRADOR = $fila[1];
+
+                   $display.="<tr>
+                                   <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/eliminar_venta.php')\"></a></td>
+                               <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','ventas/form_modificar_venta.php')\"></a></td>
+                                   <td>".$IDCASA."</td>
+                                   <td>".$FECHACOMPRA."</td>
+                                   <td>".$PRECIOVENTA." €</td>
+                                   <td>".$DNICOMPRADOR."</td>
+                             </tr>";
+               }
+       }      
+       $display.="</table></div>";
+       mysqli_close($conexion);
+       echo $display;
 ?>

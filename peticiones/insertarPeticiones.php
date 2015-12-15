@@ -4,7 +4,11 @@
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/inmobiliaria.js"></script>
 
 <?php
-echo '<div class="cls_dialog">';
+    error_reporting(E_ALL ^ E_NOTICE);
+    session_start();
+    $dni = $_SESSION["dni"];
+
+    echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
@@ -13,20 +17,33 @@ echo '<div class="cls_dialog">';
             exit();
         }
 
- $consulta = "INSERT INTO peticiones(nombre,dni,telefono,provincia,localidad,venta,precio_venta,alquiler,precio_alquiler,m2,banios,"
-         . "habitaciones,terraza,garaje,trastero,piscina,direccion) VALUES "
-                . "('".$_POST['nombre']."',".$_POST['dni'].",".$_POST['telefono'].",'".$_POST['provincia']."','".$_POST['localidad']."','".$_POST['venta']."',".$_POST['precio_venta'].",'".$_POST['alquiler']."',"
-         . "".$_POST['precio_alquiler'].",".$_POST['m2'].",".$_POST['banios'].",".$_POST['habitaciones'].",'".$_POST['terraza']."','".$_POST['garaje']."',"
-         . "'".$_POST['trastero']."','".$_POST['piscina']."','".$_POST['direccion']."')";
+    $consulta = "INSERT INTO peticiones(nombre,dni,telefono,provincia,localidad,venta,precio_venta,alquiler,precio_alquiler,m2,banios,habitaciones,terraza,garaje,trastero,piscina,direccion) VALUES ('".$_POST['nombre']."','".$_POST['dni']."','".$_POST['telefono']."','".$_POST['provincia']."','".$_POST['localidad']."','".$_POST['venta']."','".$_POST['precio_venta']."','".$_POST['alquiler']."','".$_POST['precio_alquiler']."','".$_POST['m2']."','".$_POST['banios']."','".$_POST['habitaciones']."','".$_POST['terraza']."','".$_POST['garaje']."','".$_POST['trastero']."','".$_POST['piscina']."','".$_POST['direccion']."')";
  
- $resultado = mysqli_query($conexion,$consulta);
+    $resultado = mysqli_query($conexion,$consulta);
  
- if ($resultado === true){
-        echo "</br><h2>Petición&nbsp;Registrada</h2>";
-        echo '<a><input type="button" id="id_peticiones" value="Aceptar"></a>';
+    $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
+
+    $result = mysqli_query($conexion,$sql);
+    while($fila = mysqli_fetch_row($result)){
+        $cargo = $fila[0];
+    }
+    
+    if(($cargo == "Admin") || ($cargo == "Comercial")){
+        if ($resultado === true){
+            echo "</br><h2>Petición&nbsp;Registrada</h2>";
+            echo '<a><input type="button" id="id_peticiones" value="Aceptar"></a>';
+        } else {
+            echo "</br><h2>Petición&nbsp;No&nbsp;Registrada</h2>";
+            echo '<a><input type="button" id="id_peticiones" value="Aceptar"></a>';
+        }
     } else {
-        echo "</br><h2>Petición&nbsp;No&nbsp;Registrada</h2>";
-        echo '<a><input type="button" id="id_peticiones" value="Aceptar"></a>';
+        if ($resultado === true){
+            echo "</br><h2>Petición&nbsp;Enviada</h2>";
+            echo '<a href="index.php"><input type="button" value="Aceptar"></a>';
+        } else {
+            echo "</br><h2>Petición&nbsp;No&nbsp;Enviada</h2>";
+            echo '<a href="index.php"><input type="button" value="Aceptar"></a>';
+        }
     }
  echo '</div>';
 ?>

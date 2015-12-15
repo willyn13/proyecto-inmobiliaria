@@ -33,8 +33,11 @@
     
     $resultado1 = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
     
-    $display.= '<table>
-                <a><input type="button" id="id_alta_alquiler" name="alta_alquiler" value="Dar de Alta un Alquiler"></a>
+    $display.="<table>";
+        if (mysqli_num_rows($resultado1) == 0 ){
+            $display.='<h2 class="error">No Hay Alquileres</h2>';
+        } else {
+            $display.='<a><input type="button" id="id_alta_alquiler" name="alta_alquiler" value="Dar de Alta un Alquiler"></a>
                 <tr>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -44,26 +47,26 @@
                     <th>PRECIO DE ALQUILER</th>
                     <th>DNI DEL INQUILINO</th>
                 </tr>';
-        
-    while($fila = mysqli_fetch_row($resultado1)){
-        $IDCASA = $fila[0];
-        $DNIINQUILINO = $fila[1];
-        $FECHAINICIO = $fila[3];
-        $FECHAFIN = $fila[4];
-        $PRECIOALQUILER = $fila[5];
 
-        $display.="<tr>
-                    <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/eliminar_alquiler.php')\"></a></td>
-                    <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/form_modificar_alquiler.php')\"></a></td>
-                    <td>".$IDCASA."</td>
-                    <td>".$FECHAINICIO."</td>
-                    <td>".$FECHAFIN."</td>
-                    <td>".$PRECIOALQUILER." €</td>
-                    <td>".$DNIINQUILINO."</td>
-                  </tr>";
-    }
-    
-    $display.="</table></div>";
-    mysqli_close($conexion);
-    echo $display;
+                while($fila = mysqli_fetch_row($resultado1)){
+                    $IDCASA = $fila[0];
+                    $DNIINQUILINO = $fila[1];
+                    $FECHAINICIO = $fila[3];
+                    $FECHAFIN = $fila[4];
+                    $PRECIOALQUILER = $fila[5];
+
+                    $display.="<tr>
+                                <td><a><input type='button' value='Eliminar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/eliminar_alquiler.php')\"></a></td>
+                                <td><a><input type='button' value='Modificar' onclick=\"ajaxSinFormulario('".$IDCASA."','alquileres/form_modificar_alquiler.php')\"></a></td>
+                                <td>".$IDCASA."</td>
+                                <td>".$FECHAINICIO."</td>
+                                <td>".$FECHAFIN."</td>
+                                <td>".$PRECIOALQUILER." €</td>
+                                <td>".$DNIINQUILINO."</td>
+                              </tr>";
+                }
+        }
+        $display.="</table></div>";
+        mysqli_close($conexion);
+        echo $display;
 ?>
