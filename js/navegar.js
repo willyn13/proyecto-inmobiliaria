@@ -77,7 +77,7 @@ function ajaxSinFormulario(dato,url){
 //Gestión de peticiones
     cargarDatos("#id_gestionPeticiones", "peticiones/gestion_peticiones.php");
     cargarDatos("#id_alta_peticion", "peticiones/form_insertar_peticion.php");
-    cargarDatos("#id_peticion", "peticiones/gestion_peticion.php");
+    cargarDatos("#id_peticiones", "peticiones/gestion_peticiones.php");
     
 //Gestión de localizaciones
     cargarDatos("#id_gestionLocalizacion", "localizaciones/gestion_localizaciones.php");

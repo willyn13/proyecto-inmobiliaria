@@ -15,8 +15,11 @@
 
     echo '<option value="seleccion" selected="selected">Seleccione localidad</option>';
 
-    $id_provincia = $_POST["id"];
-    $consultaLoc = 'SELECT localidad FROM localidades WHERE idprovincia = '.$id_provincia;
+    $provincia = $_POST["provincia"];
+    $consultaIdPro = 'SELECT idprovincia FROM provincias WHERE provincia = '.$provincia;
+    $resultadoIdPro = mysqli_query($consultaIdPro);
+    $peticionIdPro = mysqli_fetch_array($resultadoIdPro);
+    $consultaLoc = 'SELECT localidad FROM localidades WHERE idprovincia = '.$peticionIdPro[0];
     $resultadoLoc = mysqli_query($conexion,$consultaLoc) or die('Consulta fallida: ' . mysqli_error());
         while ($peticionLoc=mysqli_fetch_array($resultadoLoc)){
             echo "<option value=".$peticionLoc[0].">".$peticionLoc[0]."</option>";

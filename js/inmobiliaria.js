@@ -380,12 +380,12 @@ $(document).on('click',"#id_condiciones",function(event){
 $(function(){
     $("#localidades").css({"display":"none"});
     $("#provincia").on("change",function(){
-           var id = $("#provincia").val();
-           var url = "../peticiones/recogerLocalidades.php";
+           var provincia = $("#provincia").val();
+           var url = "peticiones/recogerLocalidades.php";
            $.ajax({
                type: 'POST',
                url:url,
-               data: 'id='+id,
+               data: 'id='+provincia,
                success: function (data) {
                    $("#localidades").css({"display":"block"});
                    $("#localidad").html(data);    
@@ -393,4 +393,47 @@ $(function(){
            });
     });
 });
+//Poner precio_venta si la venta esta marcada como SI
+$(function(){
+    $("#precio_venta").css({"display":"none"});
+    $("#venta").on("change",function(){
+           var seleccion = $("#venta").val();
+           var url = "peticiones/pintarPrecioVenta.php";
+           $.ajax({
+               type: 'POST',
+               url:url,
+               data: 'seleccion='+seleccion,
+               success: function (data) {
+                   if(seleccion == "S"){
+                       $("#precio_venta").css({"display":"block"});
+                       $("#precio_venta").html(data);
+                   }else{
+                       $("#precio_venta").css({"display":"none"});
+                   }   
+            }
+           });
+    });
+});
+//Poner precio_alquiler si el alquiler esta marcado como SI
+$(function(){
+    $("#precio_alquiler").css({"display":"none"});
+    $("#alquiler").on("change",function(){
+           var seleccion = $("#alquiler").val();
+           var url = "peticiones/pintarPrecioAlquiler.php";
+           $.ajax({
+               type: 'POST',
+               url:url,
+               data: 'seleccion='+seleccion,
+               success: function (data) {
+                   if(seleccion == "S"){
+                       $("#precio_alquiler").css({"display":"block"});
+                       $("#precio_alquiler").html(data);
+                   }else{
+                       $("#precio_alquiler").css({"display":"none"});
+                   }   
+            }
+           });
+    });
+});
+
 
