@@ -81,12 +81,12 @@ Página de inicio de la Aplicación
                     <ul class="cls_nav">
                         <li><a><h1>Comprar</h1></a>
                             <ul>
-                                <li id="id_comprar_inmuebles"><a><h2>Casas</h2></a></li>
+                                <li id="id_comprar"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li><a><h1>Alquilar</h1></a>
                             <ul>
-                                <li id="id_alquilar_inmuebles"><a><h2>Casas</h2></a></li>
+                                <li id="id_alquilar"><a><h2>Casas</h2></a></li>
                             </ul>
                         </li>
                         <li><a><h1>Pon Tu Anuncio</h1></a>

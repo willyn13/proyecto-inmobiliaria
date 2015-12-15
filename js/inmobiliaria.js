@@ -33,7 +33,7 @@ javascript y jquery de la Aplicación
 ********************************************************************************/
 $(document).ready(function() {
     $.ajaxSetup({ cache: false });
-    $(this).load('login/cerrarSesion.php');
+    //$(this).load('login/cerrarSesion.php');
     
 /*******************************************************************************
 01.- Pintar Inicio
