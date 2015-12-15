@@ -44,6 +44,7 @@
     $display.='<table>';
         if (mysqli_num_rows($resultado) == 0){
             echo "<h2 class=\"error\">No Hay Inmuebles.</h2>";
+            $display.='<a><input type="button" id="id_alta_inmueble" name="alta_inmueble" value="Dar de Alta un Inmueble"></a>';
         } else {
             $display.='<a><input type="button" id="id_alta_inmueble" name="alta_inmueble" value="Dar de Alta un Inmueble"></a>
                             <tr>

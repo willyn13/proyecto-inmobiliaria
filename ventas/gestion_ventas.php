@@ -5,7 +5,7 @@
 <?php
     session_start();
     $dni = $_SESSION["dni"];
-    
+    echo $_SESSION["dni"];
     echo '<div class="cls_dialog">';
         $conexion = mysqli_connect('localhost','root','','inmobiliaria')
         or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
@@ -37,6 +37,7 @@
     $display.="<table>";
         if (mysqli_num_rows($resultado1) == 0 ){
             $display.='<h2 class="error">No Hay Compra-Ventas</h2>';
+            $display.='<a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>';
         } else {
             $display.='<a><input type="button" id="id_alta_venta" name="alta_venta" value="Dar de Alta una Compra-Venta"></a>
                     <tr>

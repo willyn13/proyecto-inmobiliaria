@@ -37,6 +37,7 @@
     $display.="<table>";
         if (mysqli_num_rows($resultado) == 0 ){
             $display.='<h2 class="error">No Hay Peticiones</h2>';
+            $display.="<a><input type='button' id='id_alta_peticion' name='alta_peticion' value='Dar de Alta una Petición'></a>";
         } else {
             $display.="<a><input type='button' id='id_alta_peticion' name='alta_peticion' value='Dar de Alta una Petición'></a>
                         <tr>

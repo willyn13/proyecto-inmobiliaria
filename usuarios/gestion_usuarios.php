@@ -37,6 +37,7 @@
     $display.= "<table>";
         if (mysqli_num_rows($resultado) == 0 ){
             $display.="<p class=\"error\"><i>No hay comerciales.</i></p>";
+            $display.="<a><input type='button' id='id_alta_usuario' name='id_alta_usuario' value='Dar de Alta un Usuario'></a>";
         } else{
             $display.="<a><input type='button' id='id_alta_usuario' name='id_alta_usuario' value='Dar de Alta un Usuario'></a>";
             $display.="<tr>
