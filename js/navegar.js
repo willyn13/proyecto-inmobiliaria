@@ -71,8 +71,8 @@ function ajaxSinFormulario(dato,url){
     cargarDatos("#id_inmuebles", "inmuebles_usuarios/gestiondeinmuebles.php");
 
 //Gestión de inmuebles Clientes
-    cargarDatos("#id_comprar_inmuebles", "inmuebles_clientes/listadoInmueblesVenta.php");
-    cargarDatos("#id_alquilar_inmuebles", "inmuebles_clientes/listadoInmueblesAlquiler.php");
+    cargarDatos("#id_comprar_inmueble", "inmuebles_clientes/listadoInmueblesVenta.php");
+    cargarDatos("#id_alquilar_inmueble", "inmuebles_clientes/listadoInmueblesAlquiler.php");
     
     cargarDatos("#id_inmuebles2", "inmuebles_clientes/gestiondeinmuebles.php");
     
