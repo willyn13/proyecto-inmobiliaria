@@ -24,6 +24,7 @@ Página de inicio de la Aplicación
         <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
         <script type="text/javascript" src="/proyecto-inmobiliaria/js/inmobiliaria.js"></script>
         <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
+        <script type="text/javascript" src="/proyecto-inmobiliaria/js/validaciones.js"></script>
 
         <!-- Ficheros CCS -->
         <link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
@@ -58,7 +59,7 @@ Página de inicio de la Aplicación
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
                     <h1><span id="id_nombre">Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Más&nbsp;Cercana</span></h1>
-                    <input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" />
+                    <a href="index.php"><input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" /></a>
                 </div>
 
                 <!-- Menus -->

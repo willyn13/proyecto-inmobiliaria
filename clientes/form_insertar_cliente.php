@@ -42,8 +42,9 @@
     }
 
     //$editFormAction = $_SERVER['PHP_SELF'];
+    
     if (isset($_SERVER['QUERY_STRING'])) {
-      //  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+      //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
 
     $dni = $_SESSION["dni"];
@@ -96,7 +97,7 @@
             </tr>
         </table>
 
-        <input type="button" value="Insertar Cliente" onclick="ajaxFormulario('clientes/form_insertar_cliente.php', '#form1')" />
+        <input type="button" value="Insertar Cliente" onclick="validarClientes()" />
         <input type="button" id="id_clientes" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1" />
     </form>

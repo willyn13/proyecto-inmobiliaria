@@ -67,11 +67,12 @@ $(document).on('click',"#id_cookies img",function(event){
         event.stopImmediatePropagation();
     });
 
-    $(document).on("click","#btnLogin_inicio",function(event){
+    /*$(document).on("click","#btnLogin_inicio",function(event){
         $("#id_cerrar").css({"display":"block"});
 
         event.stopImmediatePropagation();
-    });
+    });*/
+    
     /*******************************************************************************
     03.2.- Cerrar Login
     ********************************************************************************/
@@ -233,7 +234,6 @@ $(document).on('click',"#id_vender",function(event){
 
     var v_pantallaVender = 
         '<div class="cls_vender">\n\
-            <h1>VENTAS</h1>\n\
         </div>';
     
     $("#id_contentMenusClientes").html(v_pantallaVender);
@@ -249,7 +249,8 @@ $(document).on('click',"#id_contratar",function(event){
 
     var v_pantallaVender = 
         '<div class="cls_vender">\n\
-            <h1>CONTRATAR</h1>\n\
+            <h1>CONTRATADO</h1>\n\
+            </br><h2>En breve recibira noticias nuestras, gracias por confiar en TU HOGAR</h2>\n\
         </div>';
     
     $("#id_contentMenusClientes").html(v_pantallaVender);

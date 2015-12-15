@@ -4,6 +4,7 @@
 
 <div class="cls_dialog">
 <?php 
+    session_start();
     require_once('../conexiones/conexion_inmobiliaria.php'); 
     
     if (!function_exists("GetSQLValueString")) {
@@ -45,7 +46,8 @@
     if (isset($_SERVER['QUERY_STRING'])) {
         $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
-
+    
+    $dni = $_SESSION["dni"];
     if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
         $insertSQL = sprintf("INSERT INTO usuarios (dni_usuario, idzona, nombre, apellidos, cargo, password) VALUES (%s, %s, %s, %s, %s, %s)",
         GetSQLValueString($_POST['dni_usuario'], "text"),
@@ -64,6 +66,7 @@
             $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
             $insertGoTo .= $_SERVER['QUERY_STRING'];
         }
+        
         header(sprintf("Location: %s", $insertGoTo));
     }
 ?>
@@ -99,7 +102,7 @@
             </tr>
         </table>
         
-        <input type="button" value="Insertar Usuario" onclick="ajaxFormulario('usuarios/form_insertar_usuario.php', '#form1')" />
+        <input type="button" value="Insertar Usuario" onclick="validarUsuarios()" />
         <input type="button" id="id_usuarios" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1"/>
     </form>

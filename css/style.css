@@ -358,7 +358,7 @@ body{
     position: fixed;
     top: 3.5%;
     right: 2%;
-    display: none;
+    //display: none;
 }
 
 #id_cabeceraIni h1 span{
