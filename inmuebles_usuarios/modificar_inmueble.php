@@ -13,6 +13,7 @@
     }
 
     $sql_inmueble = "SELECT * FROM inmuebles WHERE idcasa='".$_GET['dato']."'";	
+    
     $resp_sql = mysqli_query($conexion,$sql_inmueble);
 
     $i = 0;
@@ -42,7 +43,7 @@
             <tr>
                 <th><label for="venta"> Venta: </label></th>
                 <td>
-                    <select name="venta">
+                    <select id="venta" name="venta">
 <?php
                         if($inmueble[3]==0){
                             echo "<option value=0 selected>NO</option>";
@@ -59,7 +60,7 @@
             <tr>
                 <th><label for="alquiler"> Alquiler: </label></th>
                 <td>
-                    <select name="alquiler">
+                    <select id="alquiler" name="alquiler">
 <?php
                         if($inmueble[4]==0){
                             echo "<option value=0 selected>NO</option>";
@@ -83,12 +84,12 @@
             </tr>	
             <tr>
                 <th><label for="banios"> Baños: </label></th>
-                <td><input type="text" id="bagnos" placeholder="Baños" name="banios" maxlength="2" value="<?php echo $inmueble[7] ?>" required/></td>
+                <td><input type="text" id="banios" placeholder="Baños" name="banios" maxlength="2" value="<?php echo $inmueble[7] ?>" required/></td>
             </tr>	
             <tr>
                 <th><label for="terraza"> Terraza:  </label></th>
                 <td>
-                    <select name="terraza">
+                    <select id="terraza" name="terraza">
 <?php
                         if($inmueble[8]==0){
                             echo "<option value=0 selected>NO</option>";
@@ -105,7 +106,7 @@
             <tr>
                 <th><label for="trastero"> Trastero:  </label></th>
                 <td>
-                    <select name="trastero">
+                    <select id="trastero" name="trastero">
 <?php
                         if($inmueble[9]==0){
                             echo "<option value=0 selected>NO</option>";
@@ -122,7 +123,7 @@
             <tr>
                 <th><label for="piscina"> Piscina:  </label></th>
                 <td>
-                    <select name="piscina">
+                    <select id="piscina" name="piscina">
 <?php
                         if($inmueble[10]==0){
                             echo "<option value=0 selected>NO</option>";
@@ -139,7 +140,7 @@
         <tr>
             <th><label for="garaje"> Garaje:  </label></th>
             <td>
-                <select name="garaje">
+                <select id="garaje" name="garaje">
 <?php
                     if($inmueble[11]==0){
                         echo "<option value=0 selected>NO</option>";
@@ -160,7 +161,7 @@
             <tr>
                 <th><label for="idlocalidad"> Localidad: </label></th>
                 <td>
-                    <select name="idlocalidad">
+                    <select id="idlocalidad" name="idlocalidad">
                         <option selected >Selecciona localidad</option>
 <?php          
                             $consulta1="SELECT localidad from localidades where idlocalidad=".$inmueble[1];
@@ -204,7 +205,7 @@
 */-->
             <tr>
                 <th><label for="dnipropietario"> Dni propietario: </label></th>
-                <td><input type="text" id="dni_propietario" placeholder="DNI Propietario" name="dni_propietario" maxlength="9" value="<?php echo $inmueble[2] ?>" required/></td>
+                <td><input id="dnipropietario" type="text" placeholder="DNI Propietario" name="dni_propietario" maxlength="9" value="<?php echo $inmueble[2] ?>" required/></td>
             </tr>
         </table>
         

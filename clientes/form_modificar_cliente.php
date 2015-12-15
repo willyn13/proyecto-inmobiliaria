@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -12,7 +12,8 @@
         exit();
     }
 
-    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dato']."'";	
+    $sql_cliente = "SELECT * FROM clientes WHERE dni_cliente='".$_GET['dato']."'";
+    
     $resp_sql = mysqli_query($conexion,$sql_cliente);
 
     $i = 0;

@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -11,6 +11,7 @@
         printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
         exit();
     }
+    
     $sql_comercial = "SELECT * FROM usuarios WHERE dni_usuario='".$_GET['dato']."'";
     
     $resp_sql = mysqli_query($conexion,$sql_comercial);
@@ -65,6 +66,5 @@
         
         <input type="button" value="Guardar Cambios" name="modificar" onclick="ajaxFormulario('usuarios/modificar_usuario.php', '#formulario')" />
         <input type="button" id="id_usuarios" value="Cancelar" />
-        <input type="hidden" name="MM_insert" value="form1"/>
     </form>
 </div>

@@ -12,8 +12,6 @@
         exit();
     }
 
-    session_start();
-    $dni = $_SESSION["dni"];
     $consulta = "UPDATE alquileres SET "
                 . "fecha_inicio='".$_POST['FECHAINICIO']."',"
                 . "fecha_fin='".$_POST['FECHAFIN']."',"

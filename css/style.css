@@ -358,7 +358,7 @@ body{
     position: fixed;
     top: 3.5%;
     right: 2%;
-    //display: none;
+    display: none;
 }
 
 #id_cabeceraIni h1 span{
@@ -666,6 +666,16 @@ body{
     left: 0;
     width: 100%;
     min-height: 100%;
+}
+
+#id_informacion{
+    text-decoration: underline;
+    color: purple;
+}
+
+#id_informacion:hover{
+    cursor: pointer;
+    color: blue;
 }
 
 #id_slider img {

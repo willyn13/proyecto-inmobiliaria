@@ -20,9 +20,9 @@
              $password=$fila[1];
         }
         $_SESSION["cargo"] = $cargo;
-        if($cargo == "Comercial" && $password==$clave){
+        if($cargo == "Comercial" && $password == $clave){
              include '../menus/menu_comerciales.html';
-        }else if($cargo == "Admin" && $password==$clave){
+        }else if($cargo == "Admin" && $password == $clave){
              include '../menus/menu_administradores.html';
         }
     } else {

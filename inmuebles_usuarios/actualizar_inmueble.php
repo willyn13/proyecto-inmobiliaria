@@ -12,11 +12,6 @@
         exit();
     }
 
-/*`idcasa`=[value-1],`idlocalidad`=[value-2],`dni_propietario`=[value-3],`venta`=[value-4],`alquiler`=[value-5],
-`habitaciones`=[value-6],`m2`=[value-7],`banios`=[value-8],`terraza`=[value-9],`trastero`=[value-10],`piscina`=[value-11],
-`garaje`=[value-12],`direccion`=[value-13],`precio_venta`=[value-14],`precio_alquiler`=[value-15] WHERE 1
-*/
-    
     session_start();
     $dni = $_SESSION["dni"];
     $consulta = "UPDATE inmuebles SET 
@@ -36,8 +31,7 @@
                 precio_alquiler=".$_POST['precio_alquiler']."
                 WHERE idcasa=".$_POST['idcasa'];
 
-$resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion)); ;
-
+    $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion)); ;
 
     if ($resultado === true){
         echo "</br><h2>Inmueble&nbsp;Actualizado</h2>";

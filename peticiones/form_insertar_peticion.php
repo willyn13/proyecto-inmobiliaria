@@ -22,6 +22,20 @@
         <div class="cls_gestiones">
             <h1>Dar de Alta una Petición</h1>
             <form name="form1" id="form1">
+<?php                
+                $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
+
+                $result = mysqli_query($conexion,$sql);
+                while($fila = mysqli_fetch_row($result)){
+                    $cargo = $fila[0];
+                }
+
+                if(($cargo == "Admin") || ($cargo == "Comercial")){
+                    echo '<input type="button" id="id_peticiones" value="Cancelar" />';
+                } else {
+                     echo '<a href="/proyecto-inmobiliaria"><input type="button" value="Cancelar"></a>';
+                }
+?>
                 <table>
                     <tr>
                         <th>Nombre:</th>
@@ -39,12 +53,14 @@
                         <th>Provincia:</th>
                         <td>
                             <select name="provincia" id="provincia">
-                                <option value="seleccion" selected="selected">Seleccione Provincia</option>
+                                <option value="" selected>Seleccione Provincia</option>
  <?php
-                                $consultaPro = 'SELECT provincia FROM provincias';
-                                $resultadoPro = mysqli_query($conexion,$consultaPro) or die('Consulta fallida:'.mysqli_error());
-                                while ($peticionPro = mysqli_fetch_array($resultadoPro)){
-                                        echo "<option value=".$peticionPro[0].">".$peticionPro[0]."</option>";
+                                $consulta = "SELECT idprovincia,provincia FROM provincias";
+                                
+                                $resultado = mysqli_query($conexion,$consulta);
+                                
+                                while ($provincia = mysqli_fetch_array($resultado)){
+                                        echo "<option value='".$provincia[0]."'>".$provincia[1]."</option>";
                                     }
 ?>
                             </select>
@@ -150,21 +166,6 @@
                         <td><input type="text" name="direccion" placeholder="Dirección" maxlength="50" required=""/></td>
                     </tr>
                 </table>
-                <input type="button" value="Enviar Petición" onclick="ajaxFormulario('peticiones/insertarPeticiones.php', '#form1')" />
-<?php                
-                $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
-
-                $result = mysqli_query($conexion,$sql);
-                while($fila = mysqli_fetch_row($result)){
-                    $cargo = $fila[0];
-                }
-
-                if(($cargo == "Admin") || ($cargo == "Comercial")){
-                    echo '<input type="button" id="id_peticiones" value="Cancelar" />';
-                } else {
-                     echo '<a href="index.php"><input type="button" value="Cancelar"></a>';
-                }
-?>
+                <input type="button" value="Enviar Petición" onclick="validarPeticiones()" />
             </form>
         </div>
-

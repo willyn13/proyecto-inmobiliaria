@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -12,8 +12,6 @@
         exit();
     }
 
-    session_start();
-    $dni = $_SESSION["dni"];
     $consulta="UPDATE ventas SET "
             . "fecha_compra='".$_POST['FECHACOMPRA']."',"
             . "precio_final=".$_POST['PRECIOVENTA'].","

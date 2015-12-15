@@ -3,6 +3,6 @@
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
 <div class="cls_dialog">
-    </br><h2>Alquiler&nbsp;Resgistrado!</h2>
+    </br><h2>¡Alquiler&nbsp;Resgistrado!</h2>
     <input type="button" id="id_alquileres" value="Aceptar">
 </div>

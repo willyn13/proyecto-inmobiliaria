@@ -50,8 +50,9 @@
     }
 
     //$editFormAction = $_SERVER['PHP_SELF'];
+    
     if (isset($_SERVER['QUERY_STRING'])) {
-      //  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+        //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
     $dni = $_SESSION["dni"];
     if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
@@ -85,7 +86,7 @@
             <tr>
                 <th><label for="IDCASA"> Casa: </label></th>
                 <td>
-                    <select name="IDCASA">
+                    <select id="IDCASA" name="IDCASA">
                         <option value="" selected>Selecciona Inmueble</option>
         <?php       
                         $dni = $_SESSION["dni"];
@@ -102,23 +103,36 @@
             </tr>
             <tr>
                 <th><label for="dni_cliente"> DNI Comprador: </label></th>
-                <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="" required/></td>
+                <td>
+                    <select id="dni_cliente" name="dni_cliente" >
+                        <option value="" selected>Selecciona Comprador</option>
+<?php       
+                        $consulta = "SELECT dni_cliente,nombre,apellidos FROM clientes";
+
+                        $resultado = mysqli_query($conexion,$consulta);
+
+                        while ($dni2 = mysqli_fetch_array($resultado)){
+                            echo "<option value='".$dni2[0]."'>".$dni2[1].",".$dni2[2]."</option>";
+                        }
+?>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <th><label for="PRECIOALQUILER"> Precio: </label></th>
+                <th><label for="precio_final"> Precio: </label></th>
                 <td><input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" maxlength="4" required/></td>
             </tr>
             <tr>
                 <th><label for="FECHAINICIO"> Fecha Inicio: </label></th>
-                <td><input type="text" name="FECHAINICIO" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
+                <td><input type="text" id="FECHAINICIO" name="FECHAINICIO" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
             </tr>
             <tr>
                 <th><label for="FECHAFIN"> Fecha Fin: </label></th>
-                <td><input type="text" name="FECHAFIN" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
+                <td><input type="text" id="FECHAFIN" name="FECHAFIN" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
             </tr>
         </table>
 
-        <input type="button" value="Insertar Alquiler" onclick="ajaxFormulario('alquileres/form_insertar_alquiler.php', '#form1')" />
+        <input type="button" value="Insertar Alquiler" onclick="validarAlquileres()" />
         <input type="button" id="id_alquileres" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1" />
     </form>

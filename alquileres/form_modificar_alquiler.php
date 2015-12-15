@@ -12,8 +12,9 @@
         exit();
     }
 
-    $sql_alquileres = "SELECT * FROM alquileres WHERE idcasa='".$_GET['dato']."'";	
-    $resp_sql = mysqli_query($conexion,$sql_alquileres);
+    $sql_alquileres = "SELECT * FROM alquileres WHERE idcasa='".$_GET['dato']."'";
+    
+    $resp_sql = mysqli_query($conexion,$sql_alquileres) or die(mysqli_error($conexion)); 
 
     $i = 0;
     while($datos = mysqli_fetch_row($resp_sql)){

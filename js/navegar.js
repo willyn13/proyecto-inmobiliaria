@@ -1,4 +1,5 @@
 /************************************FUNCIONES GENERALES***********************************/
+
 function cargarDatos(selector, url){
     $(document).ready(function(){
              $(function(){

@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -48,6 +48,7 @@
                           <th>TELEFONO</th>
                           <th>EMAIL</th>
                        </tr>";
+            
             while($reg = mysqli_fetch_array($resultado) ){
                 $dni_cliente = $reg[0];
                 $nombre = $reg[1];

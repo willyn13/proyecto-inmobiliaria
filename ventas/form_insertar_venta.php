@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -50,8 +50,9 @@
     }
 
     //$editFormAction = $_SERVER['PHP_SELF'];
+    
     if (isset($_SERVER['QUERY_STRING'])) {
-      //  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+        //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
     
     $dni = $_SESSION["dni"];
@@ -85,7 +86,7 @@
         <tr>
             <th><label for="IDCASA"> Casa: </label></th>
             <td>
-                <select name="IDCASA" >
+                <select id="IDCASA" name="IDCASA" >
                     <option value="" selected>Selecciona Inmueble</option>
 <?php       
                     $dni = $_SESSION["dni"];
@@ -102,19 +103,32 @@
         </tr>
         <tr>
             <th><label for="dni_cliente"> DNI Comprador: </label></th>
-            <td><input type="text" id="dni_cliente" placeholder="Dni Cliente" name="dni_cliente" maxlength="9" value="" required/></td>
+            <td>
+                <select id="dni_cliente" name="dni_cliente" >
+                    <option value="" selected>Selecciona Comprador</option>
+<?php       
+                    $consulta = "SELECT dni_cliente,nombre,apellidos FROM clientes";
+
+                    $resultado = mysqli_query($conexion,$consulta);
+
+                    while ($dni2 = mysqli_fetch_array($resultado)){
+                        echo "<option value='".$dni2[0]."'>".$dni2[1].",".$dni2[2]."</option>";
+                    }
+?>
+                </select>
+            </td>
         </tr>
         <tr>
-            <th><label for="PRECIOVENTA"> Precio: </label></th>
+            <th><label for="precio_final"> Precio: </label></th>
             <td><input type="text" id="precio_final" placeholder="Precio Final" name="precio_final" maxlength="8" required/></td>
         </tr>
         <tr>
             <th><label for="FECHACOMPRA"> Fecha Venta: </label></th>
-            <td><input type="text" name="FECHACOMPRA" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
+            <td><input type="text" id="FECHACOMPRA" name="FECHACOMPRA" placeholder="AAAA/MM/DD" maxlength="10" required/></td>
         </tr>
     </table>
     
-    <input type="button" value="Insertar Venta" onclick="ajaxFormulario('ventas/form_insertar_venta.php', '#form1')" />
+    <input type="button" value="Insertar Venta" onclick="validarVentas()" />
     <input type="button" id="id_ventas" value="Cancelar" />
     <input type="hidden" name="MM_insert" value="form1" />
 </form>

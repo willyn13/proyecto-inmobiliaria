@@ -19,6 +19,7 @@
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
 
     $result = mysqli_query($conexion,$sql);
+    
     while($fila = mysqli_fetch_row($result)){
         $cargo = $fila[0];
     }
@@ -66,6 +67,7 @@
                               </tr>";
                 }
         }
+        
         $display.="</table></div>";
         mysqli_close($conexion);
         echo $display;

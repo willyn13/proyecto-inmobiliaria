@@ -21,6 +21,7 @@
     $sql = "SELECT cargo, idzona FROM usuarios WHERE dni_usuario='".$dni."'";
     
     $result = mysqli_query($conexion,$sql);
+    
     while($fila = mysqli_fetch_row($result)){
        $cargo = $fila[0];
        $zona = $fila[1];
@@ -158,7 +159,7 @@
             </tr>
         </table>
 
-        <input type="button" value="Insertar Inmueble" onclick="ajaxFormulario('inmuebles_usuarios/insertar_inmueble.php', '#form1')" />
+        <input type="button" value="Insertar Inmueble" onclick="validarInmuebles()" />
         <input type="button" id="id_inmuebles" value="Cancelar" />
         <input type="hidden" name="MM_insert" value="form1" />
     </form>

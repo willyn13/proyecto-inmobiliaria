@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -16,9 +16,21 @@
         }
     echo '</div>';
     
+    $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
+            
+    $result = mysqli_query($conexion,$sql);
+    
+    while($fila = mysqli_fetch_row($result)){
+        $cargo = $fila[0];
+    }
+    
+    if($cargo == "Admin"){
+        $consulta = "SELECT * FROM usuarios";        
+    } else {	
+        $consulta = "SELECT * FROM usuarios";
+    }
+    
     $display = '<div class="cls_gestiones"><h1>Gestión de Usuarios</h1>';	
-
-    $consulta = 'SELECT * FROM usuarios';
     
     $resultado = mysqli_query($conexion,$consulta) or die (mysqli_error($conexion));
 

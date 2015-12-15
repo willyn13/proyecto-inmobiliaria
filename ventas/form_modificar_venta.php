@@ -13,6 +13,7 @@
     }
     
     $sql_ventas = "SELECT * FROM ventas WHERE idcasa='".$_GET['dato']."'";	
+    
     $resp_sql = mysqli_query($conexion,$sql_ventas);
 
     $i = 0;

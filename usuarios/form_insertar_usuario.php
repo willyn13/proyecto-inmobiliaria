@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -41,10 +41,10 @@
         }
     }
 
-    $editFormAction = $_SERVER['PHP_SELF'];
+    //$editFormAction = $_SERVER['PHP_SELF'];
 
     if (isset($_SERVER['QUERY_STRING'])) {
-        $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+        //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
     
     $dni = $_SESSION["dni"];
@@ -82,23 +82,23 @@
             </tr>
             <tr>
                 <th><label for="idzona"> Zona: </label></th>
-                <td><input type="text" id="idzona" placeholder="Escribe zona" name="idzona" maxlength="3" value="" required/></td>
+                <td><input type="text" id="idzona" placeholder="Zona" name="idzona" maxlength="3" value="" required/></td>
             </tr>
             <tr>
                 <th><label for="nombre"> Nombre: </label></th>
-                <td><input type="text" id="nombre" placeholder="Escribe nombre" name="nombre" maxlength="15" value="" required/></td>
+                <td><input type="text" id="nombre" placeholder="Nombre" name="nombre" maxlength="15" value="" required/></td>
             </tr>
             <tr>
                 <th><label for="apellidos"> Apellidos: </label></th>
-                <td><input type="text" id="apellidos" placeholder="Escribe apellidos" name="apellidos" maxlength="30" value="" required/></td>
+                <td><input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" maxlength="30" value="" required/></td>
             </tr>
             <tr>
                 <th><label for="cargo"> Cargo: </label></th>
-                <td><input type="text" id="cargo" placeholder="Escribe cargo" name="cargo" maxlength="15" value="" required/></td>
+                <td><input type="text" id="cargo" placeholder="Cargo" name="cargo" maxlength="15" value="" required/></td>
             </tr>		
             <tr>
                 <th><label for="password"> Password: </label></th>
-                <td><input type="password" id="password" placeholder="Escribe password" name="password" maxlength="10" value="" required/></td>
+                <td><input type="password" id="password" placeholder="Password" name="password" maxlength="10" value="" required/></td>
             </tr>
         </table>
         

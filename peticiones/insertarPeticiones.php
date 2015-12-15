@@ -24,6 +24,7 @@
     $sql = "SELECT cargo,idzona FROM usuarios WHERE dni_usuario='".$dni."'";
 
     $result = mysqli_query($conexion,$sql);
+    
     while($fila = mysqli_fetch_row($result)){
         $cargo = $fila[0];
     }
@@ -39,10 +40,10 @@
     } else {
         if ($resultado === true){
             echo "</br><h2>Petición&nbsp;Enviada</h2>";
-            echo '<a href="index.php"><input type="button" value="Aceptar"></a>';
+            echo '<a href="/proyecto-inmobiliaria"><input type="button" value="Aceptar"></a>';
         } else {
             echo "</br><h2>Petición&nbsp;No&nbsp;Enviada</h2>";
-            echo '<a href="index.php"><input type="button" value="Aceptar"></a>';
+            echo '<a href="/proyecto-inmobiliaria"><input type="button" value="Aceptar"></a>';
         }
     }
  echo '</div>';

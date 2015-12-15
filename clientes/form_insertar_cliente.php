@@ -1,4 +1,4 @@
-<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/> 
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
 <script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
 
@@ -6,7 +6,15 @@
 <?php 
     session_start();
     require_once('../conexiones/conexion_inmobiliaria.php');
+ 
+    $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+    or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
+    if (mysqli_connect_errno()) {
+        printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
+        exit();
+    }
+    
     if (!function_exists("GetSQLValueString")) {
         function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = ""){
             if (PHP_VERSION < 6) {
@@ -44,7 +52,7 @@
     //$editFormAction = $_SERVER['PHP_SELF'];
     
     if (isset($_SERVER['QUERY_STRING'])) {
-      //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+        //$editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
     }
 
     $dni = $_SESSION["dni"];

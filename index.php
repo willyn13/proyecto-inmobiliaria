@@ -43,7 +43,7 @@ Página de inicio de la Aplicación
                         <h2>Contraseña</h2>
                             <input id="id_password" type="password" name="clave" size="20" maxlength="20" placeholder="Contraseña">
                         <p>&nbsp;</p>
-                        <input type="button" value="Enviar" id="btnLogin_inicio" class="cls_btn" />
+                        <input type="button" value="Enviar" id="btnLogin_inicio" class="cls_btn"/>
                     </form>
                     <p id="id_txt_error">Usuario y Contraseña Incorrectos</p>
                 </div>
@@ -59,7 +59,7 @@ Página de inicio de la Aplicación
                 <!-- Título y Logo inicial-->
                 <div id="id_cabeceraIni">
                     <h1><span id="id_nombre">Tu&nbsp;Hogar,&nbsp;Tu&nbsp;Inmobiliaria&nbsp;Más&nbsp;Cercana</span></h1>
-                    <a href="index.php"><input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn" /></a>
+                    <a><input type="button" value="CERRAR SESIÓN" id="id_cerrar" class="cls_btn"  onclick="cerrarSesion()"/></a>
                 </div>
 
                 <!-- Menus -->
@@ -98,7 +98,6 @@ Página de inicio de la Aplicación
                     </ul>
 <?php
                         }
-                        //session_destroy();
 ?>
                 </div>
             </div>
