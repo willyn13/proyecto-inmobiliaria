@@ -18,7 +18,9 @@
         
     echo '</div>';
 	
-    $sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`,`idlocalidad`, `precio_venta`, `precio_alquiler`, `dni_propietario` FROM `inmuebles` , `localidades`, `provincias` WHERE `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia`";
+    $sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`,`idlocalidad`, `precio_venta`, `precio_alquiler`, `dni_propietario` "
+            . "FROM `inmuebles` , `localidades`, `provincias` "
+            . "WHERE `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia`";
 
     $resultado = mysqli_query($conexion,$sqlMostrar);
     
@@ -26,7 +28,6 @@
         if (mysqli_num_rows($resultado) == 0){
             echo "<h2 class=\"error\">No Hay Inmuebles.</h2>";
         } else {
-
             while ($inmueble = mysqli_fetch_array($resultado)){
                 if($inmueble['piscina']==0) {$piscina="no";} else {$piscina="si";}
                 if($inmueble['terraza']==0) {$terraza="no";} else {$terraza="si";}
@@ -46,7 +47,6 @@
                             echo '</tr>';			
             }			
         }
-        
         
         $display.="</table></div>";
         mysqli_close($conexion);

@@ -1,38 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<link type="text/css" rel="stylesheet" href="/proyecto-inmobiliaria/css/style.css"/>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/navegar.js"></script>
+<script type="text/javascript" src="/proyecto-inmobiliaria/js/inmobiliaria.js"></script>
 
-<link rel=stylesheet href="style.css" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<tittle>Ficha de la casa</tittle>
-</head>
-<body>
-<table>
 <?php
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
+    session_start();
+    $dni = $_SESSION["dni"];
 
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
-	
-/*
-$var = $_GET['idcasa'];
-echo"$var";
-*/
-$sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
-FROM `inmuebles` , `localidades`, `provincias`
-where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia` and `inmuebles`.`idcasa`= '".$_GET['idcasa']."'";	
+    echo '<div class="cls_dialog">';
+        $conexion = mysqli_connect('localhost','root','','inmobiliaria')
+        or die('<h2>No Se Pudo Conectar: </h2>' . mysqli_error());
 
-$resultado =mysqli_query($conexion,$sqlMostrar);
+        if (mysqli_connect_error()) {
+            printf('<h2>No Se Pudo Conectar: %s/n</h2>', mysqli_connect_error());
+            exit();
+        }
+        
+    echo '</div>';
+    
+    $sqlMostrar = "SELECT `idcasa`, `venta`, `alquiler`, `habitaciones`, `m2`, `banios`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
+        FROM `inmuebles` , `localidades`, `provincias`
+        WHERE `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`idprovincia`=`provincias`.`idprovincia` and `inmuebles`.`idcasa`= '".$_GET['idcasa']."'";	
 
-while ($inmueble = mysqli_fetch_array($resultado)){
+    $resultado = mysqli_query($conexion,$sqlMostrar);
+
+    while ($inmueble = mysqli_fetch_array($resultado)){
 	if($inmueble['piscina']==0) {$piscina="no";} else {$piscina="si";}
 	if($inmueble['terraza']==0) {$terraza="no";} else {$terraza="si";}
 	if($inmueble['trastero']==0) {$trastero="no";} else {$trastero="si";}
 	if($inmueble['garaje']==0) {$garaje="no";} else {$garaje="si";}
-	$idcasa=$inmueble['idcasa'];
+	$idcasa = $inmueble['idcasa'];
 
 			echo "<TABLE BORDER=1 WIDTH=300>";
 			echo "<tr>";
@@ -50,12 +47,9 @@ while ($inmueble = mysqli_fetch_array($resultado)){
 			echo "<td colspan=\"3\"><a href=\"gestiondeinmuebles.php?idcasa=".$idcasa."\">Volver</a></td>";
 			echo "</tr>";
 			echo "</TABLE>";
-		}
+    }
 
+    $display.="</table></div>";
+    mysqli_close($conexion);
+    echo $display;
 ?>
-
-
-</table>
-</body>
-</html>
-

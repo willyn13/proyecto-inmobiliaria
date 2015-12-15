@@ -19,6 +19,8 @@ javascript y jquery de la Aplicación
 03.- Logim
     03.1.- Pintar Login
     03.2.- Cerrar Login
+    03.3.- Validar Login
+    03.4.- Cerrar Sesion
 04.- Pintar Slider
 05.- Activar Slider
 06.- Activar Menu Comprar
@@ -31,6 +33,7 @@ javascript y jquery de la Aplicación
 ********************************************************************************/
 $(document).ready(function() {
     $.ajaxSetup({ cache: false });
+    $(this).load('login/cerrarSesion.php');
     
 /*******************************************************************************
 01.- Pintar Inicio
@@ -96,7 +99,7 @@ $(document).on('click',"#id_cookies img",function(event){
     });
 
     /*******************************************************************************
-    03.3.- Cerrar Sesion
+    03.4.- Cerrar Sesion
     ********************************************************************************/
     $(document).on("click","#btnLogin_inicio",function(event){
         $("#id_cerrar").css({"display":"block"});

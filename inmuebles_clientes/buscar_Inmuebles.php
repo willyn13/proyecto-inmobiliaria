@@ -8,14 +8,14 @@
 <body>
 <table>
 <?php
-	$conexion = mysqli_connect('localhost','root','','inmobiliaria')
-	or die('No se pudo conectar: ' . mysqli_error());
+$conexion = mysqli_connect('localhost','root','','inmobiliaria')
+or die('No se pudo conectar: ' . mysqli_error());
 
-	if (mysqli_connect_errno()) {
-		printf("No se pudo conectar: %s/n", mysqli_connect_error());
-		exit();
-	}
-	
+if (mysqli_connect_errno()) {
+printf("No se pudo conectar: %s/n", mysqli_connect_error());
+exit();
+}
+
 
 
 $sqlMostrar = "SELECT `idcasa`,'idlocalidad' , `venta`, `alquiler`, `habitaciones`, `m2`, `bagnos`, `terraza`, `trastero`, `piscina`, `garaje`, `direccion`, `precio_venta`, `precio_alquiler`, `localidad`, `provincia` 
@@ -25,28 +25,28 @@ where `inmuebles`.`idlocalidad`=`localidades`.`idlocalidad` and `localidades`.`i
 /*echo $sqlMostrar;*/
 $resultado =mysqli_query($conexion,$sqlMostrar);
 if (mysqli_num_rows($resultado)==0 ){
-			echo "no hay datos";
-			} else{
-			 
+echo "no hay datos";
+} else{
+
 while ($inmueble = mysqli_fetch_array($resultado)){
-	if($inmueble['piscina']==0) {$piscina="no";} else {$piscina="si";}
-	if($inmueble['terraza']==0) {$terraza="no";} else {$terraza="si";}
-	if($inmueble['trastero']==0) {$trastero="no";} else {$trastero="si";}
-	if($inmueble['garaje']==0) {$garaje="no";} else {$garaje="si";}
-	$idcasa=$inmueble['idcasa'];
-			echo "<tr>";
-			echo "<td> <a href='fichacasa.php?idcasa=".$idcasa."'><img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></a></td>";
-			echo '<td><p> Precio de venta: ' .$inmueble['precio_venta'].'</p>';
-			echo '<p> Precio de alquiler: ' .$inmueble['precio_alquiler'].'</p>';
-			echo '<p> El inmueble consta de: ' .$inmueble['habitaciones'].' habitaciones, '.$inmueble['bagnos'].' baños y se encuentra en la calle '.$inmueble['direccion'].' en la comunidad de '.$inmueble['localidad'].' de la provincia de '.$inmueble['provincia'].'</p>';
-			echo '<p>Piscina: '.$piscina;
-			echo '<p>Terraza: '.$terraza;
-			echo '<p>Trastero: '.$trastero;
-			echo '<p>Garaje: '.$garaje;
-			echo '</td>';
-			echo "<td><a href=\"eliminar_inmueble.php?idcasa=".$idcasa."\">Eliminar</a></td>";
-			echo "<td><a href=\"modificar_inmueble.php?idcasa=".$idcasa."\">Modificar</a></td>";
-			echo '</tr>';	
+if($inmueble['piscina']==0) {$piscina="no";} else {$piscina="si";}
+if($inmueble['terraza']==0) {$terraza="no";} else {$terraza="si";}
+if($inmueble['trastero']==0) {$trastero="no";} else {$trastero="si";}
+if($inmueble['garaje']==0) {$garaje="no";} else {$garaje="si";}
+$idcasa=$inmueble['idcasa'];
+echo "<tr>";
+echo "<td> <a href='fichacasa.php?idcasa=".$idcasa."'><img src=\"casas/".$inmueble['imagen1']."\"/  width=\"300\" height=\"250\"></a></td>";
+echo '<td><p> Precio de venta: ' .$inmueble['precio_venta'].'</p>';
+echo '<p> Precio de alquiler: ' .$inmueble['precio_alquiler'].'</p>';
+echo '<p> El inmueble consta de: ' .$inmueble['habitaciones'].' habitaciones, '.$inmueble['bagnos'].' baños y se encuentra en la calle '.$inmueble['direccion'].' en la comunidad de '.$inmueble['localidad'].' de la provincia de '.$inmueble['provincia'].'</p>';
+echo '<p>Piscina: '.$piscina;
+echo '<p>Terraza: '.$terraza;
+echo '<p>Trastero: '.$trastero;
+echo '<p>Garaje: '.$garaje;
+echo '</td>';
+echo "<td><a href=\"eliminar_inmueble.php?idcasa=".$idcasa."\">Eliminar</a></td>";
+echo "<td><a href=\"modificar_inmueble.php?idcasa=".$idcasa."\">Modificar</a></td>";
+echo '</tr>';	
 }				
 }			
 ?>
